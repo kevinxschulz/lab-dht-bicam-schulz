@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pmd-cpd>
+   <duplication lines="94" tokens="291">
+      <file begintoken="14512" column="12" endcolumn="1" endline="158" endtoken="14802"
+            line="65"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
+      <file begintoken="15152" column="3" endcolumn="1" endline="199" endtoken="15442"
+            line="76"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbingRestart.java"/>
+      <codefragment><![CDATA[	    State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+	  
+	    return statecandidate;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		ifacceptCandidate = new FactoryAcceptCandidate();
+		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
+		Boolean accept = candidate.acceptCandidate(stateReferenceHC, stateCandidate);
+		if(accept.equals(true))
+		  stateReferenceHC = stateCandidate;
+//		getReferenceList();
+	}
+	
+	@Override
+	public List<State> getReferenceList() {
+		listStateReference.add(stateReferenceHC);
+		return listStateReference;
+	}
+
+	@Override
+	public State getReference() {
+		return stateReferenceHC;
+	}
+
+	public void setStateRef(State stateRef) {
+		this.stateReferenceHC = stateRef;
+	}
+
+	@Override
+	public void setInitialReference(State stateInitialRef) {
+		this.stateReferenceHC = stateInitialRef;
+	}
+
+	public GeneratorType getGeneratorType() {
+		return Generatortype;
+	}
+
+	public void setGeneratorType(GeneratorType Generatortype) {
+		this.Generatortype = Generatortype;
+	}
+
+	@Override
+	public GeneratorType getType() {
+		return this.Generatortype;
+	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setTypeCandidate(CandidateType typeCandidate){
+		this.typeCandidate = typeCandidate;
+	}
+
+	@Override
+	public boolean awardUpdateREF(State stateCandidate) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float getWeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setWeight(float weight) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public int[] getListCountBetterGender() {
+		// TODO Auto-generated method stub
+		return this.listCountBetterGender;
+	}
+
+	@Override
+	public int[] getListCountGender() {
+		// TODO Auto-generated method stub
+		return this.listCountGender;
+	}
+
+	@Override
+	public float[] getTrace() {
+		// TODO Auto-generated method stub
+		return this.listTrace;
+	}
+}]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="164">
+      <file begintoken="8828" column="5" endcolumn="4" endline="180" endtoken="8991"
+            line="168"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <file begintoken="9167" column="5" endcolumn="4" endline="226" endtoken="9330"
+            line="215"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <codefragment><![CDATA[				if ((getProblem().getTypeProblem().equals(ProblemType.Maximizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+					bestState = stateCandidate;
+				}
+				if ((problem.getTypeProblem().equals(ProblemType.Minimizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) > stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+					bestState = stateCandidate;
+				}
+				//					System.out.println("Evaluacion: "+ bestState.getEvaluation());
+				if(saveListBestStates == true){
+					listBest.add(bestState);
+				}
+				sumMax = (float) (sumMax + bestState.getEvaluation().get(0));
+
+			}]]></codefragment>
+   </duplication>
+   <duplication lines="18" tokens="151">
+      <file begintoken="19014" column="3" endcolumn="74" endline="61" endtoken="19164"
+            line="44"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
+      <file begintoken="20178" column="3" endcolumn="74" endline="64" endtoken="20328"
+            line="47"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <codefragment><![CDATA[		this.weight = 50;
+		listTrace.add(weight);
+	}
+
+	@Override
+	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		List<State> neighborhood = new ArrayList<State>();
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
+		State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+		return statecandidate;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, 
+	InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		//Agregando la primera solución a la lista de soluciones no dominadas
+		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
+			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());]]></codefragment>
+   </duplication>
+   <duplication lines="18" tokens="145">
+      <file begintoken="14451" column="2" endcolumn="37" endline="76" endtoken="14595"
+            line="59"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
+      <file begintoken="21026" column="2" endcolumn="37" endline="56" endtoken="21170"
+            line="40"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		List<State> neighborhood = new ArrayList<State>();
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
+	    State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+	  
+	    return statecandidate;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		ifacceptCandidate = new FactoryAcceptCandidate();
+		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
+		Boolean accept = candidate.acceptCandidate(stateReferenceHC, stateCandidate);
+		if(accept.equals(true))
+		  stateReferenceHC = stateCandidate;]]></codefragment>
+   </duplication>
+   <duplication lines="27" tokens="140">
+      <file begintoken="16679" column="25" endcolumn="37" endline="86" endtoken="16818"
+            line="60"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiCaseSimulatedAnnealing.java"/>
+      <file begintoken="25734" column="53" endcolumn="37" endline="102" endtoken="25873"
+            line="75"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
+      <codefragment><![CDATA[		neighborhood = problem.getOperator().generatedNewState(stateReferenceSA, operatornumber);
+	    State statecandidate = candidatevalue.stateCandidate(stateReferenceSA, typeCandidate, strategy, operatornumber, neighborhood);
+	    return statecandidate;
+	}
+
+	@Override
+	public State getReference() {
+		return stateReferenceSA;
+	}
+
+	public void setStateRef(State stateRef) {
+		this.stateReferenceSA = stateRef;
+	}
+
+	@Override
+	public void setInitialReference(State stateInitialRef) {
+		this.stateReferenceSA = stateInitialRef;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent)throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		countRept = countIterationsT;
+		ifacceptCandidate = new FactoryAcceptCandidate();
+		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
+		Boolean accept = candidate.acceptCandidate(stateReferenceSA, stateCandidate);
+		if(accept.equals(true))
+		  stateReferenceSA = stateCandidate.clone();]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="134">
+      <file begintoken="21629" column="2" endcolumn="9" endline="89" endtoken="21762"
+            line="74"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveTabuSearch.java"/>
+      <file begintoken="26372" column="2" endcolumn="9" endline="113" endtoken="26505"
+            line="98"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/TabuSearch.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent)throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		ifacceptCandidate = new FactoryAcceptCandidate();
+		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
+		Boolean acept = candidate.acceptCandidate(stateReferenceTS, stateCandidate);
+		if(acept.equals(true))
+		  stateReferenceTS = stateCandidate;
+
+		if (strategy.equals(StrategyType.TABU) && acept.equals(true)) {
+			if (TabuSolutions.listTabu.size() < TabuSolutions.maxelements) {
+				Boolean find = false;
+				int count = 0;
+				while ((TabuSolutions.listTabu.size() > count) && (find.equals(false))) {
+					if (TabuSolutions.listTabu.get(count).equals(stateCandidate)) {]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="127">
+      <file begintoken="19173" column="37" endcolumn="14" endline="77" endtoken="19299"
+            line="62"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
+      <file begintoken="20327" column="73" endcolumn="14" endline="79" endtoken="20453"
+            line="64"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <codefragment><![CDATA[			distanceSolution.add(new Double(0));
+		}
+		ifacceptCandidate = new FactoryAcceptCandidate();
+		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
+		State lastState = Strategy.getStrategy().listRefPoblacFinal.get(Strategy.getStrategy().listRefPoblacFinal.size()-1);
+		List<State> neighborhood = new ArrayList<State>();
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, sizeNeighbors);
+		int i= 0;
+//		Boolean restart= true;
+
+//		while (restart==true) {
+			Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+			if(accept.equals(true)){
+				stateReferenceHC = stateCandidate.clone();
+				visitedState = new ArrayList<State>();
+				lastState=stateReferenceHC.clone();]]></codefragment>
+   </duplication>
+   <duplication lines="41" tokens="119">
+      <file begintoken="20655" column="3" endcolumn="2" endline="152" endtoken="20773"
+            line="112"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <file begintoken="21175" column="3" endcolumn="2" endline="97" endtoken="21293"
+            line="57"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
+      <codefragment><![CDATA[		getReferenceList();
+	}
+
+	@Override
+	public List<State> getReferenceList() {
+		listStateReference.add(stateReferenceHC.clone());
+		return listStateReference;
+	}
+
+	@Override
+	public State getReference() {
+		return stateReferenceHC;
+	}
+
+	public void setStateRef(State stateRef) {
+		this.stateReferenceHC = stateRef;
+	}
+
+	@Override
+	public void setInitialReference(State stateInitialRef) {
+		this.stateReferenceHC = stateInitialRef;
+	}
+
+	public GeneratorType getGeneratorType() {
+		return Generatortype;
+	}
+
+	public void setGeneratorType(GeneratorType Generatortype) {
+		this.Generatortype = Generatortype;
+	}
+
+	@Override
+	public GeneratorType getType() {
+		return this.Generatortype;
+	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="118">
+      <file begintoken="19014" column="3" endcolumn="99" endline="58" endtoken="19131"
+            line="44"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
+      <file begintoken="20178" column="3" endcolumn="257" endline="60" endtoken="20295"
+            line="47"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <file begintoken="21015" column="3" endcolumn="257" endline="51" endtoken="21132"
+            line="38"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
+      <codefragment><![CDATA[		this.weight = 50;
+		listTrace.add(weight);
+	}
+
+	@Override
+	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		List<State> neighborhood = new ArrayList<State>();
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
+		State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+		return statecandidate;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, 
+	InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
+   </duplication>
+   <duplication lines="50" tokens="117">
+      <file begintoken="12816" column="36" endcolumn="1" endline="227" endtoken="12932"
+            line="178"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/EvolutionStrategies.java"/>
+      <file begintoken="14140" column="27" endcolumn="1" endline="252" endtoken="14256"
+            line="204"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/GeneticAlgorithm.java"/>
+      <codefragment><![CDATA[			State value = listStateReference.get(i);
+			ReferenceList.add(value);
+		}
+		return ReferenceList;
+	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean awardUpdateREF(State stateCandidate) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float getWeight() {
+		// TODO Auto-generated method stub
+		return this.weight;
+	}
+
+	@Override
+	public void setWeight(float weight) {
+		// TODO Auto-generated method stub
+		this.weight = weight;
+	}
+
+	@Override
+	public int[] getListCountBetterGender() {
+		// TODO Auto-generated method stub
+		return this.listCountBetterGender;
+	}
+
+	@Override
+	public int[] getListCountGender() {
+		// TODO Auto-generated method stub
+		return this.listCountGender;
+	}
+
+	@Override
+	public float[] getTrace() {
+		// TODO Auto-generated method stub
+		return this.listTrace;
+	}
+
+
+}]]></codefragment>
+   </duplication>
+   <duplication lines="40" tokens="116">
+      <file begintoken="19630" column="2" endcolumn="2" endline="171" endtoken="19745"
+            line="132"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
+      <file begintoken="20658" column="2" endcolumn="2" endline="152" endtoken="20773"
+            line="113"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <file begintoken="21178" column="2" endcolumn="2" endline="97" endtoken="21293"
+            line="58"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public List<State> getReferenceList() {
+		listStateReference.add(stateReferenceHC.clone());
+		return listStateReference;
+	}
+
+	@Override
+	public State getReference() {
+		return stateReferenceHC;
+	}
+
+	public void setStateRef(State stateRef) {
+		this.stateReferenceHC = stateRef;
+	}
+
+	@Override
+	public void setInitialReference(State stateInitialRef) {
+		this.stateReferenceHC = stateInitialRef;
+	}
+
+	public GeneratorType getGeneratorType() {
+		return Generatortype;
+	}
+
+	public void setGeneratorType(GeneratorType Generatortype) {
+		this.Generatortype = Generatortype;
+	}
+
+	@Override
+	public GeneratorType getType() {
+		return this.Generatortype;
+	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}]]></codefragment>
+   </duplication>
+   <duplication lines="49" tokens="115">
+      <file begintoken="16355" column="2" endcolumn="1" endline="165" endtoken="16469"
+            line="117"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/LimitThreshold.java"/>
+      <file begintoken="26672" column="2" endcolumn="1" endline="195" endtoken="26786"
+            line="148"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/TabuSearch.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setTypeCandidate(CandidateType typeCandidate){
+		this.typeCandidate = typeCandidate;
+	}
+
+	@Override
+	public boolean awardUpdateREF(State stateCandidate) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public float getWeight() {
+		// TODO Auto-generated method stub
+		return this.weight;
+	}
+
+	@Override
+	public void setWeight(float weight) {
+		// TODO Auto-generated method stub
+		this.weight = weight;
+	}
+
+
+	@Override
+	public int[] getListCountBetterGender() {
+		// TODO Auto-generated method stub
+		return this.listCountBetterGender;
+	}
+
+	@Override
+	public int[] getListCountGender() {
+		// TODO Auto-generated method stub
+		return this.listCountGender;
+	}
+
+	@Override
+	public float[] getTrace() {
+		// TODO Auto-generated method stub
+		return this.listTrace;
+	}
+
+}]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="113">
+      <file begintoken="10103" column="34" endcolumn="7" endline="366" endtoken="10215"
+            line="351"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <file begintoken="10218" column="24" endcolumn="7" endline="379" endtoken="10330"
+            line="366"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <codefragment><![CDATA[	public void initializeGenerators()throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		List<GeneratorType>	listType = new ArrayList<GeneratorType>();
+		this.mapGenerators = new TreeMap<GeneratorType, Generator>();
+		GeneratorType type[]= GeneratorType.values();
+		for (GeneratorType generator : type) {
+			listType.add(generator);
+		}
+		for (int i = 0; i < listType.size(); i++) {
+			Generator generator = newGenerator(listType.get(i));
+			mapGenerators.put(listType.get(i), generator);
+			//ExecuteGeneratorParall.getExecuteGeneratorParall().listGenerators.add(generator);
+//			MultiGenerator.getListGenerators()[i] = generator;
+		}
+	}
+
+	public void initialize()throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="112">
+      <file begintoken="8116" column="4" endcolumn="3" endline="40" endtoken="8227"
+            line="28"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/complement/UpdateParameter.java"/>
+      <file begintoken="9715" column="3" endcolumn="2" endline="290" endtoken="9826"
+            line="278"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <codefragment><![CDATA[			if(countIterationsCurrent.equals(EvolutionStrategies.countRef - 1)){
+				ifFactoryGenerator = new FactoryGenerator();
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.EvolutionStrategies);
+			}			
+			if(countIterationsCurrent.equals(DistributionEstimationAlgorithm.countRef - 1)){
+				ifFactoryGenerator = new FactoryGenerator();
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.DistributionEstimationAlgorithm);
+			}
+			if(countIterationsCurrent.equals(ParticleSwarmOptimization.countRef - 1)){
+				ifFactoryGenerator = new FactoryGenerator();
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.ParticleSwarmOptimization);
+			}
+		}]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="111">
+      <file begintoken="18472" column="60" endcolumn="2" endline="326" endtoken="18582"
+            line="311"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiGenerator.java"/>
+      <file begintoken="18615" column="55" endcolumn="2" endline="344" endtoken="18725"
+            line="329"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiGenerator.java"/>
+      <codefragment><![CDATA[		float weightUpdate = (float) (weightLast * (1 - 0.1) + 10);
+		activeGenerator.setWeight(weightUpdate);
+//		activeGenerator.getTrace()getTrace().add(weightUpdate);
+		for (int i = 0; i < listGenerators.length; i++) {
+			if(listGenerators[i].equals(activeGenerator))
+				activeGenerator.getTrace()[Strategy.getStrategy().getCountCurrent()] = weightUpdate;
+			else{
+				if(!listGenerators[i].getType().equals(Generatortype.MultiGenerator)){
+					float trace = listGenerators[i].getWeight();
+					listGenerators[i].getTrace() [Strategy.getStrategy().getCountCurrent()] = trace;
+				}
+			}
+		}
+	}
+
+	@SuppressWarnings("static-access")]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="107">
+      <file begintoken="14451" column="2" endcolumn="257" endline="71" endtoken="14557"
+            line="59"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
+      <file begintoken="19025" column="2" endcolumn="99" endline="58" endtoken="19131"
+            line="46"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
+      <file begintoken="20189" column="2" endcolumn="257" endline="60" endtoken="20295"
+            line="49"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		List<State> neighborhood = new ArrayList<State>();
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
+	    State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+	  
+	    return statecandidate;
+	}
+
+	@Override
+	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
+   </duplication>
+   <duplication lines="48" tokens="106">
+      <file begintoken="25378" column="42" endcolumn="1" endline="148" endtoken="25483"
+            line="101"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/RandomSearch.java"/>
+      <file begintoken="25925" column="42" endcolumn="1" endline="164" endtoken="26030"
+            line="117"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
+      <codefragment><![CDATA[		listStateReference.add(stateReferenceRS);
+		return listStateReference;
+	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean awardUpdateREF(State stateCandidate) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public float getWeight() {
+		// TODO Auto-generated method stub
+		return this.weight;
+	}
+
+	@Override
+	public void setWeight(float weight) {
+		// TODO Auto-generated method stub
+		this.weight = weight;
+	}
+
+	@Override
+	public int[] getListCountBetterGender() {
+		// TODO Auto-generated method stub
+		return this.listCountBetterGender;
+	}
+
+	@Override
+	public int[] getListCountGender() {
+		// TODO Auto-generated method stub
+		return this.listCountGender;
+	}
+
+	@Override
+	public float[] getTrace() {
+		// TODO Auto-generated method stub
+		return this.listTrace;
+	}
+
+}]]></codefragment>
+   </duplication>
+   <duplication lines="17" tokens="105">
+      <file begintoken="8722" column="6" endcolumn="6" endline="162" endtoken="8826"
+            line="146"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <file begintoken="9037" column="6" endcolumn="6" endline="208" endtoken="9141"
+            line="191"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
+      <codefragment><![CDATA[					stateCandidate = multiGenerator.generate(operatornumber);
+					problem.Evaluate(stateCandidate);
+					stateCandidate.setEvaluation(stateCandidate.getEvaluation());
+					stateCandidate.setNumber(countCurrent);
+					stateCandidate.setTypeGenerator(generatorType);
+					multiGenerator.updateReference(stateCandidate, countCurrent);
+				}
+				else {
+					stateCandidate = generator.generate(operatornumber);
+					problem.Evaluate(stateCandidate);
+					stateCandidate.setEvaluation(stateCandidate.getEvaluation());
+					stateCandidate.setNumber(countCurrent);
+					stateCandidate.setTypeGenerator(generatorType);
+					generator.updateReference(stateCandidate, countCurrent);
+					if(saveListStates ==  true){
+						listStates.add(stateCandidate);
+					}]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="103">
+      <file begintoken="5123" column="85" endcolumn="4" endline="54" endtoken="5225"
+            line="42"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/acceptation_type/AcceptMulticase.java"/>
+      <file begintoken="5286" column="8" endcolumn="4" endline="71" endtoken="5388"
+            line="59"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/acceptation_type/AcceptMulticase.java"/>
+      <codefragment><![CDATA[			else if(DominanceRank(stateCandidate, list) == DominanceRank(stateCurrent, list)){
+				//Calculando la probabilidad de aceptación
+				List<Double> evaluations = stateCurrent.getEvaluation();
+				double total = 0;
+				for (int i = 0; i < evaluations.size()-1; i++) {
+					Double evalA = evaluations.get(i);
+					Double evalB = stateCandidate.getEvaluation().get(i);
+					if (evalA != 0 && evalB != 0) {
+						total += (evalA - evalB)/((evalA + evalB)/2);
+					}
+				}	
+				pAccept = Math.exp(-(1-total)/T);
+			}]]></codefragment>
+   </duplication>
+   <duplication lines="46" tokens="103">
+      <file begintoken="12830" column="2" endcolumn="1" endline="227" endtoken="12932"
+            line="182"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/EvolutionStrategies.java"/>
+      <file begintoken="14154" column="2" endcolumn="1" endline="252" endtoken="14256"
+            line="208"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/GeneticAlgorithm.java"/>
+      <file begintoken="25381" column="2" endcolumn="1" endline="148" endtoken="25483"
+            line="103"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/RandomSearch.java"/>
+      <file begintoken="25928" column="2" endcolumn="1" endline="164" endtoken="26030"
+            line="119"
+            path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
+      <codefragment><![CDATA[	}
+
+	@Override
+	public List<State> getSonList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean awardUpdateREF(State stateCandidate) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float getWeight() {
+		// TODO Auto-generated method stub
+		return this.weight;
+	}
+
+	@Override
+	public void setWeight(float weight) {
+		// TODO Auto-generated method stub
+		this.weight = weight;
+	}
+
+	@Override
+	public int[] getListCountBetterGender() {
+		// TODO Auto-generated method stub
+		return this.listCountBetterGender;
+	}
+
+	@Override
+	public int[] getListCountGender() {
+		// TODO Auto-generated method stub
+		return this.listCountGender;
+	}
+
+	@Override
+	public float[] getTrace() {
+		// TODO Auto-generated method stub
+		return this.listTrace;
+	}
+
+
+}]]></codefragment>
+   </duplication>
+</pmd-cpd>
