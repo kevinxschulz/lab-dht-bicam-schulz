@@ -24,7 +24,7 @@
         <!-- Versions -->
         <junit.version>5.10.0</junit.version>
         <jacoco.version>0.8.11</jacoco.version>
-        <dependency-check.version>9.2.0</dependency-check.version>
+        <dependency-check.version>10.0.3</dependency-check.version>
         <pmd.version>3.21.0</pmd.version>
         <checkstyle.plugin.version>3.3.1</checkstyle.plugin.version>
         <spotbugs.plugin.version>4.8.5.0</spotbugs.plugin.version>
@@ -178,6 +178,8 @@
                     <effort>max</effort>
                     <threshold>Low</threshold>
                     <failOnError>false</failOnError>
+                    <!-- XML für Tools, HTML kommt über reporting/site -->
+                    <xmlOutput>true</xmlOutput>
                 </configuration>
                 <executions>
                     <execution>
@@ -192,5 +194,44 @@
 
         </plugins>
     </build>
+
+    <!-- Reporting-Teil für mvn site (HTML-Reports) -->
+    <reporting>
+        <plugins>
+            <!-- SpotBugs-Report als HTML unter target/site/spotbugs.html -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs.plugin.version}</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <xmlOutput>false</xmlOutput>
+                </configuration>
+            </plugin>
+
+            <!-- PMD-HTML-Report (target/site/pmd.html, cpd.html etc.) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${pmd.version}</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+
+            <!-- Checkstyle-HTML-Report (target/site/checkstyle.html) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle.plugin.version}</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <encoding>${project.reporting.outputEncoding}</encoding>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>
