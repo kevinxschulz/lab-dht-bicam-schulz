@@ -18,6 +18,10 @@ import metaheurictics.strategy.Strategy;
 import factory_interface.IFFactoryCandidate;
 import factory_method.FactoryCandidate;
 
+/**
+ * This class is responsible for selecting a candidate state from a neighborhood.
+ * It uses a factory to create a search strategy and can handle tabu search.
+ */
 public class CandidateValue {
 
 	@SuppressWarnings("unused")
@@ -44,12 +48,42 @@ public class CandidateValue {
 		this.searchcandidate = searchcandidate;
 	}
 
+	/**
+	 * Creates a new search candidate strategy.
+	 *
+	 * @param typecandidate The type of candidate search strategy to create.
+	 * @return A new instance of a search candidate strategy.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	public SearchCandidate newSearchCandidate(CandidateType typecandidate) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		ifFactory = new FactoryCandidate();
 		searchcandidate = ifFactory.createSearchCandidate(typecandidate);
 		return searchcandidate;
 	}
 
+	/**
+	 * Selects a candidate state from a neighborhood.
+	 *
+	 * @param stateCurrent The current state.
+	 * @param typeCandidate The type of candidate search strategy to use.
+	 * @param strategy The search strategy (e.g., Tabu search).
+	 * @param operatornumber The operator number to use for generating new states.
+	 * @param neighborhood The neighborhood of states to search.
+	 * @return The selected candidate state.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	public State stateCandidate(State stateCurrent, CandidateType typeCandidate, StrategyType strategy, Integer operatornumber, List<State> neighborhood) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException{
 		//Problem problem = ExecuteGenerator.getExecuteGenerator().getProblem();
 		State stateCandidate;

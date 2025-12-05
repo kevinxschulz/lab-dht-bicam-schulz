@@ -9,8 +9,19 @@ import problem.definition.Problem;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
 
+/**
+ * An acceptance criterion that accepts a candidate solution if it is not worse than the current solution.
+ * "Not worse" is determined by the problem type (maximization or minimization).
+ */
 public class AcceptNotBad extends AcceptableCandidate{
 
+	/**
+	 * Accepts the candidate solution if its evaluation is not worse than the current solution's evaluation.
+	 *
+	 * @param stateCurrent The current state.
+	 * @param stateCandidate The candidate state.
+	 * @return `true` if the candidate is accepted, `false` otherwise.
+	 */
 	@Override
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) {
 		Boolean accept = null;

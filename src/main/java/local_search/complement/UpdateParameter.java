@@ -12,11 +12,26 @@ import metaheuristics.generators.GeneratorType;
 import metaheuristics.generators.GeneticAlgorithm;
 import metaheuristics.generators.ParticleSwarmOptimization;
 
-
+/**
+ * A class that provides a method to update the parameters of a metaheuristic and change the generator if necessary.
+ */
 public class UpdateParameter {
 	
 	private static IFFactoryGenerator ifFactoryGenerator;
 	
+	/**
+	 * Updates the current iteration count and changes the generator if certain conditions are met.
+	 *
+	 * @param countIterationsCurrent The current number of iterations.
+	 * @return The updated number of iterations.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	public static Integer updateParameter(Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {//HashMap<String, Object> map, 
 		countIterationsCurrent = countIterationsCurrent + 1;
 		//		Here update parameter for update and change generator.

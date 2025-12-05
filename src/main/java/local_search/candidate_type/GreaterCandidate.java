@@ -12,9 +12,25 @@ import problem.definition.State;
 
 
 
-
+/**
+ * A search strategy that selects the candidate with the greatest evaluation value.
+ */
 public class GreaterCandidate extends SearchCandidate {
 	
+	/**
+	 * Selects the candidate with the greatest evaluation value from a list of neighbors.
+	 * If no candidate is strictly greater than the first one, a random candidate is selected.
+	 *
+	 * @param listNeighborhood The list of neighbor states.
+	 * @return The selected candidate state.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	@Override
 	public State stateSearch(List<State> listNeighborhood) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		State stateGreater = null;
