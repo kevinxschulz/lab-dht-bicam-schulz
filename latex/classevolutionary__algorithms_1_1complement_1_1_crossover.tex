@@ -1,0 +1,48 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Crossover Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_crossover}{}\label{classevolutionary__algorithms_1_1complement_1_1_crossover}\index{evolutionary\_algorithms.complement.Crossover@{evolutionary\_algorithms.complement.Crossover}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Crossover\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.651917cm]{classevolutionary__algorithms_1_1complement_1_1_crossover}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover_a77155266e5646a87bcd427189938cc32}{crossover}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father1, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father2, double PC)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase abstracta que representa el operador de cruce en un algoritmo evolutivo. Define el método que deben implementar las clases de cruce concretas. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_crossover_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_crossover_a77155266e5646a87bcd427189938cc32}\index{evolutionary\_algorithms.complement.Crossover@{evolutionary\_algorithms.complement.Crossover}!crossover@{crossover}}
+\index{crossover@{crossover}!evolutionary\_algorithms.complement.Crossover@{evolutionary\_algorithms.complement.Crossover}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_crossover_a77155266e5646a87bcd427189938cc32} 
+abstract \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+Crossover.\+crossover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father1}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father2}{, }\item[{double}]{PC}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Realiza el cruce entre dos padres para generar un nuevo estado (hijo). 
+\begin{DoxyParams}{Parameters}
+{\em father1} & El primer estado padre. \\
+\hline
+{\em father2} & El segundo estado padre. \\
+\hline
+{\em PC} & La probabilidad de cruce. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El estado hijo resultante del cruce. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_one_point_crossover_a6d644b471de305b6508b2b647edc76d1}{evolutionary\+\_\+algorithms.\+complement.\+One\+Point\+Crossover}}, and \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774}{evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Crossover.\+java\end{DoxyCompactItemize}

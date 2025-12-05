@@ -1,0 +1,349 @@
+\doxysection{metaheuristics.\+generators.\+Multi\+Generator Class Reference}
+\hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator}{}\label{classmetaheuristics_1_1generators_1_1_multi_generator}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+Inheritance diagram for metaheuristics.\+generators.\+Multi\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmetaheuristics_1_1generators_1_1_multi_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ab6c56d1cbb08a212d5adfd2d5e5664f9}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ab6c56d1cbb08a212d5adfd2d5e5664f9} 
+void {\bfseries set\+Generatortype} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} generatortype)
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a2309ca3d3de82961bbc61d3fb6c893fc}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception,    Class\+Not\+Found\+Exception, Instantiation\+Exception,    Illegal\+Access\+Exception, Invocation\+Target\+Exception,    No\+Such\+Method\+Exception 
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a7364417b4356561cfb7656fb9818cc5d}{get\+Reference}} ()
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a7e6b4c2a4a6ef326d191a2da93f97d67}{get\+Reference\+List}} ()
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_aa68b7cbbd70430924ebf582279ceeb8a}{get\+Son\+List}} ()
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a3c29946186ba7afb379169ed3636004f}{get\+Type}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_abfbc81c6f1a46e6a23e1a7f3f550e9f6}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a4064a096c203ec6b538929af5bd8d0d7}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception,    Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception,    Illegal\+Access\+Exception, Invocation\+Target\+Exception,    No\+Such\+Method\+Exception 
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a06c51732247b401b0369fe6133d35793}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a06c51732247b401b0369fe6133d35793} 
+void {\bfseries update\+Weight} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_afef1d16b774c4e86135d2fc38d0dbed7}\label{classmetaheuristics_1_1generators_1_1_multi_generator_afef1d16b774c4e86135d2fc38d0dbed7} 
+boolean {\bfseries search\+State} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a625ff0e6cad7bfefeaeb4ec8a28a71d3}{get\+Weight}} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a2c2b5c6dc19e52e87a1a0b2151fa9768}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a2c2b5c6dc19e52e87a1a0b2151fa9768} 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} {\bfseries roulette} ()
+\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_a71676324d28a05ab7745967c6edf2218}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ab3417c34a00f079f67eed485ceeb8f1f}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ab3417c34a00f079f67eed485ceeb8f1f} 
+void {\bfseries update\+Award\+SC} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a9bca4abee16ba939d1aca80ac395a130}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a9bca4abee16ba939d1aca80ac395a130} 
+void {\bfseries update\+Award\+Imp} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_abb314d2dd0d9a0d283574add841ba6b8}{set\+Weight}} (float weight)
+\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_aa4acb9d61c196f56a0bde7d0a624f3fb}{get\+Trace}} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a72bc1f2921d0ed9193933d964ba217b9}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a72bc1f2921d0ed9193933d964ba217b9} 
+void {\bfseries tournament} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a80edefbfc3233000dca1ad30cb95f8fc}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a80edefbfc3233000dca1ad30cb95f8fc} 
+Object {\bfseries clone} ()
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_ae534f33ba876de6d56d22f3889b8b666}{get\+List\+Count\+Better\+Gender}} ()
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_multi_generator_af7574c27e8798f241a9f683721a8a6b5}{get\+List\+Count\+Gender}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_adecd56fa947c1c392c1739d1bf18b6fd}\label{classmetaheuristics_1_1generators_1_1_multi_generator_adecd56fa947c1c392c1739d1bf18b6fd} 
+static void {\bfseries destroy\+Multi\+Generator} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a2a25df332708a340f5115fe7ea253053}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a2a25df332708a340f5115fe7ea253053} 
+static void {\bfseries initialize\+List\+Generator} ()  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ada4833a51b39d1372e2c050448bbab6c}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ada4833a51b39d1372e2c050448bbab6c} 
+static void {\bfseries initialize\+Generators} ()  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a21767d34c374a65dd29196459273ff34}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a21767d34c374a65dd29196459273ff34} 
+static void {\bfseries create\+Instance\+Generators\+BPP} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ab331905baebb433340e05d19e174340b}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ab331905baebb433340e05d19e174340b} 
+static \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}}\mbox{[}$\,$\mbox{]} {\bfseries get\+List\+Generators} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ada47e6ed9cecafd1895b88ca0b2bd827}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ada47e6ed9cecafd1895b88ca0b2bd827} 
+static void {\bfseries set\+List\+Generators} (\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}}\mbox{[}$\,$\mbox{]} list\+Generators)
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_abd14738b7100c980010e1385f622a038}\label{classmetaheuristics_1_1generators_1_1_multi_generator_abd14738b7100c980010e1385f622a038} 
+static \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} {\bfseries get\+Active\+Generator} ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ae3af87d1077fa62c7aea5f0c318afe5d}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ae3af87d1077fa62c7aea5f0c318afe5d} 
+static void {\bfseries set\+Active\+Generator} (\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} active\+Generator)
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a9322b6d25b0f36d5e0f7acc5ff05b26f}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a9322b6d25b0f36d5e0f7acc5ff05b26f} 
+static void {\bfseries set\+List\+Generated\+PP} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+Generated\+PP)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a65b99d327cd92bebf04d0dcea28c8a0f}\label{classmetaheuristics_1_1generators_1_1_multi_generator_a65b99d327cd92bebf04d0dcea28c8a0f} 
+static List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ {\bfseries list\+Generated\+PP} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ ()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ae77321419a2cb94552858f37113ad351}\label{classmetaheuristics_1_1generators_1_1_multi_generator_ae77321419a2cb94552858f37113ad351} 
+static \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} {\bfseries active\+Generator}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_af1c553546060e95f2cfb9df584f1b599}\label{classmetaheuristics_1_1generators_1_1_multi_generator_af1c553546060e95f2cfb9df584f1b599} 
+static final List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ {\bfseries list\+State\+Reference} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries count\+Gender}
+\item 
+int {\bfseries count\+Better\+Gender}
+\item 
+int\mbox{[}$\,$\mbox{]} {\bfseries list\+Count\+Better\+Gender}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A portfolio-\/style generator that manages and selects among several underlying generators (operators).
+
+Implements selection mechanisms (roulette, tournament) over a set of generators, coordinates initialization of generator instances and delegates candidate generation to the currently selected active generator. 
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a71676324d28a05ab7745967c6edf2218}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!awardUpdateREF@{awardUpdateREF}}
+\index{awardUpdateREF@{awardUpdateREF}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{awardUpdateREF()}{awardUpdateREF()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a71676324d28a05ab7745967c6edf2218} 
+boolean metaheuristics.\+generators.\+Multi\+Generator.\+award\+Update\+REF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+Awards the update of the reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & The candidate state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the update is awarded, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a2309ca3d3de82961bbc61d3fb6c893fc}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a2309ca3d3de82961bbc61d3fb6c893fc} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Multi\+Generator.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception,    Class\+Not\+Found\+Exception, Instantiation\+Exception,    Illegal\+Access\+Exception, Invocation\+Target\+Exception,    No\+Such\+Method\+Exception}
+
+Generates a new state. 
+\begin{DoxyParams}{Parameters}
+{\em operatornumber} & The operator number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new state. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_ae534f33ba876de6d56d22f3889b8b666}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getListCountBetterGender@{getListCountBetterGender}}
+\index{getListCountBetterGender@{getListCountBetterGender}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getListCountBetterGender()}{getListCountBetterGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_ae534f33ba876de6d56d22f3889b8b666} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Multi\+Generator.\+get\+List\+Count\+Better\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of count of better gender. \begin{DoxyReturn}{Returns}
+the list of count of better gender. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_af7574c27e8798f241a9f683721a8a6b5}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getListCountGender@{getListCountGender}}
+\index{getListCountGender@{getListCountGender}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getListCountGender()}{getListCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_af7574c27e8798f241a9f683721a8a6b5} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Multi\+Generator.\+get\+List\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of count of gender. \begin{DoxyReturn}{Returns}
+the list of count of gender. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a7364417b4356561cfb7656fb9818cc5d}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a7364417b4356561cfb7656fb9818cc5d} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Multi\+Generator.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the reference state. \begin{DoxyReturn}{Returns}
+The reference state. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a7e6b4c2a4a6ef326d191a2da93f97d67}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getReferenceList@{getReferenceList}}
+\index{getReferenceList@{getReferenceList}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getReferenceList()}{getReferenceList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a7e6b4c2a4a6ef326d191a2da93f97d67} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Multi\+Generator.\+get\+Reference\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of reference states. \begin{DoxyReturn}{Returns}
+The list of reference states. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_aa68b7cbbd70430924ebf582279ceeb8a}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getSonList@{getSonList}}
+\index{getSonList@{getSonList}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getSonList()}{getSonList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_aa68b7cbbd70430924ebf582279ceeb8a} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Multi\+Generator.\+get\+Son\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of son states. \begin{DoxyReturn}{Returns}
+The list of son states. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_aa4acb9d61c196f56a0bde7d0a624f3fb}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getTrace@{getTrace}}
+\index{getTrace@{getTrace}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getTrace()}{getTrace()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_aa4acb9d61c196f56a0bde7d0a624f3fb} 
+float\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Multi\+Generator.\+get\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the trace of the generator. \begin{DoxyReturn}{Returns}
+The trace of the generator. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a3c29946186ba7afb379169ed3636004f}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getType@{getType}}
+\index{getType@{getType}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a3c29946186ba7afb379169ed3636004f} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Multi\+Generator.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the type of the generator. \begin{DoxyReturn}{Returns}
+The generator type. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a625ff0e6cad7bfefeaeb4ec8a28a71d3}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a625ff0e6cad7bfefeaeb4ec8a28a71d3} 
+float metaheuristics.\+generators.\+Multi\+Generator.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the weight of the generator. \begin{DoxyReturn}{Returns}
+The weight of the generator. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_abfbc81c6f1a46e6a23e1a7f3f550e9f6}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!setInitialReference@{setInitialReference}}
+\index{setInitialReference@{setInitialReference}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{setInitialReference()}{setInitialReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_abfbc81c6f1a46e6a23e1a7f3f550e9f6} 
+void metaheuristics.\+generators.\+Multi\+Generator.\+set\+Initial\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Initial\+Ref}{}\end{DoxyParamCaption})}
+
+Sets the initial reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Initial\+Ref} & The initial reference state. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_abb314d2dd0d9a0d283574add841ba6b8}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_abb314d2dd0d9a0d283574add841ba6b8} 
+void metaheuristics.\+generators.\+Multi\+Generator.\+set\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight}{}\end{DoxyParamCaption})}
+
+Sets the weight of the generator. 
+\begin{DoxyParams}{Parameters}
+{\em weight} & The weight of the generator. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_multi_generator_a4064a096c203ec6b538929af5bd8d0d7}\index{metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!metaheuristics.generators.MultiGenerator@{metaheuristics.generators.MultiGenerator}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_multi_generator_a4064a096c203ec6b538929af5bd8d0d7} 
+void metaheuristics.\+generators.\+Multi\+Generator.\+update\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception,    Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception,    Illegal\+Access\+Exception, Invocation\+Target\+Exception,    No\+Such\+Method\+Exception}
+
+Updates the reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & The candidate state. \\
+\hline
+{\em count\+Iterations\+Current} & The current number of iterations. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{metaheuristics.\+generators.\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/Multi\+Generator.\+java\end{DoxyCompactItemize}

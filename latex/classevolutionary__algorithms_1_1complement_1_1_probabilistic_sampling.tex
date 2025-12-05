@@ -1,0 +1,62 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling}{}\label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e}{sampling}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ fathers, int count\+Ind)
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7}{list\+State}} (int count\+Ind)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa el muestreo probabilístico para la generación de nuevos individuos. Este método de muestreo se utiliza en algoritmos de estimación de distribución (EDAs). 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}!listState@{listState}}
+\index{listState@{listState}!evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+\doxysubsubsection{\texorpdfstring{listState()}{listState()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling.\+list\+State (\begin{DoxyParamCaption}\item[{int}]{count\+Ind}{}\end{DoxyParamCaption})}
+
+Inicializa una lista de estados (individuos). 
+\begin{DoxyParams}{Parameters}
+{\em count\+Ind} & El número de individuos a crear. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de nuevos estados inicializados. 
+\end{DoxyReturn}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}!sampling@{sampling}}
+\index{sampling@{sampling}!evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+\doxysubsubsection{\texorpdfstring{sampling()}{sampling()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling.\+sampling (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{fathers}{, }\item[{int}]{count\+Ind}{}\end{DoxyParamCaption})}
+
+Realiza el muestreo probabilístico para generar una lista de nuevos individuos. 
+\begin{DoxyParams}{Parameters}
+{\em fathers} & La lista de padres a partir de la cual se realizará el muestreo. \\
+\hline
+{\em count\+Ind} & El número de individuos a generar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de nuevos individuos generados mediante muestreo probabilístico. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_sampling_a6e7058367ab7e7c4758bf37c61a75ba2}{evolutionary\+\_\+algorithms.\+complement.\+Sampling}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Probabilistic\+Sampling.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover}{}\label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0}{mascara}} (int length)
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774}{crossover}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father1, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father2, double PC)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa el operador de cruce uniforme. Este operador de cruce combina dos padres para crear un nuevo individuo. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}!crossover@{crossover}}
+\index{crossover@{crossover}!evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover.\+crossover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father1}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father2}{, }\item[{double}]{PC}{}\end{DoxyParamCaption})}
+
+Realiza el cruce uniforme entre dos padres. 
+\begin{DoxyParams}{Parameters}
+{\em father1} & El primer padre. \\
+\hline
+{\em father2} & El segundo padre. \\
+\hline
+{\em PC} & La probabilidad de cruce (no se utiliza directamente en esta implementación, ya que el cruce uniforme suele aplicar la combinación en cada gen con una probabilidad fija). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El nuevo individuo resultante del cruce. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover_a77155266e5646a87bcd427189938cc32}{evolutionary\+\_\+algorithms.\+complement.\+Crossover}}.
+
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}!mascara@{mascara}}
+\index{mascara@{mascara}!evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+\doxysubsubsection{\texorpdfstring{mascara()}{mascara()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0} 
+int\mbox{[}$\,$\mbox{]} evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover.\+mascara (\begin{DoxyParamCaption}\item[{int}]{length}{}\end{DoxyParamCaption})}
+
+Genera una máscara binaria aleatoria. 
+\begin{DoxyParams}{Parameters}
+{\em length} & La longitud de la máscara. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un arreglo de enteros que representa la máscara. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Uniform\+Crossover.\+java\end{DoxyCompactItemize}

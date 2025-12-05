@@ -1,0 +1,45 @@
+\doxysection{problem.\+extension.\+Factores\+Ponderados Class Reference}
+\hypertarget{classproblem_1_1extension_1_1_factores_ponderados}{}\label{classproblem_1_1extension_1_1_factores_ponderados}\index{problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}}
+Inheritance diagram for problem.\+extension.\+Factores\+Ponderados\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classproblem_1_1extension_1_1_factores_ponderados}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc}{evaluation\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Weighted-\/factors (scalarization) solution method.
+
+This evaluator computes a single scalar value by combining each objective\textquotesingle{}s (possibly inverted) evaluation with its configured weight. The computed scalar is stored as a single-\/element evaluation vector in the provided {\ttfamily \doxylink{classproblem_1_1definition_1_1_state}{State}}.
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1extension_1_1_factores_ponderados_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc}\index{problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}!evaluationState@{evaluationState}}
+\index{evaluationState@{evaluationState}!problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}}
+\doxysubsubsection{\texorpdfstring{evaluationState()}{evaluationState()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc} 
+void problem.\+extension.\+Factores\+Ponderados.\+evaluation\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})}
+
+Evaluate the provided state by computing a weighted sum of the problem\textquotesingle{}s objective function values. If the overall problem or the objective has a minimization semantics, the value is inverted as required to produce a consistent (higher-\/is-\/better) scalar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state to evaluate; its evaluation vector will be set to a single-\/element list containing the scalarized value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628}{problem.\+extension.\+Solution\+Method}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/extension/Factores\+Ponderados.\+java\end{DoxyCompactItemize}

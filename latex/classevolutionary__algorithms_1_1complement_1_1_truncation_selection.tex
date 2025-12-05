@@ -1,0 +1,78 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_truncation_selection}{}\label{classevolutionary__algorithms_1_1complement_1_1_truncation_selection}\index{evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_truncation_selection}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_a0dbafca391ff276d1eae799b429c8405}{Order\+Better}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State)
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_aa0d3f437007ccd6f8004b949025251e8}{asc\+Order\+Better}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State)
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_ab59a8422f18ba171cb70b680c84eaac1}{selection}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State, int truncation)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa la selección por truncamiento. En este método, los individuos con las mejores aptitudes son seleccionados directamente como padres. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_aa0d3f437007ccd6f8004b949025251e8}\index{evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}!ascOrderBetter@{ascOrderBetter}}
+\index{ascOrderBetter@{ascOrderBetter}!evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}}
+\doxysubsubsection{\texorpdfstring{ascOrderBetter()}{ascOrderBetter()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_aa0d3f437007ccd6f8004b949025251e8} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection.\+asc\+Order\+Better (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption})}
+
+Ordena la lista de estados de forma ascendente según su valor de evaluación. Se utiliza para problemas de minimización. 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados a ordenar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La lista de estados ordenada. 
+\end{DoxyReturn}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_a0dbafca391ff276d1eae799b429c8405}\index{evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}!OrderBetter@{OrderBetter}}
+\index{OrderBetter@{OrderBetter}!evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}}
+\doxysubsubsection{\texorpdfstring{OrderBetter()}{OrderBetter()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_a0dbafca391ff276d1eae799b429c8405} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection.\+Order\+Better (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption})}
+
+Ordena la lista de estados de forma descendente según su valor de evaluación. Se utiliza para problemas de maximización. 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados a ordenar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La lista de estados ordenada. 
+\end{DoxyReturn}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_ab59a8422f18ba171cb70b680c84eaac1}\index{evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}!selection@{selection}}
+\index{selection@{selection}!evolutionary\_algorithms.complement.TruncationSelection@{evolutionary\_algorithms.complement.TruncationSelection}}
+\doxysubsubsection{\texorpdfstring{selection()}{selection()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_ab59a8422f18ba171cb70b680c84eaac1} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection.\+selection (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{, }\item[{int}]{truncation}{}\end{DoxyParamCaption})}
+
+Realiza la selección por truncamiento. Selecciona los mejores individuos de la población según el tipo de problema (maximización o minimización). 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados de la población actual. \\
+\hline
+{\em truncation} & El número de individuos a seleccionar como padres. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de estados que representan los padres seleccionados. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_father_selection_aa6e6bd01ac639141a67815fb65f7c831}{evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Truncation\+Selection.\+java\end{DoxyCompactItemize}

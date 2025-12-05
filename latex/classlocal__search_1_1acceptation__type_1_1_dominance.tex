@@ -1,0 +1,58 @@
+\doxysection{local\+\_\+search.\+acceptation\+\_\+type.\+Dominance Class Reference}
+\hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance}{}\label{classlocal__search_1_1acceptation__type_1_1_dominance}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2}{List\+Dominance}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionX, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list)
+\item 
+boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8}{dominance}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionX, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionY)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that provides methods for checking dominance between solutions in multi-\/objective optimization. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}!dominance@{dominance}}
+\index{dominance@{dominance}!local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+\doxysubsubsection{\texorpdfstring{dominance()}{dominance()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8} 
+boolean local\+\_\+search.\+acceptation\+\_\+type.\+Dominance.\+dominance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionX}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionY}{}\end{DoxyParamCaption})}
+
+Checks if solutionX dominates solutionY.
+
+
+\begin{DoxyParams}{Parameters}
+{\em solutionX} & The first solution. \\
+\hline
+{\em solutionY} & The second solution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if solutionX dominates solutionY, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}!ListDominance@{ListDominance}}
+\index{ListDominance@{ListDominance}!local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+\doxysubsubsection{\texorpdfstring{ListDominance()}{ListDominance()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2} 
+boolean local\+\_\+search.\+acceptation\+\_\+type.\+Dominance.\+List\+Dominance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionX}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list}{}\end{DoxyParamCaption})}
+
+Checks if a solution X dominates any of the non-\/dominated solutions in a list. If it does, the dominated solutions are removed from the list and X is added.
+
+
+\begin{DoxyParams}{Parameters}
+{\em solutionX} & The solution to check. \\
+\hline
+{\em list} & The list of non-\/dominated solutions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the solution was added to the list, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/acceptation\+\_\+type/Dominance.\+java\end{DoxyCompactItemize}

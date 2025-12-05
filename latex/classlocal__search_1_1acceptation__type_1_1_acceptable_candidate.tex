@@ -1,0 +1,65 @@
+\doxysection{local\+\_\+search.\+acceptation\+\_\+type.\+Acceptable\+Candidate Class Reference}
+\hypertarget{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate}{}\label{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate}\index{local\_search.acceptation\_type.AcceptableCandidate@{local\_search.acceptation\_type.AcceptableCandidate}}
+Inheritance diagram for local\+\_\+search.\+acceptation\+\_\+type.\+Acceptable\+Candidate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.346939cm]{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract Boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592}{accept\+Candidate}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class for determining whether a candidate solution should be accepted in a local search algorithm. Subclasses must implement the {\ttfamily \doxylink{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592}{accept\+Candidate}} method. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592}\index{local\_search.acceptation\_type.AcceptableCandidate@{local\_search.acceptation\_type.AcceptableCandidate}!acceptCandidate@{acceptCandidate}}
+\index{acceptCandidate@{acceptCandidate}!local\_search.acceptation\_type.AcceptableCandidate@{local\_search.acceptation\_type.AcceptableCandidate}}
+\doxysubsubsection{\texorpdfstring{acceptCandidate()}{acceptCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592} 
+abstract Boolean local\+\_\+search.\+acceptation\+\_\+type.\+Acceptable\+Candidate.\+accept\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Determines whether a candidate solution should be accepted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Current} & The current state. \\
+\hline
+{\em state\+Candidate} & The candidate state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the candidate state is accepted, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_anyone_aa08b618877d2ffed2805e11fbb817921}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Anyone}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_best_a0ecd99df90a9818e14ddf8908cc38626}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Best}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_multicase_a526e452510b7eebe59af4dde0c59b337}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Multicase}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_bad_a06c25a1ad9093849dc090b67effe8654}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Bad}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_bad_t_ab913b2e75ae2c8a85091ba229f13d123}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+BadT}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_bad_u_aae18a93b424add171ea18e79645977c7}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+BadU}}, \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_a05fe7b0385dfafe7701f6a4e9b2b80d2}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated}}, and \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu_a3182ac113bddb89bb3ea7af704b38835}{local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+Tabu}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/acceptation\+\_\+type/Acceptable\+Candidate.\+java\end{DoxyCompactItemize}

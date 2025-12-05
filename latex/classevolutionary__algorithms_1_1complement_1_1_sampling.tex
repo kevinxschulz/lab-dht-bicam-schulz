@@ -1,0 +1,46 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Sampling Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_sampling}{}\label{classevolutionary__algorithms_1_1complement_1_1_sampling}\index{evolutionary\_algorithms.complement.Sampling@{evolutionary\_algorithms.complement.Sampling}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Sampling\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_sampling}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_sampling_a6e7058367ab7e7c4758bf37c61a75ba2}{sampling}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ fathers, int count\+Ind)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase abstracta que representa el operador de muestreo en algoritmos de estimación de distribución (EDAs). Define el método que deben implementar las clases de muestreo concretas. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_sampling_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_sampling_a6e7058367ab7e7c4758bf37c61a75ba2}\index{evolutionary\_algorithms.complement.Sampling@{evolutionary\_algorithms.complement.Sampling}!sampling@{sampling}}
+\index{sampling@{sampling}!evolutionary\_algorithms.complement.Sampling@{evolutionary\_algorithms.complement.Sampling}}
+\doxysubsubsection{\texorpdfstring{sampling()}{sampling()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_sampling_a6e7058367ab7e7c4758bf37c61a75ba2} 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Sampling.\+sampling (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{fathers}{, }\item[{int}]{count\+Ind}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Realiza el muestreo para generar una lista de nuevos individuos. 
+\begin{DoxyParams}{Parameters}
+{\em fathers} & La lista de estados padre a partir de la cual se realizará el muestreo. \\
+\hline
+{\em count\+Ind} & El número de individuos a generar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de nuevos estados generados mediante muestreo. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e}{evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Sampling.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\doxysection{problem.\+extension.\+Solution\+Method Class Reference}
+\hypertarget{classproblem_1_1extension_1_1_solution_method}{}\label{classproblem_1_1extension_1_1_solution_method}\index{problem.extension.SolutionMethod@{problem.extension.SolutionMethod}}
+Inheritance diagram for problem.\+extension.\+Solution\+Method\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classproblem_1_1extension_1_1_solution_method}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628}{evaluation\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for solution evaluation methods used by the problem extension mechanisms. Concrete subclasses implement a strategy for evaluating a {\ttfamily \doxylink{classproblem_1_1definition_1_1_state}{problem.\+definition.\+State}} and storing the resulting evaluation vector in the provided state. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1extension_1_1_solution_method_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628}\index{problem.extension.SolutionMethod@{problem.extension.SolutionMethod}!evaluationState@{evaluationState}}
+\index{evaluationState@{evaluationState}!problem.extension.SolutionMethod@{problem.extension.SolutionMethod}}
+\doxysubsubsection{\texorpdfstring{evaluationState()}{evaluationState()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628} 
+abstract void problem.\+extension.\+Solution\+Method.\+evaluation\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Evaluate the given state and store the computed evaluation values inside the state object (via {\ttfamily state.\+set\+Evaluation(...) }).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state to evaluate; implementations should update the state\textquotesingle{}s evaluation vector accordingly \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc}{problem.\+extension.\+Factores\+Ponderados}}, and \mbox{\hyperlink{classproblem_1_1extension_1_1_multi_objetivo_puro_aaac35db96f3f750b6f5349243c39d122}{problem.\+extension.\+Multi\+Objetivo\+Puro}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/extension/Solution\+Method.\+java\end{DoxyCompactItemize}

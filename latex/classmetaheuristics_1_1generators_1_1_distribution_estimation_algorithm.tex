@@ -1,0 +1,167 @@
+\doxysection{metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm Class Reference}
+\hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm}{}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm}\index{metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}}
+Inheritance diagram for metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c}{Max\+Value}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+Ind)
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a5d496021c3310be8abbc218d4bc63baa}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a8087863b6c6a820fdf5c9b6aa3bc151c}{get\+Reference}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\item 
+abstract void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\item 
+abstract \mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{get\+Type}} ()
+\item 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{get\+Reference\+List}} ()
+\item 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{get\+Son\+List}} ()
+\item 
+abstract boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\item 
+abstract void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{set\+Weight}} (float weight)
+\item 
+abstract float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{get\+Weight}} ()
+\item 
+abstract float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{get\+Trace}} ()
+\item 
+abstract int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{get\+List\+Count\+Better\+Gender}} ()
+\item 
+abstract int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{get\+List\+Count\+Gender}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ae50e0df6a1c2ba93f382441dd74391a2}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ae50e0df6a1c2ba93f382441dd74391a2} 
+static final List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ {\bfseries son\+List} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a9c5e4917260b4db67d9250bc25cd6b76}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a9c5e4917260b4db67d9250bc25cd6b76} 
+static final \mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_replace_type}{Replace\+Type}} {\bfseries replace\+Type} = \mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_replace_type_add8d19fe300f2768faa2a51f56ccf7ed}{Replace\+Type.\+Generational\+Replace}}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ac2aafd54d7a5db503bfd7d0cf025464d}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ac2aafd54d7a5db503bfd7d0cf025464d} 
+static final \mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_selection_type}{Selection\+Type}} {\bfseries selection\+Type} = \mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_selection_type_a122c944398d78db6354b4320bc68b256}{Selection\+Type.\+Truncation\+Selection}}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a108c4227bf4fd0e5b6b074cec0225eb6}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a108c4227bf4fd0e5b6b074cec0225eb6} 
+static int {\bfseries truncation}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a174ec58f932f401fb4fce8be26827aa4}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a174ec58f932f401fb4fce8be26827aa4} 
+static int {\bfseries count\+Ref} = 0
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a415f59f4e9358544ea00abdb1d738354}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a415f59f4e9358544ea00abdb1d738354} 
+static int {\bfseries count\+Gender} = 0
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a896455555bc934f88a014edc4097e2c3}\label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a896455555bc934f88a014edc4097e2c3} 
+static int {\bfseries count\+Better\+Gender} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries count\+Gender}
+\item 
+int {\bfseries count\+Better\+Gender}
+\item 
+int\mbox{[}$\,$\mbox{]} {\bfseries list\+Count\+Better\+Gender}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a5d496021c3310be8abbc218d4bc63baa}\index{metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a5d496021c3310be8abbc218d4bc63baa} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+Generates a new state. 
+\begin{DoxyParams}{Parameters}
+{\em operatornumber} & The operator number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new state. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+Generate a candidate state using the configured sampling operator.
+
+The method selects fathers using the configured father selection strategy and then uses the sampling factory to create new candidates. If more than one candidate is sampled their first-\/objective evaluations are computed and the best one (Max\+Value) is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operatornumber} & a parameter forwarded to the sampling operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated candidate state 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Reflective\+Operation\+Exception} & if factory reflection fails\\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a8087863b6c6a820fdf5c9b6aa3bc151c}\index{metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a8087863b6c6a820fdf5c9b6aa3bc151c} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the reference state. \begin{DoxyReturn}{Returns}
+The reference state. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c}\index{metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}!MaxValue@{MaxValue}}
+\index{MaxValue@{MaxValue}!metaheuristics.generators.DistributionEstimationAlgorithm@{metaheuristics.generators.DistributionEstimationAlgorithm}}
+\doxysubsubsection{\texorpdfstring{MaxValue()}{MaxValue()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm.\+Max\+Value (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+Ind}{}\end{DoxyParamCaption})}
+
+Return the state with the maximum evaluation value (first objective) from the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Ind} & list of candidate states (must be non-\/empty) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the state that has the maximum value for the first evaluation
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/Distribution\+Estimation\+Algorithm.\+java\end{DoxyCompactItemize}

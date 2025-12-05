@@ -1,0 +1,67 @@
+\doxysection{problem\+\_\+operators.\+Mutation\+Operator Class Reference}
+\hypertarget{classproblem__operators_1_1_mutation_operator}{}\label{classproblem__operators_1_1_mutation_operator}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+Inheritance diagram for problem\+\_\+operators.\+Mutation\+Operator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classproblem__operators_1_1_mutation_operator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747}{generated\+New\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, Integer operatornumber)
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b}{generate\+Random\+State}} (Integer operatornumber)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classproblem__operators_1_1_mutation_operator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}!generatedNewState@{generatedNewState}}
+\index{generatedNewState@{generatedNewState}!problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+\doxysubsubsection{\texorpdfstring{generatedNewState()}{generatedNewState()}}
+{\footnotesize\ttfamily \label{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ problem\+\_\+operators.\+Mutation\+Operator.\+generated\+New\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption})}
+
+Generate a list of new states derived from {\ttfamily state\+Current}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Current} & the state to operate on \\
+\hline
+{\em operatornumber} & an identifier for the operator variant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of generated states (may be empty) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classproblem_1_1definition_1_1_operator_a5b6625843e73d938f9235985bf966b34}{problem.\+definition.\+Operator}}.
+
+\Hypertarget{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}!generateRandomState@{generateRandomState}}
+\index{generateRandomState@{generateRandomState}!problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+\doxysubsubsection{\texorpdfstring{generateRandomState()}{generateRandomState()}}
+{\footnotesize\ttfamily \label{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ problem\+\_\+operators.\+Mutation\+Operator.\+generate\+Random\+State (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption})}
+
+Generate a list of random states (not derived from an existing state) according to the operator configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em operatornumber} & an identifier for the operator variant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of randomly generated states 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classproblem_1_1definition_1_1_operator_a08c63f0d681ef130fccdb04d24ddf181}{problem.\+definition.\+Operator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem\+\_\+operators/Mutation\+Operator.\+java\end{DoxyCompactItemize}

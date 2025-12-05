@@ -1,0 +1,52 @@
+\doxysection{problem.\+definition.\+Objetive\+Function Class Reference}
+\hypertarget{classproblem_1_1definition_1_1_objetive_function}{}\label{classproblem_1_1definition_1_1_objetive_function}\index{problem.definition.ObjetiveFunction@{problem.definition.ObjetiveFunction}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classproblem_1_1definition_1_1_objetive_function_ad887f3d72969374a0dee69d8875834e1}{get\+Weight}} ()
+\item 
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_ae499492e9679b11fa78341b9d8a043e2}\label{classproblem_1_1definition_1_1_objetive_function_ae499492e9679b11fa78341b9d8a043e2} 
+void {\bfseries set\+Weight} (float weight)
+\item 
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_a546c39d702df1ab99f2babbf994adbe0}\label{classproblem_1_1definition_1_1_objetive_function_a546c39d702df1ab99f2babbf994adbe0} 
+\mbox{\hyperlink{enumproblem_1_1definition_1_1_problem_1_1_problem_type}{Problem\+Type}} {\bfseries get\+Type\+Problem} ()
+\item 
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_aacb5681d5f1106c5fbcb18ae716f2736}\label{classproblem_1_1definition_1_1_objetive_function_aacb5681d5f1106c5fbcb18ae716f2736} 
+void {\bfseries set\+Type\+Problem} (\mbox{\hyperlink{enumproblem_1_1definition_1_1_problem_1_1_problem_type}{Problem\+Type}} type\+Problem)
+\item 
+abstract Double \mbox{\hyperlink{classproblem_1_1definition_1_1_objetive_function_ac67bc734733fdfc29d3b282255e2de98}{Evaluation}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_ac67bc734733fdfc29d3b282255e2de98}\index{problem.definition.ObjetiveFunction@{problem.definition.ObjetiveFunction}!Evaluation@{Evaluation}}
+\index{Evaluation@{Evaluation}!problem.definition.ObjetiveFunction@{problem.definition.ObjetiveFunction}}
+\doxysubsubsection{\texorpdfstring{Evaluation()}{Evaluation()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_objetive_function_ac67bc734733fdfc29d3b282255e2de98} 
+abstract Double problem.\+definition.\+Objetive\+Function.\+Evaluation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Evaluate the provided {\ttfamily state} and return a numeric score.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numeric objective value (higher or lower depends on the problem type, see {\ttfamily \doxylink{enumproblem_1_1definition_1_1_problem_1_1_problem_type}{Problem\+Type}}) 
+\end{DoxyReturn}
+\Hypertarget{classproblem_1_1definition_1_1_objetive_function_ad887f3d72969374a0dee69d8875834e1}\index{problem.definition.ObjetiveFunction@{problem.definition.ObjetiveFunction}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!problem.definition.ObjetiveFunction@{problem.definition.ObjetiveFunction}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_objetive_function_ad887f3d72969374a0dee69d8875834e1} 
+float problem.\+definition.\+Objetive\+Function.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Represents an objective (fitness) function for the problem.
+
+Concrete implementations must provide the {\ttfamily \doxylink{classproblem_1_1definition_1_1_objetive_function_ac67bc734733fdfc29d3b282255e2de98}{Evaluation(\+State)}} method which computes the objective value for a given {\ttfamily \doxylink{classproblem_1_1definition_1_1_state}{State}}.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/definition/Objetive\+Function.\+java\end{DoxyCompactItemize}

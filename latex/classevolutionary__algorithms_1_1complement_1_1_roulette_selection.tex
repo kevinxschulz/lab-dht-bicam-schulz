@@ -1,0 +1,46 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Roulette\+Selection Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_roulette_selection}{}\label{classevolutionary__algorithms_1_1complement_1_1_roulette_selection}\index{evolutionary\_algorithms.complement.RouletteSelection@{evolutionary\_algorithms.complement.RouletteSelection}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Roulette\+Selection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_roulette_selection}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_roulette_selection_ace4f2faee78f128d104fedb0cf3963fd}{selection}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State, int truncation)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa la selección por ruleta para elegir padres. En este método, la probabilidad de que un individuo sea seleccionado es proporcional a su aptitud. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_roulette_selection_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_roulette_selection_ace4f2faee78f128d104fedb0cf3963fd}\index{evolutionary\_algorithms.complement.RouletteSelection@{evolutionary\_algorithms.complement.RouletteSelection}!selection@{selection}}
+\index{selection@{selection}!evolutionary\_algorithms.complement.RouletteSelection@{evolutionary\_algorithms.complement.RouletteSelection}}
+\doxysubsubsection{\texorpdfstring{selection()}{selection()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_roulette_selection_ace4f2faee78f128d104fedb0cf3963fd} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Roulette\+Selection.\+selection (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{, }\item[{int}]{truncation}{}\end{DoxyParamCaption})}
+
+Realiza la selección de padres utilizando el método de la ruleta. 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados de la población actual. \\
+\hline
+{\em truncation} & El número de padres a seleccionar (no se utiliza directamente en esta implementación, ya que la ruleta selecciona basándose en probabilidades relativas). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de estados que representan los padres seleccionados. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_father_selection_aa6e6bd01ac639141a67815fb65f7c831}{evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Roulette\+Selection.\+java\end{DoxyCompactItemize}

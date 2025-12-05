@@ -1,0 +1,353 @@
+\doxysection{metaheuristics.\+generators.\+Tabu\+Search Class Reference}
+\hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search}{}\label{classmetaheuristics_1_1generators_1_1_tabu_search}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+Inheritance diagram for metaheuristics.\+generators.\+Tabu\+Search\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmetaheuristics_1_1generators_1_1_tabu_search}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a6f3c2a118b89b335ccdf87ed881a7fc4}{get\+Type\+Generator}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_ab9330d706d7d48afbdc6595ba717130f}{set\+Type\+Generator}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} type\+Generator)
+\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_ad0157e54c7cc9736d0cfc1785a3f65bf}{Tabu\+Search}} ()
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a960394b27d55ada10842a94184aa39b4}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_ada5be4a7b947390cc70ad6b9bf33d412}{get\+Reference}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a934077931cd4880ed942a42af6ab195f}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a989071f26389ac8286a7b9cf6b86d845}{set\+State\+Ref}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Ref)
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a8e5310bc24ca49dccb985a122173936c}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_ad36e2583d8edb47cc2e8dae351ff3a1a}{get\+Type}} ()
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_aab7acb152f577f48ee9a0f29b01e3689}{get\+Reference\+List}} ()
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_acc567d162eb376a317f3d8eae95420a1}{get\+Son\+List}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a9c28686a2db567c3c4484d6065dcd04a}{set\+Type\+Candidate}} (\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} type\+Candidate)
+\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_adc6c6a8184388aafc9d143d63ca7ffde}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a8a29d1741aaafb540e647ffda3d690e6}{get\+Weight}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_a87599bb3ca19dda7107a5ae796531f4d}{set\+Weight}} (float weight)
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_ac5abb641df2c61b9c1aa4911ae69fb75}{get\+List\+Count\+Better\+Gender}} ()
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_aa15df7ff1b01b2b9997ad2b8ca39d3aa}{get\+List\+Count\+Gender}} ()
+\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_tabu_search_add5beec981c395092cd1101d8aa66850}{get\+Trace}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a9e27d27d061ca3c6696f96fe62663f39}\label{classmetaheuristics_1_1generators_1_1_tabu_search_a9e27d27d061ca3c6696f96fe62663f39} 
+static int {\bfseries count\+Gender} = 0
+\item 
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a17ee22467fbf2a967b261479f95435d6}\label{classmetaheuristics_1_1generators_1_1_tabu_search_a17ee22467fbf2a967b261479f95435d6} 
+static int {\bfseries count\+Better\+Gender} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries count\+Gender}
+\item 
+int {\bfseries count\+Better\+Gender}
+\item 
+int\mbox{[}$\,$\mbox{]} {\bfseries list\+Count\+Better\+Gender}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A generator that implements the Tabu Search algorithm. It uses a tabu list to avoid previously visited solutions and escape local optima. 
+
+\label{doc-constructors}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_ad0157e54c7cc9736d0cfc1785a3f65bf}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!TabuSearch@{TabuSearch}}
+\index{TabuSearch@{TabuSearch}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{TabuSearch()}{TabuSearch()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_ad0157e54c7cc9736d0cfc1785a3f65bf} 
+metaheuristics.\+generators.\+Tabu\+Search.\+Tabu\+Search (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Constructs a new \doxylink{classmetaheuristics_1_1generators_1_1_tabu_search}{Tabu\+Search} generator with default values. 
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_adc6c6a8184388aafc9d143d63ca7ffde}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!awardUpdateREF@{awardUpdateREF}}
+\index{awardUpdateREF@{awardUpdateREF}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{awardUpdateREF()}{awardUpdateREF()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_adc6c6a8184388aafc9d143d63ca7ffde} 
+boolean metaheuristics.\+generators.\+Tabu\+Search.\+award\+Update\+REF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+Awards the update of the reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & The candidate state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the update is awarded, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a960394b27d55ada10842a94184aa39b4}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a960394b27d55ada10842a94184aa39b4} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Tabu\+Search.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+Generates a new state by exploring the neighborhood of the current reference state. 
+\begin{DoxyParams}{Parameters}
+{\em operatornumber} & The operator number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new state. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_ac5abb641df2c61b9c1aa4911ae69fb75}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getListCountBetterGender@{getListCountBetterGender}}
+\index{getListCountBetterGender@{getListCountBetterGender}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getListCountBetterGender()}{getListCountBetterGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_ac5abb641df2c61b9c1aa4911ae69fb75} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Tabu\+Search.\+get\+List\+Count\+Better\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of count of better gender. \begin{DoxyReturn}{Returns}
+the list of count of better gender. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_aa15df7ff1b01b2b9997ad2b8ca39d3aa}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getListCountGender@{getListCountGender}}
+\index{getListCountGender@{getListCountGender}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getListCountGender()}{getListCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_aa15df7ff1b01b2b9997ad2b8ca39d3aa} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Tabu\+Search.\+get\+List\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of count of gender. \begin{DoxyReturn}{Returns}
+the list of count of gender. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_ada5be4a7b947390cc70ad6b9bf33d412}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_ada5be4a7b947390cc70ad6b9bf33d412} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Tabu\+Search.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the reference state. \begin{DoxyReturn}{Returns}
+The reference state. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_aab7acb152f577f48ee9a0f29b01e3689}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getReferenceList@{getReferenceList}}
+\index{getReferenceList@{getReferenceList}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getReferenceList()}{getReferenceList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_aab7acb152f577f48ee9a0f29b01e3689} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Tabu\+Search.\+get\+Reference\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of reference states. \begin{DoxyReturn}{Returns}
+The list of reference states. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_acc567d162eb376a317f3d8eae95420a1}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getSonList@{getSonList}}
+\index{getSonList@{getSonList}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getSonList()}{getSonList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_acc567d162eb376a317f3d8eae95420a1} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Tabu\+Search.\+get\+Son\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the list of son states. \begin{DoxyReturn}{Returns}
+The list of son states. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_add5beec981c395092cd1101d8aa66850}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getTrace@{getTrace}}
+\index{getTrace@{getTrace}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getTrace()}{getTrace()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_add5beec981c395092cd1101d8aa66850} 
+float\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Tabu\+Search.\+get\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the trace of the generator. \begin{DoxyReturn}{Returns}
+The trace of the generator. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_ad36e2583d8edb47cc2e8dae351ff3a1a}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getType@{getType}}
+\index{getType@{getType}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_ad36e2583d8edb47cc2e8dae351ff3a1a} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Tabu\+Search.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the type of the generator. \begin{DoxyReturn}{Returns}
+The type of the generator. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a6f3c2a118b89b335ccdf87ed881a7fc4}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getTypeGenerator@{getTypeGenerator}}
+\index{getTypeGenerator@{getTypeGenerator}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getTypeGenerator()}{getTypeGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a6f3c2a118b89b335ccdf87ed881a7fc4} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Tabu\+Search.\+get\+Type\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the type of the generator. \begin{DoxyReturn}{Returns}
+The type of the generator. 
+\end{DoxyReturn}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a8a29d1741aaafb540e647ffda3d690e6}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a8a29d1741aaafb540e647ffda3d690e6} 
+float metaheuristics.\+generators.\+Tabu\+Search.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gets the weight of the generator. \begin{DoxyReturn}{Returns}
+The weight of the generator. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a934077931cd4880ed942a42af6ab195f}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!setInitialReference@{setInitialReference}}
+\index{setInitialReference@{setInitialReference}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{setInitialReference()}{setInitialReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a934077931cd4880ed942a42af6ab195f} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+set\+Initial\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Initial\+Ref}{}\end{DoxyParamCaption})}
+
+Sets the initial reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Initial\+Ref} & The initial reference state. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a989071f26389ac8286a7b9cf6b86d845}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!setStateRef@{setStateRef}}
+\index{setStateRef@{setStateRef}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{setStateRef()}{setStateRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a989071f26389ac8286a7b9cf6b86d845} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+set\+State\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Ref}{}\end{DoxyParamCaption})}
+
+Sets the reference state. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Ref} & The reference state. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a9c28686a2db567c3c4484d6065dcd04a}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!setTypeCandidate@{setTypeCandidate}}
+\index{setTypeCandidate@{setTypeCandidate}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{setTypeCandidate()}{setTypeCandidate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a9c28686a2db567c3c4484d6065dcd04a} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+set\+Type\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{type\+Candidate}{}\end{DoxyParamCaption})}
+
+Sets the type of the candidate. 
+\begin{DoxyParams}{Parameters}
+{\em type\+Candidate} & The type of the candidate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_ab9330d706d7d48afbdc6595ba717130f}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!setTypeGenerator@{setTypeGenerator}}
+\index{setTypeGenerator@{setTypeGenerator}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{setTypeGenerator()}{setTypeGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_ab9330d706d7d48afbdc6595ba717130f} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+set\+Type\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{type\+Generator}{}\end{DoxyParamCaption})}
+
+Sets the type of the generator. 
+\begin{DoxyParams}{Parameters}
+{\em type\+Generator} & The type of the generator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a87599bb3ca19dda7107a5ae796531f4d}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a87599bb3ca19dda7107a5ae796531f4d} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+set\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight}{}\end{DoxyParamCaption})}
+
+Sets the weight of the generator. 
+\begin{DoxyParams}{Parameters}
+{\em weight} & The weight of the generator. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_tabu_search_a8e5310bc24ca49dccb985a122173936c}\index{metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!metaheuristics.generators.TabuSearch@{metaheuristics.generators.TabuSearch}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_tabu_search_a8e5310bc24ca49dccb985a122173936c} 
+void metaheuristics.\+generators.\+Tabu\+Search.\+update\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+Updates the reference state and the tabu list. If the candidate is accepted, it becomes the new reference state. If the strategy is TABU, the new state is added to the tabu list to avoid revisiting it. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & The candidate state. \\
+\hline
+{\em count\+Iterations\+Current} & The current number of iterations. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{metaheuristics.\+generators.\+Generator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/Tabu\+Search.\+java\end{DoxyCompactItemize}

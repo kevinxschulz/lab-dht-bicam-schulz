@@ -1,0 +1,78 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace}{}\label{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace}\index{evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a1283c4f4d8b9bbe5ae5dc4916934c8a9}{replace}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State)
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_abe62f49ad7e904c9f118f64884ef3c7d}{Min\+Value}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State)
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a5c820ed80ca82edb7d2b53f9ecee09bb}{Max\+Value}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa la estrategia de reemplazo de estado estacionario. En esta estrategia, solo los individuos de peor aptitud son reemplazados por nuevos individuos, manteniendo la mayor parte de la población original. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a5c820ed80ca82edb7d2b53f9ecee09bb}\index{evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}!MaxValue@{MaxValue}}
+\index{MaxValue@{MaxValue}!evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}}
+\doxysubsubsection{\texorpdfstring{MaxValue()}{MaxValue()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a5c820ed80ca82edb7d2b53f9ecee09bb} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace.\+Max\+Value (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption})}
+
+Encuentra el estado con el valor de evaluación máximo en una lista de estados. 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados a evaluar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El estado con el valor máximo. 
+\end{DoxyReturn}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_abe62f49ad7e904c9f118f64884ef3c7d}\index{evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}!MinValue@{MinValue}}
+\index{MinValue@{MinValue}!evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}}
+\doxysubsubsection{\texorpdfstring{MinValue()}{MinValue()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_abe62f49ad7e904c9f118f64884ef3c7d} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace.\+Min\+Value (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption})}
+
+Encuentra el estado con el valor de evaluación mínimo en una lista de estados. 
+\begin{DoxyParams}{Parameters}
+{\em list\+State} & La lista de estados a evaluar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El estado con el valor mínimo. 
+\end{DoxyReturn}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a1283c4f4d8b9bbe5ae5dc4916934c8a9}\index{evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}!replace@{replace}}
+\index{replace@{replace}!evolutionary\_algorithms.complement.SteadyStateReplace@{evolutionary\_algorithms.complement.SteadyStateReplace}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a1283c4f4d8b9bbe5ae5dc4916934c8a9} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace.\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption})}
+
+Realiza el reemplazo de estado estacionario. Si el problema es de maximización, reemplaza el individuo con el valor mínimo si el candidato es mejor. Si el problema es de minimización, reemplaza el individuo con el valor máximo si el candidato es mejor. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & El estado candidato a ser insertado en la población. \\
+\hline
+{\em list\+State} & La lista de estados de la población actual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La nueva lista de estados después del reemplazo. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_replace_aac9402083a696d23ca0d97540d3951e5}{evolutionary\+\_\+algorithms.\+complement.\+Replace}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Steady\+State\+Replace.\+java\end{DoxyCompactItemize}

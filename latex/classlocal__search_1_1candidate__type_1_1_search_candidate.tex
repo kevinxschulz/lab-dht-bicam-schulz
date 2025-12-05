@@ -1,0 +1,63 @@
+\doxysection{local\+\_\+search.\+candidate\+\_\+type.\+Search\+Candidate Class Reference}
+\hypertarget{classlocal__search_1_1candidate__type_1_1_search_candidate}{}\label{classlocal__search_1_1candidate__type_1_1_search_candidate}\index{local\_search.candidate\_type.SearchCandidate@{local\_search.candidate\_type.SearchCandidate}}
+Inheritance diagram for local\+\_\+search.\+candidate\+\_\+type.\+Search\+Candidate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.869565cm]{classlocal__search_1_1candidate__type_1_1_search_candidate}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate_a0f10adc1526fb08f54427c50734f8abf}{state\+Search}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+Neighborhood)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract class for search strategies that select a candidate from a list of neighbors. Subclasses must implement the {\ttfamily \doxylink{classlocal__search_1_1candidate__type_1_1_search_candidate_a0f10adc1526fb08f54427c50734f8abf}{state\+Search}} method. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_search_candidate_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_search_candidate_a0f10adc1526fb08f54427c50734f8abf}\index{local\_search.candidate\_type.SearchCandidate@{local\_search.candidate\_type.SearchCandidate}!stateSearch@{stateSearch}}
+\index{stateSearch@{stateSearch}!local\_search.candidate\_type.SearchCandidate@{local\_search.candidate\_type.SearchCandidate}}
+\doxysubsubsection{\texorpdfstring{stateSearch()}{stateSearch()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_search_candidate_a0f10adc1526fb08f54427c50734f8abf} 
+abstract \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} local\+\_\+search.\+candidate\+\_\+type.\+Search\+Candidate.\+state\+Search (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+Neighborhood}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Selects a candidate from a list of neighbors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Neighborhood} & The list of neighbor states. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The selected candidate state. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_greater_candidate_a2d2d47efc889cca9b440e64746b67f46}{local\+\_\+search.\+candidate\+\_\+type.\+Greater\+Candidate}}, \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate_a8f08ece6519709427b4917712b805159}{local\+\_\+search.\+candidate\+\_\+type.\+Not\+Dominated\+Candidate}}, \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_random_candidate_a66efbf984c90ee02f81608b3621220a9}{local\+\_\+search.\+candidate\+\_\+type.\+Random\+Candidate}}, and \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_smaller_candidate_a69eb3c75ce366bc050c117fa764b82be}{local\+\_\+search.\+candidate\+\_\+type.\+Smaller\+Candidate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/candidate\+\_\+type/Search\+Candidate.\+java\end{DoxyCompactItemize}

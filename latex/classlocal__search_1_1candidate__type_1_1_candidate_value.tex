@@ -1,0 +1,105 @@
+\doxysection{local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value Class Reference}
+\hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value}{}\label{classlocal__search_1_1candidate__type_1_1_candidate_value}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a010225e9b9d133c8c621db64cd243fa6}\label{classlocal__search_1_1candidate__type_1_1_candidate_value_a010225e9b9d133c8c621db64cd243fa6} 
+{\bfseries Candidate\+Value} (\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} strategy, \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_candidate}{IFFactory\+Candidate}} if\+Factory, \mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} typecand, \mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} tabusolution, \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} searchcandidate)
+\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457}{new\+Search\+Candidate}} (\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} typecandidate)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75}{state\+Candidate}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, \mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} type\+Candidate, \mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} strategy, Integer operatornumber, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ neighborhood)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\item 
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_ae334fe4b4bc2211c5120d905d3114762}\label{classlocal__search_1_1candidate__type_1_1_candidate_value_ae334fe4b4bc2211c5120d905d3114762} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} {\bfseries get\+Tabusolution} ()
+\item 
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a142eb7bff2e5f3312d0277152f803d1a}\label{classlocal__search_1_1candidate__type_1_1_candidate_value_a142eb7bff2e5f3312d0277152f803d1a} 
+void {\bfseries set\+Tabusolution} (\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} tabusolution)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for selecting a candidate state from a neighborhood. It uses a factory to create a search strategy and can handle tabu search. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!newSearchCandidate@{newSearchCandidate}}
+\index{newSearchCandidate@{newSearchCandidate}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{newSearchCandidate()}{newSearchCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457} 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+new\+Search\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{typecandidate}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+Creates a new search candidate strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em typecandidate} & The type of candidate search strategy to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new instance of a search candidate strategy. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!stateCandidate@{stateCandidate}}
+\index{stateCandidate@{stateCandidate}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{stateCandidate()}{stateCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+state\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{type\+Candidate}{, }\item[{\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}}}]{strategy}{, }\item[{Integer}]{operatornumber}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{neighborhood}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+Selects a candidate state from a neighborhood.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Current} & The current state. \\
+\hline
+{\em type\+Candidate} & The type of candidate search strategy to use. \\
+\hline
+{\em strategy} & The search strategy (e.\+g., Tabu search). \\
+\hline
+{\em operatornumber} & The operator number to use for generating new states. \\
+\hline
+{\em neighborhood} & The neighborhood of states to search. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The selected candidate state. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/candidate\+\_\+type/Candidate\+Value.\+java\end{DoxyCompactItemize}

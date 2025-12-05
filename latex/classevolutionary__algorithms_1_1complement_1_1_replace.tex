@@ -1,0 +1,63 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Replace Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_replace}{}\label{classevolutionary__algorithms_1_1complement_1_1_replace}\index{evolutionary\_algorithms.complement.Replace@{evolutionary\_algorithms.complement.Replace}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Replace\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.618497cm]{classevolutionary__algorithms_1_1complement_1_1_replace}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_replace_aac9402083a696d23ca0d97540d3951e5}{replace}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$list\+State)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase abstracta que representa el operador de reemplazo de individuos en un algoritmo evolutivo. Define el método que deben implementar las clases de reemplazo concretas. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_replace_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_replace_aac9402083a696d23ca0d97540d3951e5}\index{evolutionary\_algorithms.complement.Replace@{evolutionary\_algorithms.complement.Replace}!replace@{replace}}
+\index{replace@{replace}!evolutionary\_algorithms.complement.Replace@{evolutionary\_algorithms.complement.Replace}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_replace_aac9402083a696d23ca0d97540d3951e5} 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Replace.\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Realiza el reemplazo de individuos en la población. 
+\begin{DoxyParams}{Parameters}
+{\em state\+Candidate} & El estado candidato a ser considerado para el reemplazo. \\
+\hline
+{\em list\+State} & La lista de estados de la población actual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La nueva lista de estados después de aplicar el reemplazo. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & \\
+\hline
+{\em Security\+Exception} & \\
+\hline
+{\em Class\+Not\+Found\+Exception} & \\
+\hline
+{\em Instantiation\+Exception} & \\
+\hline
+{\em Illegal\+Access\+Exception} & \\
+\hline
+{\em Invocation\+Target\+Exception} & \\
+\hline
+{\em No\+Such\+Method\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_generational_replace_aad6c6c29ab27a71b56b077977875b9f8}{evolutionary\+\_\+algorithms.\+complement.\+Generational\+Replace}}, and \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_steady_state_replace_a1283c4f4d8b9bbe5ae5dc4916934c8a9}{evolutionary\+\_\+algorithms.\+complement.\+Steady\+State\+Replace}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Replace.\+java\end{DoxyCompactItemize}

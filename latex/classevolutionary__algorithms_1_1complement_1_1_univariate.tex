@@ -1,0 +1,60 @@
+\doxysection{evolutionary\+\_\+algorithms.\+complement.\+Univariate Class Reference}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_univariate}{}\label{classevolutionary__algorithms_1_1complement_1_1_univariate}\index{evolutionary\_algorithms.complement.Univariate@{evolutionary\_algorithms.complement.Univariate}}
+Inheritance diagram for evolutionary\+\_\+algorithms.\+complement.\+Univariate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classevolutionary__algorithms_1_1complement_1_1_univariate}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probability}{Probability}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_univariate_a4732278fca14312bc399c1d313384e26}{distribution}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ fathers)
+\item 
+List$<$ String $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_univariate_afa13e9ef6e898434b0c99d846e9eac80}{get\+List\+Key}} (Sorted\+Map$<$ String, Object $>$ map)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa la distribución univariada para la estimación de distribuciones. Calcula la probabilidad de cada valor en cada variable de forma independiente. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_univariate_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_univariate_a4732278fca14312bc399c1d313384e26}\index{evolutionary\_algorithms.complement.Univariate@{evolutionary\_algorithms.complement.Univariate}!distribution@{distribution}}
+\index{distribution@{distribution}!evolutionary\_algorithms.complement.Univariate@{evolutionary\_algorithms.complement.Univariate}}
+\doxysubsubsection{\texorpdfstring{distribution()}{distribution()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_univariate_a4732278fca14312bc399c1d313384e26} 
+List$<$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probability}{Probability}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Univariate.\+distribution (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{fathers}{}\end{DoxyParamCaption})}
+
+Calcula la distribución univariada a partir de una lista de estados padre. Para cada variable, cuenta la frecuencia de cada valor y la convierte en una probabilidad. 
+\begin{DoxyParams}{Parameters}
+{\em fathers} & La lista de estados padre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de objetos {\ttfamily \doxylink{classevolutionary__algorithms_1_1complement_1_1_probability}{Probability}} que representan la distribución univariada. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_distribution_a3659ddbe93fb1b752547591eaf141873}{evolutionary\+\_\+algorithms.\+complement.\+Distribution}}.
+
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_univariate_afa13e9ef6e898434b0c99d846e9eac80}\index{evolutionary\_algorithms.complement.Univariate@{evolutionary\_algorithms.complement.Univariate}!getListKey@{getListKey}}
+\index{getListKey@{getListKey}!evolutionary\_algorithms.complement.Univariate@{evolutionary\_algorithms.complement.Univariate}}
+\doxysubsubsection{\texorpdfstring{getListKey()}{getListKey()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_univariate_afa13e9ef6e898434b0c99d846e9eac80} 
+List$<$ String $>$ evolutionary\+\_\+algorithms.\+complement.\+Univariate.\+get\+List\+Key (\begin{DoxyParamCaption}\item[{Sorted\+Map$<$ String, Object $>$}]{map}{}\end{DoxyParamCaption})}
+
+Extrae las claves de un mapa ordenado como una lista de cadenas. 
+\begin{DoxyParams}{Parameters}
+{\em map} & El mapa ordenado de donde extraer las claves. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de cadenas que representan las claves del mapa. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/Univariate.\+java\end{DoxyCompactItemize}

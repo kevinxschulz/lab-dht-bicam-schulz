@@ -1,0 +1,45 @@
+\doxysection{problem.\+extension.\+Multi\+Objetivo\+Puro Class Reference}
+\hypertarget{classproblem_1_1extension_1_1_multi_objetivo_puro}{}\label{classproblem_1_1extension_1_1_multi_objetivo_puro}\index{problem.extension.MultiObjetivoPuro@{problem.extension.MultiObjetivoPuro}}
+Inheritance diagram for problem.\+extension.\+Multi\+Objetivo\+Puro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classproblem_1_1extension_1_1_multi_objetivo_puro}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classproblem_1_1extension_1_1_multi_objetivo_puro_aaac35db96f3f750b6f5349243c39d122}{evaluation\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pure multi-\/objective evaluation method. For each objective function defined in the current problem, this evaluator computes a normalized value and produces a vector of objective values stored in the state\textquotesingle{}s evaluation. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1extension_1_1_multi_objetivo_puro_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classproblem_1_1extension_1_1_multi_objetivo_puro_aaac35db96f3f750b6f5349243c39d122}\index{problem.extension.MultiObjetivoPuro@{problem.extension.MultiObjetivoPuro}!evaluationState@{evaluationState}}
+\index{evaluationState@{evaluationState}!problem.extension.MultiObjetivoPuro@{problem.extension.MultiObjetivoPuro}}
+\doxysubsubsection{\texorpdfstring{evaluationState()}{evaluationState()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_multi_objetivo_puro_aaac35db96f3f750b6f5349243c39d122} 
+void problem.\+extension.\+Multi\+Objetivo\+Puro.\+evaluation\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})}
+
+Evaluate the given state for each objective function. 
+
+The method takes into account the overall problem type (maximize / minimize) and each objective\textquotesingle{}s declared type. If necessary, it inverts the objective value so that the returned evaluations are consistent with the problem direction (higher = better when the problem is a maximization problem).
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state to evaluate; its evaluation vector will be set \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628}{problem.\+extension.\+Solution\+Method}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/extension/Multi\+Objetivo\+Puro.\+java\end{DoxyCompactItemize}
