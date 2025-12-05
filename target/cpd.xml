@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <pmd-cpd>
    <duplication lines="94" tokens="291">
-      <file begintoken="14512" column="12" endcolumn="1" endline="158" endtoken="14802"
+      <file begintoken="14579" column="12" endcolumn="1" endline="158" endtoken="14869"
             line="65"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
-      <file begintoken="15152" column="3" endcolumn="1" endline="199" endtoken="15442"
+      <file begintoken="15219" column="3" endcolumn="1" endline="199" endtoken="15509"
             line="76"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbingRestart.java"/>
       <codefragment><![CDATA[	    State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
@@ -103,10 +103,10 @@
 }]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="164">
-      <file begintoken="8828" column="5" endcolumn="4" endline="180" endtoken="8991"
+      <file begintoken="8840" column="5" endcolumn="4" endline="180" endtoken="9003"
             line="168"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
-      <file begintoken="9167" column="5" endcolumn="4" endline="226" endtoken="9330"
+      <file begintoken="9179" column="5" endcolumn="4" endline="226" endtoken="9342"
             line="215"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
       <codefragment><![CDATA[				if ((getProblem().getTypeProblem().equals(ProblemType.Maximizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
@@ -124,10 +124,10 @@
 			}]]></codefragment>
    </duplication>
    <duplication lines="18" tokens="151">
-      <file begintoken="19014" column="3" endcolumn="74" endline="61" endtoken="19164"
+      <file begintoken="19085" column="3" endcolumn="74" endline="61" endtoken="19235"
             line="44"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
-      <file begintoken="20178" column="3" endcolumn="74" endline="64" endtoken="20328"
+      <file begintoken="20249" column="3" endcolumn="74" endline="64" endtoken="20399"
             line="47"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
       <codefragment><![CDATA[		this.weight = 50;
@@ -150,10 +150,10 @@
 			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());]]></codefragment>
    </duplication>
    <duplication lines="18" tokens="145">
-      <file begintoken="14451" column="2" endcolumn="37" endline="76" endtoken="14595"
+      <file begintoken="14518" column="2" endcolumn="37" endline="76" endtoken="14662"
             line="59"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
-      <file begintoken="21026" column="2" endcolumn="37" endline="56" endtoken="21170"
+      <file begintoken="21097" column="2" endcolumn="37" endline="56" endtoken="21241"
             line="40"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
       <codefragment><![CDATA[	}
@@ -176,10 +176,10 @@
 		  stateReferenceHC = stateCandidate;]]></codefragment>
    </duplication>
    <duplication lines="27" tokens="140">
-      <file begintoken="16679" column="25" endcolumn="37" endline="86" endtoken="16818"
+      <file begintoken="16749" column="25" endcolumn="37" endline="86" endtoken="16888"
             line="60"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiCaseSimulatedAnnealing.java"/>
-      <file begintoken="25734" column="53" endcolumn="37" endline="102" endtoken="25873"
+      <file begintoken="25808" column="53" endcolumn="37" endline="102" endtoken="25947"
             line="75"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
       <codefragment><![CDATA[		neighborhood = problem.getOperator().generatedNewState(stateReferenceSA, operatornumber);
@@ -211,10 +211,10 @@
 		  stateReferenceSA = stateCandidate.clone();]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="134">
-      <file begintoken="21629" column="2" endcolumn="9" endline="89" endtoken="21762"
+      <file begintoken="21700" column="2" endcolumn="9" endline="89" endtoken="21833"
             line="74"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveTabuSearch.java"/>
-      <file begintoken="26372" column="2" endcolumn="9" endline="113" endtoken="26505"
+      <file begintoken="26446" column="2" endcolumn="9" endline="113" endtoken="26579"
             line="98"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/TabuSearch.java"/>
       <codefragment><![CDATA[	}
@@ -235,10 +235,10 @@
 					if (TabuSolutions.listTabu.get(count).equals(stateCandidate)) {]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="127">
-      <file begintoken="19173" column="37" endcolumn="14" endline="77" endtoken="19299"
+      <file begintoken="19244" column="37" endcolumn="14" endline="77" endtoken="19370"
             line="62"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
-      <file begintoken="20327" column="73" endcolumn="14" endline="79" endtoken="20453"
+      <file begintoken="20398" column="73" endcolumn="14" endline="79" endtoken="20524"
             line="64"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
       <codefragment><![CDATA[			distanceSolution.add(new Double(0));
@@ -259,10 +259,10 @@
 				lastState=stateReferenceHC.clone();]]></codefragment>
    </duplication>
    <duplication lines="41" tokens="119">
-      <file begintoken="20655" column="3" endcolumn="2" endline="152" endtoken="20773"
+      <file begintoken="20726" column="3" endcolumn="2" endline="152" endtoken="20844"
             line="112"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
-      <file begintoken="21175" column="3" endcolumn="2" endline="97" endtoken="21293"
+      <file begintoken="21246" column="3" endcolumn="2" endline="97" endtoken="21364"
             line="57"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
       <codefragment><![CDATA[		getReferenceList();
@@ -308,13 +308,13 @@
 	}]]></codefragment>
    </duplication>
    <duplication lines="15" tokens="118">
-      <file begintoken="19014" column="3" endcolumn="99" endline="58" endtoken="19131"
+      <file begintoken="19085" column="3" endcolumn="99" endline="58" endtoken="19202"
             line="44"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
-      <file begintoken="20178" column="3" endcolumn="257" endline="60" endtoken="20295"
+      <file begintoken="20249" column="3" endcolumn="257" endline="60" endtoken="20366"
             line="47"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
-      <file begintoken="21015" column="3" endcolumn="257" endline="51" endtoken="21132"
+      <file begintoken="21086" column="3" endcolumn="257" endline="51" endtoken="21203"
             line="38"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
       <codefragment><![CDATA[		this.weight = 50;
@@ -334,10 +334,10 @@
 	InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
    </duplication>
    <duplication lines="50" tokens="117">
-      <file begintoken="12816" column="36" endcolumn="1" endline="227" endtoken="12932"
+      <file begintoken="12857" column="36" endcolumn="1" endline="227" endtoken="12973"
             line="178"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/EvolutionStrategies.java"/>
-      <file begintoken="14140" column="27" endcolumn="1" endline="252" endtoken="14256"
+      <file begintoken="14207" column="27" endcolumn="1" endline="252" endtoken="14323"
             line="204"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/GeneticAlgorithm.java"/>
       <codefragment><![CDATA[			State value = listStateReference.get(i);
@@ -392,13 +392,13 @@
 }]]></codefragment>
    </duplication>
    <duplication lines="40" tokens="116">
-      <file begintoken="19630" column="2" endcolumn="2" endline="171" endtoken="19745"
+      <file begintoken="19701" column="2" endcolumn="2" endline="171" endtoken="19816"
             line="132"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
-      <file begintoken="20658" column="2" endcolumn="2" endline="152" endtoken="20773"
+      <file begintoken="20729" column="2" endcolumn="2" endline="152" endtoken="20844"
             line="113"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
-      <file begintoken="21178" column="2" endcolumn="2" endline="97" endtoken="21293"
+      <file begintoken="21249" column="2" endcolumn="2" endline="97" endtoken="21364"
             line="58"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveStochasticHillClimbing.java"/>
       <codefragment><![CDATA[	}
@@ -443,10 +443,10 @@
 	}]]></codefragment>
    </duplication>
    <duplication lines="49" tokens="115">
-      <file begintoken="16355" column="2" endcolumn="1" endline="165" endtoken="16469"
+      <file begintoken="16422" column="2" endcolumn="1" endline="165" endtoken="16536"
             line="117"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/LimitThreshold.java"/>
-      <file begintoken="26672" column="2" endcolumn="1" endline="195" endtoken="26786"
+      <file begintoken="26746" column="2" endcolumn="1" endline="195" endtoken="26860"
             line="148"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/TabuSearch.java"/>
       <codefragment><![CDATA[	}
@@ -500,10 +500,10 @@
 }]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="113">
-      <file begintoken="10103" column="34" endcolumn="7" endline="366" endtoken="10215"
+      <file begintoken="10115" column="34" endcolumn="7" endline="366" endtoken="10227"
             line="351"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
-      <file begintoken="10218" column="24" endcolumn="7" endline="379" endtoken="10330"
+      <file begintoken="10230" column="24" endcolumn="7" endline="379" endtoken="10342"
             line="366"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
       <codefragment><![CDATA[	public void initializeGenerators()throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -524,10 +524,10 @@
 	public void initialize()throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="112">
-      <file begintoken="8116" column="4" endcolumn="3" endline="40" endtoken="8227"
+      <file begintoken="8128" column="4" endcolumn="3" endline="40" endtoken="8239"
             line="28"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/complement/UpdateParameter.java"/>
-      <file begintoken="9715" column="3" endcolumn="2" endline="290" endtoken="9826"
+      <file begintoken="9727" column="3" endcolumn="2" endline="290" endtoken="9838"
             line="278"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
       <codefragment><![CDATA[			if(countIterationsCurrent.equals(EvolutionStrategies.countRef - 1)){
@@ -545,10 +545,10 @@
 		}]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="111">
-      <file begintoken="18472" column="60" endcolumn="2" endline="326" endtoken="18582"
+      <file begintoken="18543" column="60" endcolumn="2" endline="326" endtoken="18653"
             line="311"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiGenerator.java"/>
-      <file begintoken="18615" column="55" endcolumn="2" endline="344" endtoken="18725"
+      <file begintoken="18686" column="55" endcolumn="2" endline="344" endtoken="18796"
             line="329"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiGenerator.java"/>
       <codefragment><![CDATA[		float weightUpdate = (float) (weightLast * (1 - 0.1) + 10);
@@ -569,13 +569,13 @@
 	@SuppressWarnings("static-access")]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="107">
-      <file begintoken="14451" column="2" endcolumn="257" endline="71" endtoken="14557"
+      <file begintoken="14518" column="2" endcolumn="257" endline="71" endtoken="14624"
             line="59"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/HillClimbing.java"/>
-      <file begintoken="19025" column="2" endcolumn="99" endline="58" endtoken="19131"
+      <file begintoken="19096" column="2" endcolumn="99" endline="58" endtoken="19202"
             line="46"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingDistance.java"/>
-      <file begintoken="20189" column="2" endcolumn="257" endline="60" endtoken="20295"
+      <file begintoken="20260" column="2" endcolumn="257" endline="60" endtoken="20366"
             line="49"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/MultiobjectiveHillClimbingRestart.java"/>
       <codefragment><![CDATA[	}
@@ -593,10 +593,10 @@
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {]]></codefragment>
    </duplication>
    <duplication lines="48" tokens="106">
-      <file begintoken="25378" column="42" endcolumn="1" endline="148" endtoken="25483"
+      <file begintoken="25449" column="42" endcolumn="1" endline="148" endtoken="25554"
             line="101"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/RandomSearch.java"/>
-      <file begintoken="25925" column="42" endcolumn="1" endline="164" endtoken="26030"
+      <file begintoken="25999" column="42" endcolumn="1" endline="164" endtoken="26104"
             line="117"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
       <codefragment><![CDATA[		listStateReference.add(stateReferenceRS);
@@ -649,10 +649,10 @@
 }]]></codefragment>
    </duplication>
    <duplication lines="17" tokens="105">
-      <file begintoken="8722" column="6" endcolumn="6" endline="162" endtoken="8826"
+      <file begintoken="8734" column="6" endcolumn="6" endline="162" endtoken="8838"
             line="146"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
-      <file begintoken="9037" column="6" endcolumn="6" endline="208" endtoken="9141"
+      <file begintoken="9049" column="6" endcolumn="6" endline="208" endtoken="9153"
             line="191"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java"/>
       <codefragment><![CDATA[					stateCandidate = multiGenerator.generate(operatornumber);
@@ -674,10 +674,10 @@
 					}]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="103">
-      <file begintoken="5123" column="85" endcolumn="4" endline="54" endtoken="5225"
+      <file begintoken="5134" column="85" endcolumn="4" endline="54" endtoken="5236"
             line="42"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/acceptation_type/AcceptMulticase.java"/>
-      <file begintoken="5286" column="8" endcolumn="4" endline="71" endtoken="5388"
+      <file begintoken="5297" column="8" endcolumn="4" endline="71" endtoken="5399"
             line="59"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/acceptation_type/AcceptMulticase.java"/>
       <codefragment><![CDATA[			else if(DominanceRank(stateCandidate, list) == DominanceRank(stateCurrent, list)){
@@ -695,16 +695,16 @@
 			}]]></codefragment>
    </duplication>
    <duplication lines="46" tokens="103">
-      <file begintoken="12830" column="2" endcolumn="1" endline="227" endtoken="12932"
+      <file begintoken="12871" column="2" endcolumn="1" endline="227" endtoken="12973"
             line="182"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/EvolutionStrategies.java"/>
-      <file begintoken="14154" column="2" endcolumn="1" endline="252" endtoken="14256"
+      <file begintoken="14221" column="2" endcolumn="1" endline="252" endtoken="14323"
             line="208"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/GeneticAlgorithm.java"/>
-      <file begintoken="25381" column="2" endcolumn="1" endline="148" endtoken="25483"
+      <file begintoken="25452" column="2" endcolumn="1" endline="148" endtoken="25554"
             line="103"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/RandomSearch.java"/>
-      <file begintoken="25928" column="2" endcolumn="1" endline="164" endtoken="26030"
+      <file begintoken="26002" column="2" endcolumn="1" endline="164" endtoken="26104"
             line="119"
             path="/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java"/>
       <codefragment><![CDATA[	}

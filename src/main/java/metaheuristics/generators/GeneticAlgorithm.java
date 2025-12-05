@@ -35,18 +35,18 @@ public class GeneticAlgorithm extends Generator {
 	private IFFactoryMutation iffactorymutation;
 	private IFFactoryReplace iffreplace;
 	
-	public static final MutationType mutationType;
-	public static final CrossoverType crossoverType;
-	public static final ReplaceType replaceType;
-	public static final SelectionType selectionType;
+	public static final MutationType mutationType = MutationType.OnePointMutation;
+	public static final CrossoverType crossoverType = CrossoverType.UniformCrossover;
+	public static final ReplaceType replaceType = ReplaceType.GenerationalReplace;
+	public static final SelectionType selectionType = SelectionType.TruncationSelection;
 	
 //	private SelectionType selectionType;
 //	private CrossoverType crossoverType;
 //	private MutationType mutationType;
 //	private ReplaceType replaceType;
 	private GeneratorType generatorType;
-	public static final double PC;
-	public static final double PM;
+	public static final double PC = 0.8;
+	public static final double PM = 0.1;
 	public static int countRef = 0;
 	public static int truncation;
 	private float weight;

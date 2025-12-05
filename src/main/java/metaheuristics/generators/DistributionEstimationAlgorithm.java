@@ -35,8 +35,8 @@ public class DistributionEstimationAlgorithm extends Generator {
 	private SamplingType Samplingtype;
 	
 //	private ReplaceType replaceType;
-	public static final ReplaceType replaceType;
-	public static final SelectionType selectionType;
+	public static final ReplaceType replaceType = ReplaceType.GenerationalReplace;
+	public static final SelectionType selectionType = SelectionType.TruncationSelection;
 	
 	private GeneratorType generatorType;
 	//private ProblemState candidate;

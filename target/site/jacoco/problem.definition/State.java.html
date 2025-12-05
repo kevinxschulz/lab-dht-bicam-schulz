@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>State.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">biciam</a> &gt; <a href="index.source.html" class="el_package">problem.definition</a> &gt; <span class="el_source">State.java</span></div><h1>State.java</h1><pre class="source lang-java linenums">package problem.definition;
+
+
+
+import java.util.ArrayList;
+
+import metaheuristics.generators.GeneratorType;
+
+public class State {
+	
+	protected GeneratorType typeGenerator;
+	protected ArrayList&lt;Double&gt; evaluation;
+	protected int number;
+	protected ArrayList&lt;Object&gt; code;
+	
+<span class="nc" id="L16">	public State(State ps) {</span>
+<span class="nc" id="L17">		typeGenerator = ps.getTypeGenerator();</span>
+<span class="nc" id="L18">		evaluation = ps.getEvaluation();</span>
+<span class="nc" id="L19">		number = ps.getNumber();</span>
+<span class="nc" id="L20">		code = new ArrayList&lt;Object&gt;(ps.getCode());</span>
+<span class="nc" id="L21">	}</span>
+	
+	public State(ArrayList&lt;Object&gt; code) {
+<span class="fc" id="L24">		super();</span>
+<span class="fc" id="L25">		this.code = code;</span>
+<span class="fc" id="L26">	}</span>
+	
+<span class="fc" id="L28">	public State() {</span>
+<span class="fc" id="L29">		code=new ArrayList&lt;Object&gt;();</span>
+<span class="fc" id="L30">	}	</span>
+	
+	public ArrayList&lt;Object&gt; getCode() {
+<span class="fc" id="L33">		return code;</span>
+	}
+
+	public void setCode(ArrayList&lt;Object&gt; listCode) {
+<span class="fc" id="L37">		this.code = listCode;</span>
+<span class="fc" id="L38">	}</span>
+
+	public GeneratorType getTypeGenerator() {
+<span class="fc" id="L41">		return typeGenerator;</span>
+	}
+	public void setTypeGenerator(GeneratorType typeGenerator) {
+<span class="fc" id="L44">		this.typeGenerator = typeGenerator;</span>
+<span class="fc" id="L45">	}</span>
+
+	
+	public ArrayList&lt;Double&gt; getEvaluation() {
+<span class="fc" id="L49">		return evaluation;</span>
+	}
+
+	public void setEvaluation(ArrayList&lt;Double&gt; evaluation) {
+<span class="fc" id="L53">		this.evaluation = evaluation;</span>
+<span class="fc" id="L54">	}</span>
+
+	public int getNumber() {
+<span class="fc" id="L57">		return number;</span>
+	}
+	public void setNumber(int number) {
+<span class="fc" id="L60">		this.number = number;</span>
+<span class="fc" id="L61">	}</span>
+	public State clone(){
+<span class="fc" id="L63">		return this;</span>
+	}
+	
+	public Object getCopy(){
+<span class="fc" id="L67">		return new State(this.getCode());</span>
+	}
+	
+	public boolean Comparator(State state){
+
+<span class="fc" id="L72">		boolean result=false;</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">		if(state.getCode().equals(getCode())){</span>
+<span class="fc" id="L74">			result=true;</span>
+		}
+<span class="fc" id="L76">		return result;</span>
+	}
+	public double Distance(State state){
+<span class="nc" id="L79">		double distancia = 0;</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">		for (int i = 0; i &lt; state.getCode().size(); i++) {</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">			if (!(state.getCode().get(i).equals(this.getCode().get(i)))) {</span>
+<span class="nc" id="L82">				distancia++;</span>
+			}
+		}
+<span class="nc" id="L85">	return distancia;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
