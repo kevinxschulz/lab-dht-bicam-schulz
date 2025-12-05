@@ -7,7 +7,7 @@ import problem.definition.State;
 
 public class TabuSolutions {
 	
-	public static List<State> listTabu = new ArrayList<State>();
+	public static final List<State> listTabu = new ArrayList<State>();
 
 	public static int maxelements; 
 

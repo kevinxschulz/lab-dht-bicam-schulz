@@ -35,18 +35,18 @@ public class GeneticAlgorithm extends Generator {
 	private IFFactoryMutation iffactorymutation;
 	private IFFactoryReplace iffreplace;
 	
-	public static MutationType mutationType;
-	public static CrossoverType crossoverType;
-	public static ReplaceType replaceType;
-	public static SelectionType selectionType;
+	public static final MutationType mutationType;
+	public static final CrossoverType crossoverType;
+	public static final ReplaceType replaceType;
+	public static final SelectionType selectionType;
 	
 //	private SelectionType selectionType;
 //	private CrossoverType crossoverType;
 //	private MutationType mutationType;
 //	private ReplaceType replaceType;
 	private GeneratorType generatorType;
-	public static double PC;
-	public static double PM;
+	public static final double PC;
+	public static final double PM;
 	public static int countRef = 0;
 	public static int truncation;
 	private float weight;
@@ -60,7 +60,7 @@ public class GeneticAlgorithm extends Generator {
 	
     public GeneticAlgorithm() {
 		super();
-		this.listState = getListStateRef(); // llamada al método que devuelve la lista. 
+		this.listState = getListStateRef(); // llamada al mï¿½todo que devuelve la lista. 
 //		this.selectionType = SelectionType.Truncation;
 //		this.crossoverType = CrossoverType.UniformCrossover;
 //		this.mutationType = MutationType.UniformMutation;

@@ -17,7 +17,7 @@ public class MultiGenerator extends Generator {
 	private static Generator[] listGenerators = new Generator[GeneratorType.values().length];
 	public static List<State> listGeneratedPP = new ArrayList<State> ();
 	public static Generator activeGenerator;
-	public static List<State> listStateReference = new ArrayList<State>(); 
+	public static final List<State> listStateReference = new ArrayList<State>(); 
 	
 	public void setGeneratortype(GeneratorType generatortype) {
 		Generatortype = generatortype;

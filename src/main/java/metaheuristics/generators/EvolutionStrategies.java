@@ -32,10 +32,10 @@ public class EvolutionStrategies extends Generator {
 //	private MutationType mutationType;
 //	private ReplaceType replaceType;
 	private GeneratorType generatorType;
-	public static double PM;
-	public static MutationType mutationType;
-	public static ReplaceType replaceType;
-	public static SelectionType selectionType;
+	public static final double PM;
+	public static final MutationType mutationType;
+	public static final ReplaceType replaceType;
+	public static final SelectionType selectionType;
 	public static int countRef = 0;
 	public static int truncation;
 	private float weight = 50;

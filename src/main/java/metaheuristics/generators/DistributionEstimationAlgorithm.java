@@ -27,7 +27,7 @@ public class DistributionEstimationAlgorithm extends Generator {
 
 	private State stateReferenceDA;
 	private List<State> referenceList = new ArrayList<State>(); 
-	public static List<State> sonList = new ArrayList<State>(); 
+	public static final List<State> sonList = new ArrayList<State>(); 
 	private IFFactoryFatherSelection iffatherselection;
 	private IFFSampling iffsampling;
 	private IFFactoryReplace iffreplace;
@@ -35,8 +35,8 @@ public class DistributionEstimationAlgorithm extends Generator {
 	private SamplingType Samplingtype;
 	
 //	private ReplaceType replaceType;
-	public static ReplaceType replaceType;
-	public static SelectionType selectionType;
+	public static final ReplaceType replaceType;
+	public static final SelectionType selectionType;
 	
 	private GeneratorType generatorType;
 	//private ProblemState candidate;
@@ -54,7 +54,7 @@ public class DistributionEstimationAlgorithm extends Generator {
 	
 	public DistributionEstimationAlgorithm() {
 		super();
-		this.referenceList = getListStateRef(); // llamada al método que devuelve la lista. 
+		this.referenceList = getListStateRef(); // llamada al mï¿½todo que devuelve la lista. 
 //		this.selectionType = SelectionType.Truncation;
 		//this.replaceType = ReplaceType.Generational;
 //		this.replaceType = ReplaceType.Smallest;

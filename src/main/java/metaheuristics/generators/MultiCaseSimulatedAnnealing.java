@@ -24,7 +24,7 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 	private CandidateType typeCandidate;
 	private State stateReferenceSA;
     private IFFactoryAcceptCandidate ifacceptCandidate;
-    public static Double alpha;
+    public static final Double alpha;
     public static Double tinitial;
     public static Double tfinal;
     public static int countIterationsT;
