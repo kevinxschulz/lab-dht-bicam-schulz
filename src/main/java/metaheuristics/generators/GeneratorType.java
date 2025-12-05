@@ -1,5 +1,8 @@
 package metaheuristics.generators;
 
+/**
+ * An enum representing the different types of metaheuristic generators.
+ */
 public enum GeneratorType {
 	HillClimbing, TabuSearch, SimulatedAnnealing, RandomSearch, LimitThreshold, HillClimbingRestart, //un punto
 	GeneticAlgorithm, EvolutionStrategies, DistributionEstimationAlgorithm, ParticleSwarmOptimization, //poblaciones de puntos

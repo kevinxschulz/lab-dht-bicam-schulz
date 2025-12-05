@@ -3,6 +3,10 @@ package metaheuristics.generators;
 import factory_method.FactoryGenerator;
 
 
+/**
+ * Helper that creates and injects a GeneticAlgorithm instance into the
+ * generator array. Designed to run in a separate thread during initialization.
+ */
 public class InstanceGA implements Runnable {
 
 	private boolean terminate = false;

@@ -15,6 +15,13 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.State;
 
 
+/**
+ * Multi-objective stochastic hill climbing generator.
+ *
+ * <p>Explores the neighborhood of a reference state and chooses candidate
+ * solutions using a multi-objective acceptance rule. Intended for problems
+ * with multiple objectives where nondominated moves are preferred.
+ */
 public class MultiobjectiveStochasticHillClimbing extends Generator{
 
 	protected CandidateValue candidatevalue;

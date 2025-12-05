@@ -21,6 +21,13 @@ import factory_method.FactoryFatherSelection;
 import factory_method.FactoryMutation;
 import factory_method.FactoryReplace;
 
+/**
+ * Evolution Strategies (ES) generator.
+ *
+ * <p>Implements the (mu+lambda) or (mu,lambda) style evolution strategy
+ * behaviour: selection of parents, mutation and replacement using the
+ * configured factory-provided operators.
+ */
 public class EvolutionStrategies extends Generator {
 	
 	private State stateReferenceES;

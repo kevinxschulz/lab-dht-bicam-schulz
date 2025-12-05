@@ -11,6 +11,13 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * Particle Swarm Optimization (PSO) generator.
+ *
+ * <p>Manages a collection of `Particle` instances, local/global bests and
+ * the PSO-specific parameters (inertia, learning factors, constriction).
+ * Delegates candidate generation to particles and tracks PSO state.
+ */
 public class ParticleSwarmOptimization extends Generator {
 	
 	private State stateReferencePSO;

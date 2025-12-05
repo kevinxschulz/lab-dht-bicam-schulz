@@ -3,6 +3,11 @@ package metaheuristics.generators;
 import factory_method.FactoryGenerator;
 
 
+/**
+ * Helper that creates and injects a DistributionEstimationAlgorithm instance
+ * into the available generator array. This class is intended to be run in a
+ * background thread when generators are initialized lazily.
+ */
 public class InstanceDE implements Runnable {
 
 	private boolean terminate = false;

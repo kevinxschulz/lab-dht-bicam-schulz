@@ -19,6 +19,13 @@ import problem.definition.State;
 
 
 
+/**
+ * Multi-objective Tabu Search generator.
+ *
+ * <p>Explores neighborhoods under a tabu strategy and maintains a list of
+ * nondominated solutions. Uses multi-objective acceptance rules specific
+ * for tabu-based exploration.
+ */
 public class MultiobjectiveTabuSearch extends Generator {
 
 	private CandidateValue candidatevalue;

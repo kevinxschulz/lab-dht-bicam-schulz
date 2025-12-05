@@ -20,6 +20,13 @@ import metaheurictics.strategy.Strategy;
 
 
 
+/**
+ * Multi-objective hill climbing with restarts.
+ *
+ * <p>Performs hill climbing suitable for multi-objective optimization and
+ * restarts the search from random positions when needed to escape plateaus
+ * or stagnation.
+ */
 public class MultiobjectiveHillClimbingRestart extends Generator{
 
 	protected CandidateValue candidatevalue;
@@ -58,7 +65,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		//Agregando la primera solución a la lista de soluciones no dominadas
+		//Agregando la primera soluciï¿½n a la lista de soluciones no dominadas
 
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
 			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());

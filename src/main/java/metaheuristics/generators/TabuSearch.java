@@ -10,7 +10,7 @@ import local_search.candidate_type.CandidateType;
 import local_search.candidate_type.CandidateValue;
 import local_search.complement.StrategyType;
 import local_search.complement.TabuSolutions;
-import metaheurictics.strategy.Strategy;
+import metaheuristics.strategy.Strategy;
 
 import problem.definition.Problem;
 import problem.definition.State;
@@ -21,6 +21,10 @@ import problem.definition.Problem.ProblemType;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
+/**
+ * A generator that implements the Tabu Search algorithm.
+ * It uses a tabu list to avoid previously visited solutions and escape local optima.
+ */
 public class TabuSearch extends Generator {
 
 	private CandidateValue candidatevalue;
@@ -41,14 +45,25 @@ public class TabuSearch extends Generator {
     private float[] listTrace = new float[1200000];
 
 
+    /**
+     * Gets the type of the generator.
+     * @return The type of the generator.
+     */
     public GeneratorType getTypeGenerator() {
 		return typeGenerator;
 	}
 
+    /**
+     * Sets the type of the generator.
+     * @param typeGenerator The type of the generator.
+     */
 	public void setTypeGenerator(GeneratorType typeGenerator) {
 		this.typeGenerator = typeGenerator;
 	}
 
+	/**
+	 * Constructs a new TabuSearch generator with default values.
+	 */
 	public TabuSearch() {
     	super();
 		this.typeAcceptation = AcceptType.AcceptAnyone;
@@ -73,6 +88,18 @@ public class TabuSearch extends Generator {
 		
 	}
 
+	/**
+	 * Generates a new state by exploring the neighborhood of the current reference state.
+	 * @param operatornumber The operator number.
+	 * @return A new state.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		//ArrayList<State>list=new ArrayList<State>();
@@ -83,21 +110,47 @@ public class TabuSearch extends Generator {
 	    return statecandidate;
 	}
 
+	/**
+	 * Gets the reference state.
+	 * @return The reference state.
+	 */
 	@Override
 	public State getReference() {
 		return stateReferenceTS;
 	}
 
+	/**
+	 * Sets the initial reference state.
+	 * @param stateInitialRef The initial reference state.
+	 */
 	@Override
 	public void setInitialReference(State stateInitialRef) {
 		this.stateReferenceTS = stateInitialRef;
 	}
 
+	/**
+	 * Sets the reference state.
+	 * @param stateRef The reference state.
+	 */
 	public void setStateRef(State stateRef) {
 		this.stateReferenceTS = stateRef;
 	}
 
-	@Override            //******************no lo entiendo
+	/**
+	 * Updates the reference state and the tabu list.
+	 * If the candidate is accepted, it becomes the new reference state.
+	 * If the strategy is TABU, the new state is added to the tabu list to avoid revisiting it.
+	 * @param stateCandidate The candidate state.
+	 * @param countIterationsCurrent The current number of iterations.
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
+	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent)throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		ifacceptCandidate = new FactoryAcceptCandidate();
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
@@ -136,56 +189,97 @@ public class TabuSearch extends Generator {
 //		getReferenceList();
 	}
 
+	/**
+	 * Gets the type of the generator.
+	 * @return The type of the generator.
+	 */
 	@Override
 	public GeneratorType getType() {
 		return this.typeGenerator;
 	}
 
+	/**
+	 * Gets the list of reference states.
+	 * @return The list of reference states.
+	 */
 	@Override
 	public List<State> getReferenceList() {
 		listStateReference.add(stateReferenceTS);
 		return listStateReference;
 	}
 
+	/**
+	 * Gets the list of son states.
+	 * @return The list of son states.
+	 */
 	@Override
 	public List<State> getSonList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Sets the type of the candidate.
+	 * @param typeCandidate The type of the candidate.
+	 */
 	public void setTypeCandidate(CandidateType typeCandidate){
 		this.typeCandidate = typeCandidate;
 	}
 
+	/**
+	 * Awards the update of the reference state.
+	 * @param stateCandidate The candidate state.
+	 * @return True if the update is awarded, false otherwise.
+	 */
 	@Override
 	public boolean awardUpdateREF(State stateCandidate) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * Gets the weight of the generator.
+	 * @return The weight of the generator.
+	 */
 	public float getWeight() {
 		// TODO Auto-generated method stub
 		return this.weight;
 	}
 
+	/**
+	 * Sets the weight of the generator.
+	 * @param weight The weight of the generator.
+	 */
 	@Override
 	public void setWeight(float weight) {
 		// TODO Auto-generated method stub
 		this.weight = weight;
 	}
 
+	/**
+	 * Gets the list of count of better gender.
+	 * @return the list of count of better gender.
+	 */
 	@Override
 	public int[] getListCountBetterGender() {
 		// TODO Auto-generated method stub
 		return this.listCountBetterGender;
 	}
 
+	/**
+	 * Gets the list of count of gender.
+	 * @return the list of count of gender.
+	 */
 	@Override
 	public int[] getListCountGender() {
 		// TODO Auto-generated method stub
 		return this.listCountGender;
 	}
 
+	/**
+	 * Gets the trace of the generator.
+	 * @return The trace of the generator.
+	 */
 	@Override
 	public float[] getTrace() {
 		// TODO Auto-generated method stub

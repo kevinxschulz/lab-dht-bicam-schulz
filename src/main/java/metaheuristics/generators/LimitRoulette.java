@@ -1,5 +1,11 @@
 package metaheuristics.generators;
 
+/**
+ * Simple helper used by `MultiGenerator` to store roulette wheel limits.
+ *
+ * <p>Each `LimitRoulette` maps a probability interval (low/high) to a
+ * specific `Generator` instance for roulette selection.
+ */
 public class LimitRoulette {
 
 	private float limitLow;

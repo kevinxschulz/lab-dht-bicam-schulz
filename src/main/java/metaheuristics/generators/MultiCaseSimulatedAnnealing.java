@@ -16,6 +16,12 @@ import problem.definition.Problem;
 import problem.definition.State;
 
 
+/**
+ * Multi-case Simulated Annealing generator.
+ *
+ * <p>Supports multi-case acceptance criteria and temperature scheduling
+ * for multi-objective simulated annealing variations.
+ */
 public class MultiCaseSimulatedAnnealing extends Generator {
 
 	private CandidateValue candidatevalue;

@@ -2,6 +2,10 @@ package metaheuristics.generators;
 
 import factory_method.FactoryGenerator;
 
+/**
+ * Helper that creates and injects an EvolutionStrategies instance into the
+ * generator array. Used for asynchronous initialization of generators.
+ */
 public class InstanceEE implements Runnable {
 
 	private boolean terminate = false;

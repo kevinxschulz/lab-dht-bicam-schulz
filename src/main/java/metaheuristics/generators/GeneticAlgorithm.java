@@ -26,6 +26,13 @@ import factory_method.FactoryFatherSelection;
 import factory_method.FactoryMutation;
 import factory_method.FactoryReplace;
 
+/**
+ * Genetic Algorithm (GA) generator.
+ *
+ * <p>Implements standard GA operations (selection, crossover, mutation)
+ * using the pluggable factory-provided operators. Produces offspring
+ * from selected parents and applies the configured replacement strategy.
+ */
 public class GeneticAlgorithm extends Generator {
 
 	private State stateReferenceGA;

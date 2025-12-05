@@ -11,6 +11,15 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * A portfolio-style generator that manages and selects among several
+ * underlying generators (operators).
+ *
+ * <p>Implements selection mechanisms (roulette, tournament) over a set of
+ * generators, coordinates initialization of generator instances and
+ * delegates candidate generation to the currently selected active
+ * generator.
+ */
 public class MultiGenerator extends Generator {
 
 	private GeneratorType Generatortype;

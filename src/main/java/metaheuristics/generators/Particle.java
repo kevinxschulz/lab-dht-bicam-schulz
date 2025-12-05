@@ -9,6 +9,13 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * Particle wrapper used by the Particle Swarm Optimization generator.
+ *
+ * <p>Holds the current and personal-best {@code State} for a single particle
+ * and its velocity vector. The class implements particle-specific updates
+ * used by the PSO algorithm.
+ */
 public class Particle extends Generator {
 
 	private State statePBest;
@@ -117,7 +124,7 @@ public class Particle extends Generator {
 		    }
 			return newCode;
 	    }
-		 else{                                                  //cálculo de la posicion para codificacion binaria
+		 else{                                                  //cï¿½lculo de la posicion para codificacion binaria
 			  for (int i = 0; i < stateActual.getCode().size(); i++){
 				  double rand = (double)(Math.random() * (double)(1));
 				  double s = 1/(1 + 1.72 * (Double)(actualVelocity.get(i))); // 

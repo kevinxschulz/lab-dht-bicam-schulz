@@ -24,6 +24,15 @@ import factory_method.FactoryReplace;
 import factory_method.FactorySampling;
 
 public class DistributionEstimationAlgorithm extends Generator {
+	/**
+	 * Distribution Estimation Algorithm (DEA) generator.
+	 *
+	 * <p>This generator implements a distribution-estimation-based operator for
+	 * producing candidate solutions. It keeps a reference list of states and
+	 * supports sampling from a distribution built over selected parents (fathers).
+	 * The class integrates with the strategy and factory interfaces defined in
+	 * the project to perform father selection, sampling and replacement.
+	 */
 
 	private State stateReferenceDA;
 	private List<State> referenceList = new ArrayList<State>(); 
@@ -68,6 +77,12 @@ public class DistributionEstimationAlgorithm extends Generator {
 	}
 	
 	public State MaxValue (List<State> listInd){
+		/**
+		 * Return the state with the maximum evaluation value (first objective) from the list.
+		 *
+		 * @param listInd list of candidate states (must be non-empty)
+		 * @return a copy of the state that has the maximum value for the first evaluation
+		 */
 		State state = new State(listInd.get(0));
 		double max = state.getEvaluation().get(0);
 		for (int i = 1; i < listInd.size(); i++) {
@@ -81,6 +96,18 @@ public class DistributionEstimationAlgorithm extends Generator {
 	
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
+		/**
+		 * Generate a candidate state using the configured sampling operator.
+		 *
+		 * <p>The method selects fathers using the configured father selection
+		 * strategy and then uses the sampling factory to create new candidates.
+		 * If more than one candidate is sampled their first-objective evaluations
+		 * are computed and the best one (MaxValue) is returned.
+		 *
+		 * @param operatornumber a parameter forwarded to the sampling operator
+		 * @return the generated candidate state
+		 * @throws ReflectiveOperationException if factory reflection fails
+		 */
 		//********************selection*****************************
 		//ProblemState candidate = new ProblemState();
 		/*State candidate = new State();//(State) Strategy.getStrategy().getProblem().getState().clone()
@@ -121,7 +148,7 @@ public class DistributionEstimationAlgorithm extends Generator {
     	else{
     		candidate = ind.get(0);
     	}
-//    	sonList = ind;
+		// sonList = ind; (left intentionally commented out)
     	//listcandidate.add(candidate);
        // this.candidate = candidate;
     	return candidate;
@@ -130,6 +157,13 @@ public class DistributionEstimationAlgorithm extends Generator {
     		
 	@Override
 	public State getReference() {
+		/**
+		 * Return the current reference state according to the problem objective
+		 * type (maximize or minimize). The method inspects the first objective
+		 * value to find the best state in {@code referenceList}.
+		 *
+		 * @return the best reference state (first in list if tie)
+		 */
 		stateReferenceDA = referenceList.get(0);
 		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
 			for (int i = 1; i < referenceList.size(); i++) {
@@ -148,6 +182,11 @@ public class DistributionEstimationAlgorithm extends Generator {
 
 	@Override
 	public List<State> getReferenceList() {
+		/**
+		 * Return a shallow copy of the reference list.
+		 *
+		 * @return a new list containing the same State references as {@code referenceList}
+		 */
 		List<State> ReferenceList = new ArrayList<State>();
 		for (int i = 0; i < referenceList.size(); i++) {
 			State value = referenceList.get(i);
@@ -168,6 +207,14 @@ public class DistributionEstimationAlgorithm extends Generator {
 
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
+		/**
+		 * Update the reference list by applying the configured replacement
+		 * strategy using the provided candidate.
+		 *
+		 * @param stateCandidate the candidate state to consider for replacement
+		 * @param countIterationsCurrent current iteration counter (unused)
+		 * @throws ReflectiveOperationException if replacement factory creation fails
+		 */
 		iffreplace = new FactoryReplace();
 		Replace replace = iffreplace.createReplace(replaceType);
 		referenceList = replace.replace(stateCandidate, referenceList);
