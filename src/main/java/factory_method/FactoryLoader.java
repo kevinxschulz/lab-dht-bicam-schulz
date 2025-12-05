@@ -1,9 +1,25 @@
 package factory_method;
 import java.lang.reflect.InvocationTargetException;
 
-
+/**
+ * A utility class for creating instances of classes using reflection.
+ * This class is used by the factory classes to create objects.
+ */
 public class FactoryLoader {
 
+	/**
+	 * Creates an instance of a class given its name.
+	 *
+	 * @param className The fully qualified name of the class to instantiate.
+	 * @return An instance of the class, or null if an error occurred.
+	 * @throws ClassNotFoundException
+	 * @throws IllegalArgumentException
+	 * @throws SecurityException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws InvocationTargetException
+	 * @throws NoSuchMethodException
+	 */
 	public static Object getInstance(String className) throws ClassNotFoundException, IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException{
 		@SuppressWarnings("rawtypes")
 		Class c = null;
