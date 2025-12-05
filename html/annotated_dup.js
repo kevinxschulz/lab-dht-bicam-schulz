@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "app", null, [
+      [ "Main", "classapp_1_1_main.html", null ]
+    ] ],
     [ "config", null, [
       [ "tspDynamic", null, [
         [ "TSPState", "classconfig_1_1tsp_dynamic_1_1_t_s_p_state.html", null ]
@@ -89,11 +92,6 @@ var annotated_dup =
         [ "UpdateParameter", "classlocal__search_1_1complement_1_1_update_parameter.html", null ]
       ] ]
     ] ],
-    [ "metaheurictics", null, [
-      [ "strategy", null, [
-        [ "Strategy", "classmetaheurictics_1_1strategy_1_1_strategy.html", null ]
-      ] ]
-    ] ],
     [ "metaheuristics", null, [
       [ "generators", null, [
         [ "DistributionEstimationAlgorithm", "classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm.html", "classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm" ],
@@ -119,6 +117,9 @@ var annotated_dup =
         [ "RandomSearch", "classmetaheuristics_1_1generators_1_1_random_search.html", "classmetaheuristics_1_1generators_1_1_random_search" ],
         [ "SimulatedAnnealing", "classmetaheuristics_1_1generators_1_1_simulated_annealing.html", "classmetaheuristics_1_1generators_1_1_simulated_annealing" ],
         [ "TabuSearch", "classmetaheuristics_1_1generators_1_1_tabu_search.html", "classmetaheuristics_1_1generators_1_1_tabu_search" ]
+      ] ],
+      [ "strategy", null, [
+        [ "Strategy", "classmetaheuristics_1_1strategy_1_1_strategy.html", null ]
       ] ]
     ] ],
     [ "problem", null, [

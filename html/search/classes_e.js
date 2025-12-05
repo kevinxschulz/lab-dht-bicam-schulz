@@ -10,6 +10,6 @@ var searchData=
   ['state_7',['State',['../classproblem_1_1definition_1_1_state.html',1,'problem::definition']]],
   ['steadystatereplace_8',['SteadyStateReplace',['../classevolutionary__algorithms_1_1complement_1_1_steady_state_replace.html',1,'evolutionary_algorithms::complement']]],
   ['stopexecute_9',['StopExecute',['../classlocal__search_1_1complement_1_1_stop_execute.html',1,'local_search::complement']]],
-  ['strategy_10',['Strategy',['../classmetaheurictics_1_1strategy_1_1_strategy.html',1,'metaheurictics::strategy']]],
+  ['strategy_10',['Strategy',['../classmetaheuristics_1_1strategy_1_1_strategy.html',1,'metaheuristics::strategy']]],
   ['strategytype_11',['StrategyType',['../enumlocal__search_1_1complement_1_1_strategy_type.html',1,'local_search::complement']]]
 ];

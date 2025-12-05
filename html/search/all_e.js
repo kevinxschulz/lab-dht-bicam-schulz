@@ -28,6 +28,6 @@ var searchData=
   ['steadystatereplace_25',['SteadyStateReplace',['../classevolutionary__algorithms_1_1complement_1_1_steady_state_replace.html',1,'evolutionary_algorithms.complement.SteadyStateReplace'],['../enumevolutionary__algorithms_1_1complement_1_1_replace_type.html#ae89ca06cfe0b0248c46a6b44717f474e',1,'evolutionary_algorithms.complement.ReplaceType.SteadyStateReplace']]],
   ['stopexecute_26',['StopExecute',['../classlocal__search_1_1complement_1_1_stop_execute.html',1,'local_search::complement']]],
   ['stopiterations_27',['stopIterations',['../classlocal__search_1_1complement_1_1_stop_execute.html#ab1a3bdd37f463399ac6ee0d082220c1c',1,'local_search::complement::StopExecute']]],
-  ['strategy_28',['Strategy',['../classmetaheurictics_1_1strategy_1_1_strategy.html',1,'metaheurictics::strategy']]],
+  ['strategy_28',['Strategy',['../classmetaheuristics_1_1strategy_1_1_strategy.html',1,'metaheuristics::strategy']]],
   ['strategytype_29',['StrategyType',['../enumlocal__search_1_1complement_1_1_strategy_type.html',1,'local_search::complement']]]
 ];

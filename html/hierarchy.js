@@ -80,6 +80,7 @@ var hierarchy =
       [ "factory_method.FactorySampling", "classfactory__method_1_1_factory_sampling.html", null ]
     ] ],
     [ "metaheuristics.generators.LimitRoulette", "classmetaheuristics_1_1generators_1_1_limit_roulette.html", null ],
+    [ "app.Main", "classapp_1_1_main.html", null ],
     [ "problem.extension.MetricasMultiobjetivo", "classproblem_1_1extension_1_1_metricas_multiobjetivo.html", null ],
     [ "evolutionary_algorithms.complement.Mutation", "classevolutionary__algorithms_1_1complement_1_1_mutation.html", [
       [ "evolutionary_algorithms.complement.AIOMutation", "classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation.html", null ],
@@ -122,7 +123,7 @@ var hierarchy =
     ] ],
     [ "problem.definition.State", "classproblem_1_1definition_1_1_state.html", null ],
     [ "local_search.complement.StopExecute", "classlocal__search_1_1complement_1_1_stop_execute.html", null ],
-    [ "metaheurictics.strategy.Strategy", "classmetaheurictics_1_1strategy_1_1_strategy.html", null ],
+    [ "metaheuristics.strategy.Strategy", "classmetaheuristics_1_1strategy_1_1_strategy.html", null ],
     [ "local_search.complement.StrategyType", "enumlocal__search_1_1complement_1_1_strategy_type.html", null ],
     [ "local_search.complement.TabuSolutions", "classlocal__search_1_1complement_1_1_tabu_solutions.html", null ],
     [ "config.tspDynamic.TSPState", "classconfig_1_1tsp_dynamic_1_1_t_s_p_state.html", null ],
