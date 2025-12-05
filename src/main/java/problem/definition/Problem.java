@@ -10,6 +10,14 @@ import factory_interface.IFFactorySolutionMethod;
 import factory_method.FactorySolutionMethod;
 
 
+/**
+ * Represents a complete optimization/problem instance.
+ *
+ * <p>This class holds the codification, operators, objective functions,
+ * and the current state for the problem instance. It also provides a
+ * mechanism to evaluate states using the configured objective functions
+ * or a pluggable {@code SolutionMethod}.</p>
+ */
 public class Problem {
 
 	public enum ProblemType {Maximizar,Minimizar;}
@@ -74,14 +82,15 @@ public class Problem {
 	}
 
 	public void Evaluate(State state) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		double eval = 0;       
+		// Evaluate a state using either the first objective function
+		// or a pluggable SolutionMethod when configured.
+		double eval = 0;
 		ArrayList<Double> evaluation = new ArrayList<Double>(this.function.size());
 		if (typeSolutionMethod == null) {
-			eval= function.get(0).Evaluation(state);
+			eval = function.get(0).Evaluation(state);
 			evaluation.add(evaluation.size(), eval);
 			state.setEvaluation(evaluation);
-		}
-		else {
+		} else {
 			SolutionMethod method = newSolutionMethod(typeSolutionMethod);
 			method.evaluationState(state);
 		}
