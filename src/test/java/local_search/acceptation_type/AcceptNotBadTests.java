@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import metaheurictics.strategy.Strategy;
+import metaheuristics.strategy.Strategy;
 import metaheuristics.generators.Generator;
 import metaheuristics.generators.GeneratorType;
 import problem.definition.ObjetiveFunction;

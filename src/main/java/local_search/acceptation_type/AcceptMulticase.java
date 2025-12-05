@@ -1,7 +1,7 @@
 package local_search.acceptation_type;
 
 import metaheuristics.generators.*;
-import metaheurictics.strategy.*;
+import metaheuristics.strategy.*;
 
 import java.util.List;
 import java.util.Random;

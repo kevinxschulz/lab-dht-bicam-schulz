@@ -2,7 +2,7 @@ package local_search.acceptation_type;
 
 
 import local_search.acceptation_type.Dominance;
-import metaheurictics.strategy.Strategy;
+import metaheuristics.strategy.Strategy;
 
 import problem.definition.State;
 

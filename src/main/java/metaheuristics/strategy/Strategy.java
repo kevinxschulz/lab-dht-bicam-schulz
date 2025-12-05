@@ -1,4 +1,4 @@
-package metaheurictics.strategy;
+package metaheuristics.strategy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

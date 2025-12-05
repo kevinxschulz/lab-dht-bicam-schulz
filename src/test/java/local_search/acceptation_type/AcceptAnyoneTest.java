@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import problem.definition.State;
-import metaheurictics.strategy.Strategy;
+import metaheuristics.strategy.Strategy;
 
 public class AcceptAnyoneTest {
 

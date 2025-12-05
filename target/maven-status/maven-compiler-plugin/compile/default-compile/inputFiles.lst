@@ -1,3 +1,4 @@
+/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/app/Main.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/config/tspDynamic/TSPState.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/evolutionary_algorithms/complement/AIOMutation.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/evolutionary_algorithms/complement/Crossover.java
@@ -67,7 +68,6 @@
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/complement/StrategyType.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/complement/TabuSolutions.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/local_search/complement/UpdateParameter.java
-/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheurictics/strategy/Strategy.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/EvolutionStrategies.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/Generator.java
@@ -91,6 +91,7 @@
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/RandomSearch.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/SimulatedAnnealing.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/generators/TabuSearch.java
+/Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/metaheuristics/strategy/Strategy.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/problem/definition/Codification.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/problem/definition/ObjetiveFunction.java
 /Users/kevin/Studium/4rdSemester/Laboratorio/lab-dht-bicam-schulz/src/main/java/problem/definition/Operator.java

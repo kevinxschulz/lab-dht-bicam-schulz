@@ -14,7 +14,7 @@ import local_search.acceptation_type.AcceptableCandidate;
 import local_search.candidate_type.CandidateType;
 import local_search.candidate_type.CandidateValue;
 import local_search.complement.StrategyType;
-import metaheurictics.strategy.Strategy;
+import metaheuristics.strategy.Strategy;
 
 /**
  * Multi-objective hill climbing using distance-based restart heuristics.

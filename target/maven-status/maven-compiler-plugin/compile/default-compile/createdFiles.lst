@@ -35,6 +35,7 @@ evolutionary_algorithms/complement/SamplingType.class
 problem/definition/State.class
 metaheuristics/generators/DistributionEstimationAlgorithm.class
 problem/extension/MultiObjetivoPuro.class
+app/Main.class
 factory_interface/IFFactoryCrossover.class
 evolutionary_algorithms/complement/TruncationSelection.class
 problem/extension/TypeSolutionMethod.class
@@ -87,6 +88,7 @@ evolutionary_algorithms/complement/GenerationalReplace.class
 factory_interface/IFFSampling.class
 evolutionary_algorithms/complement/DistributionType.class
 factory_method/FactoryMutation.class
+metaheuristics/strategy/Strategy.class
 metaheuristics/generators/MultiCaseSimulatedAnnealing.class
 evolutionary_algorithms/complement/Sampling.class
 evolutionary_algorithms/complement/ProbabilisticSampling.class
@@ -94,7 +96,6 @@ factory_method/FactoryAcceptCandidate.class
 metaheuristics/generators/Generator.class
 local_search/complement/StrategyType.class
 local_search/acceptation_type/AcceptNotBad.class
-metaheurictics/strategy/Strategy.class
 problem/extension/FactoresPonderados.class
 local_search/acceptation_type/AcceptNotDominated.class
 metaheuristics/generators/MultiobjectiveHillClimbingDistance.class
