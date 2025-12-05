@@ -13,27 +13,24 @@
     <description>BiCIAM project migrated to Maven with quality and security plugins</description>
 
     <properties>
-        <!-- Java-Version -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <!-- Encoding (an dein Projekt angepasst) -->
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
 
-        <!-- Versions -->
         <junit.version>5.10.0</junit.version>
         <jacoco.version>0.8.11</jacoco.version>
-        <dependency-check.version>10.0.3</dependency-check.version>
+        <dependency-check.version>12.1.9</dependency-check.version>
         <pmd.version>3.21.0</pmd.version>
         <checkstyle.plugin.version>3.3.1</checkstyle.plugin.version>
         <spotbugs.plugin.version>4.8.5.0</spotbugs.plugin.version>
         <findsecbugs.version>1.13.0</findsecbugs.version>
+
+        <nvd.api.key>${env.NVD_API_KEY}</nvd.api.key>
     </properties>
 
-    <!-- Dependencies -->
     <dependencies>
-        <!-- JUnit 5 für Unit-Tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -41,17 +38,22 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- jExcelAPI: für jxl.*, BiffException usw. -->
         <dependency>
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6.12</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Java-Compiler-Konfiguration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -63,7 +65,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire: Test-Runner mit JUnit 5 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -73,19 +74,16 @@
                 </configuration>
             </plugin>
 
-            <!-- JaCoCo: Testabdeckung -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
                 <executions>
-                    <!-- Agent vor Tests vorbereiten -->
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- Report nach den Tests erzeugen -->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
@@ -96,28 +94,25 @@
                 </executions>
             </plugin>
 
-            <!-- OWASP Dependency-Check: Sicherheitsanalyse von Dependencies -->
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>${dependency-check.version}</version>
-                <executions>
-                    <execution>
-                        <id>check</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <version>12.1.9</version>
                 <configuration>
-                    <format>HTML</format>
-                    <!-- Bei Funden nicht hart abbrechen, sonst nervig beim Entwickeln -->
+                    <nvdApiKey>${nvd.api.key}</nvdApiKey>
+
+                    <formats>
+                        <format>HTML</format>
+                        <format>XML</format>
+                    </formats>
+
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+
                     <failOnError>false</failOnError>
                 </configuration>
+                
             </plugin>
 
-            <!-- PMD: statische Codeanalyse -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -138,13 +133,11 @@
                 </executions>
             </plugin>
 
-            <!-- Checkstyle: Code-Style-Checks (Google-Style) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle.plugin.version}</version>
                 <configuration>
-                    <!-- interne Config: google_checks.xml -->
                     <configLocation>google_checks.xml</configLocation>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <consoleOutput>true</consoleOutput>
@@ -161,13 +154,11 @@
                 </executions>
             </plugin>
 
-            <!-- SpotBugs + FindSecBugs: Bugs & Security (SAST) -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs.plugin.version}</version>
                 <dependencies>
-                    <!-- Security-Plugin für SpotBugs -->
                     <dependency>
                         <groupId>com.h3xstream.findsecbugs</groupId>
                         <artifactId>findsecbugs-plugin</artifactId>
@@ -178,8 +169,8 @@
                     <effort>max</effort>
                     <threshold>Low</threshold>
                     <failOnError>false</failOnError>
-                    <!-- XML für Tools, HTML kommt über reporting/site -->
                     <xmlOutput>true</xmlOutput>
+                    <htmlOutput>true</htmlOutput>
                 </configuration>
                 <executions>
                     <execution>
@@ -195,10 +186,8 @@
         </plugins>
     </build>
 
-    <!-- Reporting-Teil für mvn site (HTML-Reports) -->
     <reporting>
         <plugins>
-            <!-- SpotBugs-Report als HTML unter target/site/spotbugs.html -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
@@ -210,7 +199,6 @@
                 </configuration>
             </plugin>
 
-            <!-- PMD-HTML-Report (target/site/pmd.html, cpd.html etc.) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -220,7 +208,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Checkstyle-HTML-Report (target/site/checkstyle.html) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
