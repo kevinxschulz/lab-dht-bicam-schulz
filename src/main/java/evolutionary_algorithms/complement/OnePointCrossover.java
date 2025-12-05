@@ -7,9 +7,19 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
-
+/**
+ * Clase que implementa el operador de cruce de un solo punto.
+ * Este operador de cruce combina dos padres para crear un nuevo individuo.
+ */
 public class OnePointCrossover extends Crossover {
 
+	/**
+	 * Realiza el cruce de un solo punto entre dos padres.
+	 * @param father1 El primer padre.
+	 * @param father2 El segundo padre.
+	 * @param PC La probabilidad de cruce.
+	 * @return El nuevo individuo resultante del cruce.
+	 */
 	@Override
 	public State crossover(State father1, State father2, double PC) {
 				

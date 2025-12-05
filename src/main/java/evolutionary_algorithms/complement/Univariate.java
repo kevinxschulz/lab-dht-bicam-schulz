@@ -6,10 +6,18 @@ import java.util.SortedMap;
 
 import problem.definition.State;
 
-
-
+/**
+ * Clase que implementa la distribución univariada para la estimación de distribuciones.
+ * Calcula la probabilidad de cada valor en cada variable de forma independiente.
+ */
 public class Univariate extends Distribution {
 
+	/**
+	 * Calcula la distribución univariada a partir de una lista de estados padre.
+	 * Para cada variable, cuenta la frecuencia de cada valor y la convierte en una probabilidad.
+	 * @param fathers La lista de estados padre.
+	 * @return Una lista de objetos {@link Probability} que representan la distribución univariada.
+	 */
 	@Override
 	public List<Probability> distribution(List<State> fathers) {
 
@@ -48,6 +56,11 @@ public class Univariate extends Distribution {
 		return ListProbability;
 	}
 
+	/**
+	 * Extrae las claves de un mapa ordenado como una lista de cadenas.
+	 * @param map El mapa ordenado de donde extraer las claves.
+	 * @return Una lista de cadenas que representan las claves del mapa.
+	 */
 	public List<String> getListKey(SortedMap<String, Object> map){
 		List<String> listKey = new ArrayList<String>();
 		String key = map.keySet().toString();

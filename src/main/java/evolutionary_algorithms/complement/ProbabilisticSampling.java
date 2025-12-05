@@ -9,9 +9,18 @@ import metaheuristics.generators.GeneratorType;
 
 import problem.definition.State;
 
-
+/**
+ * Clase que implementa el muestreo probabilístico para la generación de nuevos individuos.
+ * Este método de muestreo se utiliza en algoritmos de estimación de distribución (EDAs).
+ */
 public class ProbabilisticSampling extends Sampling {
 
+	/**
+	 * Realiza el muestreo probabilístico para generar una lista de nuevos individuos.
+	 * @param fathers La lista de padres a partir de la cual se realizará el muestreo.
+	 * @param countInd El número de individuos a generar.
+	 * @return Una lista de nuevos individuos generados mediante muestreo probabilístico.
+	 */
 	@Override
 	public List<State> sampling(List<State> fathers, int countInd) {
 		// TODO Auto-generated method stub
@@ -66,8 +75,12 @@ public class ProbabilisticSampling extends Sampling {
 		return staList;
 	}
 	
-	// inicializa la lista de individuos
-		public List<State> listState(int countInd) {
+	/**
+	 * Inicializa una lista de estados (individuos).
+	 * @param countInd El número de individuos a crear.
+	 * @return Una lista de nuevos estados inicializados.
+	 */
+	public List<State> listState(int countInd) {
 			List<State> staList = new ArrayList<State>(countInd);
 			for (int i = 0; i < countInd; i++) {
 				State state = new State();

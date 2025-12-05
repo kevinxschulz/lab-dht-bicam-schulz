@@ -4,9 +4,17 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
+/**
+ * Clase que implementa el operador de cruce uniforme.
+ * Este operador de cruce combina dos padres para crear un nuevo individuo.
+ */
 public class UniformCrossover extends Crossover {
 	
-	
+	/**
+	 * Genera una máscara binaria aleatoria.
+	 * @param length La longitud de la máscara.
+	 * @return Un arreglo de enteros que representa la máscara.
+	 */
 	public int[] mascara(int length){
 		int[] mascara = new int[length];
 		for (int i = 0; i < mascara.length; i++) {
@@ -16,6 +24,14 @@ public class UniformCrossover extends Crossover {
 		return mascara;
 	}	
     
+	/**
+	 * Realiza el cruce uniforme entre dos padres.
+	 * @param father1 El primer padre.
+	 * @param father2 El segundo padre.
+	 * @param PC La probabilidad de cruce (no se utiliza directamente en esta implementación,
+	 *           ya que el cruce uniforme suele aplicar la combinación en cada gen con una probabilidad fija).
+	 * @return El nuevo individuo resultante del cruce.
+	 */
 	@Override
 	public State crossover(State father1, State father2, double PC) {
 		Object value = new Object();

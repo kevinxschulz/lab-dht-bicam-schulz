@@ -3,6 +3,11 @@ package evolutionary_algorithms.complement;
 
 import metaheurictics.strategy.Strategy;
 import problem.definition.State;
+
+/**
+ * Clase que implementa el operador de mutación de dos puntos.
+ * Este operador selecciona dos genes aleatorios en la codificación de un individuo y los intercambia.
+ */
 public class TowPointsMutation extends Mutation {
 
 	/*@Override
@@ -19,6 +24,12 @@ public class TowPointsMutation extends Mutation {
 		return newind;
 	}*/
 
+	/**
+	 * Realiza la mutación de dos puntos en un individuo.
+	 * @param newind El individuo a mutar.
+	 * @param PM La probabilidad de mutación (no se utiliza en esta implementación).
+	 * @return El individuo mutado.
+	 */
 	@Override
 	public State mutation(State newind, double PM) {
 		Object key1 = Strategy.getStrategy().getProblem().getCodification().getAleatoryKey();

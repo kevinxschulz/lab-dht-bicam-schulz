@@ -1,5 +1,15 @@
 package evolutionary_algorithms.complement;
 
+/**
+ * Enumeración que define los tipos de estrategias de reemplazo disponibles.
+ */
 public enum ReplaceType {
-	SteadyStateReplace, GenerationalReplace;
+	/**
+	 * Reemplazo de estado estacionario.
+	 */
+	SteadyStateReplace, 
+	/**
+	 * Reemplazo generacional.
+	 */
+	GenerationalReplace;
 }

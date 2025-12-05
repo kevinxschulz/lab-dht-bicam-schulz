@@ -7,8 +7,19 @@ import metaheuristics.generators.LimitRoulette;
 
 import problem.definition.State;
 
+/**
+ * Clase que implementa la selección por ruleta para elegir padres.
+ * En este método, la probabilidad de que un individuo sea seleccionado es proporcional a su aptitud.
+ */
 public class RouletteSelection extends FatherSelection {
 
+	/**
+	 * Realiza la selección de padres utilizando el método de la ruleta.
+	 * @param listState La lista de estados de la población actual.
+	 * @param truncation El número de padres a seleccionar (no se utiliza directamente en esta implementación,
+	 *                   ya que la ruleta selecciona basándose en probabilidades relativas).
+	 * @return Una lista de estados que representan los padres seleccionados.
+	 */
 	@Override
 	public List<State> selection(List<State> listState, int truncation) {/*
 		List<State> fatherList = new ArrayList<State>();
@@ -17,7 +28,7 @@ public class RouletteSelection extends FatherSelection {
 		for (int i = 0; i < listState.size(); i++) {
 			total  = total + listState.get(i).getEvaluation().get(0);
 		}
-		double number = (double) Math.random() * (double)(total);
+		double number = (double) Math.random() * (double)(1);
 
 		for (int i = 0; i < listState.size(); i++) {
 		  sum = sum + listState.get(i).getEvaluation().get(0);

@@ -1,5 +1,15 @@
 package evolutionary_algorithms.complement;
 
+/**
+ * Enumeración que define los tipos de operadores de cruce disponibles.
+ */
 public enum CrossoverType {
-	OnePointCrossover, UniformCrossover;
+	/**
+	 * Cruce de un solo punto.
+	 */
+	OnePointCrossover, 
+	/**
+	 * Cruce uniforme.
+	 */
+	UniformCrossover;
 }

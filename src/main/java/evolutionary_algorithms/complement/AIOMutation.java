@@ -9,11 +9,22 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
+/**
+ * Clase que representa una mutación de tipo AIO (All-In-One).
+ * Esta mutación realiza una inversión de una subsecuencia de la codificación del estado.
+ */
 public class AIOMutation extends Mutation {
 	
 	
 	public static final ArrayList<Object> path = new ArrayList<Object>();
 
+	/**
+	 * Realiza la mutación en el estado dado.
+	 * Selecciona dos puntos aleatorios en la codificación y invierte la subsecuencia entre ellos.
+	 * @param state El estado a mutar.
+	 * @param PM La probabilidad de mutación (no se utiliza en esta implementación).
+	 * @return El estado mutado.
+	 */
 	@Override
 	public State mutation(State state, double PM) {
 		// TODO Auto-generated method stub
@@ -46,6 +57,10 @@ public class AIOMutation extends Mutation {
 		return state;
 	}
 	
+	/**
+	 * Ordena la ruta (codificación) del estado según el valor de cada TSPState.
+	 * @param state El estado cuya ruta se va a ordenar.
+	 */
 	public void sortedPathValue(State state) {
 		for(int k = 0; k < state.getCode().size(); k++){
 			path.add( state.getCode().get(k));
@@ -63,6 +78,9 @@ public class AIOMutation extends Mutation {
 	
 	}
 
+	/**
+	 * Llena la lista `path` con los índices de las variables del problema.
+	 */
 	public static void fillPath() {
 		for(int k = 0; k < Strategy.getStrategy().getProblem().getCodification().getVariableCount(); k++){
 			path.add(k);
