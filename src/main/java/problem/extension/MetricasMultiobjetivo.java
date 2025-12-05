@@ -9,9 +9,33 @@ import java.util.List;
 import jxl.read.biff.BiffException;
 import problem.definition.State;
 
+/**
+ * Utility class that provides common multi-objective quality metrics used to
+ * evaluate approximation sets (e.g. Pareto fronts) produced by multi-objective
+ * algorithms.
+ *
+ * <p>Implemented metrics include:
+ * <ul>
+ *   <li>TasaError: proportion of solutions in the current front that are not
+ *       members of a reference (true) Pareto front.</li>
+ *   <li>DistanciaGeneracional: generational distance from the current front
+ *       to the reference front.</li>
+ *   <li>Dispersion: spread/dispersion of solutions within a front.</li>
+ * </ul>
+ * </p>
+ */
 public class MetricasMultiobjetivo {
 
-// % de soluciones q no son miembros del frente de pareto verdadero
+	/**
+	 * Proportion of solutions in the current Pareto front that are not
+	 * members of the reference (true) Pareto front.
+	 *
+	 * @param solutionsFPcurrent the current/approximated Pareto front
+	 * @param solutionsFPtrue the reference (true) Pareto front
+	 * @return fraction between 0 and 1 indicating the error rate
+	 * @throws BiffException when reading reference data fails
+	 * @throws IOException when an I/O error occurs
+	 */
 	public double TasaError(List<State> solutionsFPcurrent, List<State> solutionsFPtrue) throws BiffException, IOException{
 		float tasaError = 0;
 		for (int i = 0; i < solutionsFPcurrent.size() ; i++) { // frente de pareto actual
@@ -21,25 +45,33 @@ public class MetricasMultiobjetivo {
 			}
 		}
 		double total = tasaError/solutionsFPcurrent.size();
-		//System.out.println(solutionsFP.size() + "/" + solutions.size() + "/" + total);
 		return total;
 	}
-	
-// % Indica  qué  tan  lejos  están  los  elementos  del frente  de  Pareto  actual  respecto  al  frente  de  Pareto  verdadero	
+
+	/**
+	 * Generational distance: indicates how far elements of the current Pareto
+	 * front are from the reference (true) Pareto front.
+	 *
+	 * @param solutionsFPcurrent the current/approximated Pareto front
+	 * @param solutionsFPtrue the reference (true) Pareto front
+	 * @return the generational distance (Euclidean-based) averaged over solutions
+	 * @throws BiffException when reading reference data fails
+	 * @throws IOException when an I/O error occurs
+	 */
 	public double DistanciaGeneracional(List<State> solutionsFPcurrent, List<State> solutionsFPtrue) throws BiffException, IOException{
 		float min = 1000;
 		float distancia = 0;
 		float distanciaGeneracional = 0;
 		for (int i = 0; i < solutionsFPcurrent.size();i++) {
 			State solutionVO = solutionsFPcurrent.get(i);
-			//Calculando la distancia euclideana entre solutionVO y el miembro más cercano del frente de Pareto verdadero
+			//Calculando la distancia euclideana entre solutionVO y el miembro mï¿½s cercano del frente de Pareto verdadero
 			min = 1000;
 			for (int j = 0; j < solutionsFPtrue.size();j++) { 
 				for (int j2 = 0; j2 < solutionVO.getEvaluation().size(); j2++) {
 					State solutionFPV = solutionsFPtrue.get(j);
 					// porq elevar la distancia al cuadrado
 					distancia += (solutionVO.getEvaluation().get(j2) - solutionFPV.getEvaluation().get(j2))*  
-							(solutionVO.getEvaluation().get(j2) - solutionFPV.getEvaluation().get(j2)); //ceros si el argumento es el cero, 1.0 si el argumento es mayor que el cero, -1.0 si el argumento está menos del cero
+							(solutionVO.getEvaluation().get(j2) - solutionFPV.getEvaluation().get(j2));
 				}
 				if(distancia < min){
 					min = distancia;
@@ -48,12 +80,20 @@ public class MetricasMultiobjetivo {
 			distanciaGeneracional += min;
 		}
 		double total = Math.sqrt(distanciaGeneracional)/solutionsFPcurrent.size();
-		//System.out.println(total);
 		return total;
 	}
 
+	/**
+	 * Computes the dispersion (spread) of the given set of solutions. The
+	 * measure is the standard deviation of the nearest-neighbor distances
+	 * among solutions.
+	 *
+	 * @param solutions list of solutions to measure
+	 * @return dispersion value (standard deviation) or 0 if not enough samples
+	 * @throws BiffException when reading external data fails
+	 * @throws IOException when an I/O error occurs
+	 */
 	public double Dispersion(ArrayList<State> solutions) throws BiffException, IOException{
-		//Soluciones obtenidas con la ejecución del algoritmo X
 		LinkedList<Float> distancias = new LinkedList<Float>();
 		float distancia = 0;
 		float min = 1000;
@@ -84,14 +124,21 @@ public class MetricasMultiobjetivo {
 			Float dist = (Float) iter.next();
 			sumDistancias += Math.pow((media - dist),2);
 		}
-		//Calculando la dispersion
 		double dispersion = 0;
 		if(solutions.size() > 1){
 			dispersion = Math.sqrt((1.0/(solutions.size()-1))*sumDistancias);
 		}
-		//System.out.println(dispersion);
 		return dispersion;
 	}
+
+	/**
+	 * Checks whether the provided solution (by evaluation vector) is
+	 * contained in the list of solutions.
+	 *
+	 * @param solA the solution to search for
+	 * @param solutions the list to search inside
+	 * @return true if a solution with an equal evaluation vector exists
+	 */
 	private boolean Contains(State solA, List<State> solutions){
 		int i = 0;
 		boolean result = false;
@@ -103,6 +150,13 @@ public class MetricasMultiobjetivo {
 		}
 		return result;
 	}
+
+	/**
+	 * Compute minimum value in a list of metrics.
+	 *
+	 * @param allMetrics list of metric values
+	 * @return minimum value found
+	 */
 	public double CalcularMin(ArrayList<Double> allMetrics){
 		double min = 1000;
 		for (Iterator<Double> iter = allMetrics.iterator(); iter.hasNext();) {
@@ -114,6 +168,12 @@ public class MetricasMultiobjetivo {
 		return min;
 	}
 
+	/**
+	 * Compute maximum value in a list of metrics.
+	 *
+	 * @param allMetrics list of metric values
+	 * @return maximum value found
+	 */
 	public double CalcularMax(ArrayList<Double> allMetrics){
 		double max = 0;
 		for (Iterator<Double> iter = allMetrics.iterator(); iter.hasNext();) {
@@ -124,6 +184,13 @@ public class MetricasMultiobjetivo {
 		}
 		return max;
 	}
+
+	/**
+	 * Compute arithmetic mean of a list of metric values.
+	 *
+	 * @param allMetrics list of metric values
+	 * @return arithmetic mean
+	 */
 	public double CalcularMedia(ArrayList<Double> allMetrics){
 		double sum = 0;
 		for (Iterator<Double> iter = allMetrics.iterator(); iter.hasNext();) {
