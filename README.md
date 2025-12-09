@@ -1,0 +1,1 @@
+[![CI Pipeline](https://github.com/kevinxschulz/lab-dht-bicam-schulz/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/kevinxschulz/lab-dht-bicam-schulz/actions/workflows/ci-pipeline.yml)
