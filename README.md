@@ -1,1 +1,3 @@
 [![CI Pipeline](https://github.com/kevinxschulz/lab-dht-bicam-schulz/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/kevinxschulz/lab-dht-bicam-schulz/actions/workflows/ci-pipeline.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kevinxschulz_lab-dht-bicam-schulz&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kevinxschulz_lab-dht-bicam-schulz)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kevinxschulz_lab-dht-bicam-schulz&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kevinxschulz_lab-dht-bicam-schulz)
