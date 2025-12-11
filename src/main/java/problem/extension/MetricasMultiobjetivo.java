@@ -14,7 +14,7 @@ import problem.definition.State;
  * evaluate approximation sets (e.g. Pareto fronts) produced by multi-objective
  * algorithms.
  *
- * <p>Implemented metrics include:
+ * <p>Implemented metrics include:</p>
  * <ul>
  *   <li>TasaError: proportion of solutions in the current front that are not
  *       members of a reference (true) Pareto front.</li>
@@ -22,7 +22,6 @@ import problem.definition.State;
  *       to the reference front.</li>
  *   <li>Dispersion: spread/dispersion of solutions within a front.</li>
  * </ul>
- * </p>
  */
 public class MetricasMultiobjetivo {
 
