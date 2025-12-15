@@ -37,8 +37,8 @@ public class LimitThreshold extends Generator{
 	private float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
+	private int countGender = 0;
+	private int countBetterGender = 0;
 	private int[] listCountBetterGender = new int[10];
 	private int[] listCountGender = new int[10];
 	private float[] listTrace = new float[1200000];
@@ -261,7 +261,7 @@ public class LimitThreshold extends Generator{
 
 	@Override
 	public void setCountGender(int countGender) {
-		LimitThreshold.countGender = countGender;
+		this.countGender = countGender;
 	}
 
 	@Override
@@ -271,7 +271,7 @@ public class LimitThreshold extends Generator{
 
 	@Override
 	public void setCountBetterGender(int countBetterGender) {
-		LimitThreshold.countBetterGender = countBetterGender;
+		this.countBetterGender = countBetterGender;
 	}
 
 }

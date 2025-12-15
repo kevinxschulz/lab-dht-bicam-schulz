@@ -59,8 +59,8 @@ public class GeneticAlgorithm extends Generator {
 	private float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
+	private int countGender = 0;
+	private int countBetterGender = 0;
 	private int[] listCountBetterGender = new int[10];
 	private int[] listCountGender = new int[10];
 	private float[] listTrace = new float[1200000];
@@ -263,7 +263,7 @@ public class GeneticAlgorithm extends Generator {
 
 	@Override
 	public void setCountGender(int countGender) {
-		GeneticAlgorithm.countGender = countGender;
+		this.countGender = countGender;
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public class GeneticAlgorithm extends Generator {
 
 	@Override
 	public void setCountBetterGender(int countBetterGender) {
-		GeneticAlgorithm.countBetterGender = countBetterGender;
+		this.countBetterGender = countBetterGender;
 	}
 
 }

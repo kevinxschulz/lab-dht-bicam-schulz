@@ -26,20 +26,17 @@ abstract class AbstractLocalSearchGenerator extends Generator {
     protected State referenceState;
     protected IFFactoryAcceptCandidate ifacceptCandidate;
     protected GeneratorType generatorType;
-    public static List<State> listStateReference = new ArrayList<State>();
+    public static List<State> listStateReference = new ArrayList<>();
     protected float weight = 50f;
 
-    public static int countGender = 0;
-    public static int countBetterGender = 0;
+    protected int countGender = 0;
+    protected int countBetterGender = 0;
     private int[] listCountBetterGender = new int[10];
     private int[] listCountGender = new int[10];
     private float[] listTrace = new float[1200000];
 
     protected AbstractLocalSearchGenerator(GeneratorType generatorType) {
         this.generatorType = generatorType;
-        if (listStateReference == null) {
-            listStateReference = new ArrayList<State>();
-        }
         listTrace[0] = this.weight;
         listCountBetterGender[0] = 0;
         listCountGender[0] = 0;
@@ -136,7 +133,7 @@ abstract class AbstractLocalSearchGenerator extends Generator {
 
     @Override
     public void setCountGender(int countGender) {
-        AbstractLocalSearchGenerator.countGender = countGender;
+        this.countGender = countGender;
     }
 
     @Override
@@ -146,6 +143,6 @@ abstract class AbstractLocalSearchGenerator extends Generator {
 
     @Override
     public void setCountBetterGender(int countBetterGender) {
-        AbstractLocalSearchGenerator.countBetterGender = countBetterGender;
+        this.countBetterGender = countBetterGender;
     }
 }
