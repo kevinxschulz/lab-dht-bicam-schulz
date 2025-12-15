@@ -29,7 +29,6 @@ import metaheuristics.strategy.Strategy;
  */
 public class MultiobjectiveHillClimbingRestart extends AbstractLocalSearchGenerator {
 
-	private List<State> visitedState = new ArrayList<State>();
 	public static int sizeNeighbors;
 
 
@@ -40,14 +39,6 @@ public class MultiobjectiveHillClimbingRestart extends AbstractLocalSearchGenera
 		//Problem problem = Strategy.getStrategy().getProblem();
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-	}
-
-	@Override
-	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
-		State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
-		return statecandidate;
 	}
 
 	@Override
@@ -107,29 +98,9 @@ public class MultiobjectiveHillClimbingRestart extends AbstractLocalSearchGenera
 	}
 
 	@Override
-	public List<State> getReferenceList() {
-		if (listStateReference == null) {
-			listStateReference = new ArrayList<>();
-		}
-		listStateReference.add(referenceState.clone());
-		return listStateReference;
-	}
-
-	@Override
 	public List<State> getSonList() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	private boolean Contain(State state){
-		boolean found = false;
-		for (Iterator<State> iter = visitedState.iterator(); iter.hasNext();) {
-			State element = (State) iter.next();
-			if(element.Comparator(state)==true){
-				found = true;
-			}
-		}
-		return found;
 	}
 
 	@Override

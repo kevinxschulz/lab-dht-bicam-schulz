@@ -2,6 +2,7 @@ package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import factory_interface.IFFactoryAcceptCandidate;
@@ -11,6 +12,7 @@ import local_search.acceptation_type.AcceptableCandidate;
 import local_search.candidate_type.CandidateType;
 import local_search.candidate_type.CandidateValue;
 import local_search.complement.StrategyType;
+import metaheuristics.strategy.Strategy;
 import problem.definition.State;
 
 /**
@@ -27,6 +29,7 @@ abstract class AbstractLocalSearchGenerator extends Generator {
     protected IFFactoryAcceptCandidate ifacceptCandidate;
     protected GeneratorType generatorType;
     public static List<State> listStateReference = new ArrayList<>();
+    protected List<State> visitedState = new ArrayList<State>();
     protected float weight = 50f;
 
     protected int countGender = 0;
@@ -147,5 +150,31 @@ abstract class AbstractLocalSearchGenerator extends Generator {
     @Override
     public void setCountBetterGender(int countBetterGender) {
         this.countBetterGender = countBetterGender;
+    }
+
+    @Override
+    public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException,
+            InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        List<State> neighborhood = new ArrayList<State>();
+        neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
+        State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
+        return statecandidate;
+    }
+
+    /**
+     * Checks if a state has already been visited.
+     * 
+     * @param state the state to check
+     * @return true if the state has been visited, false otherwise
+     */
+    protected boolean Contain(State state) {
+        boolean found = false;
+        for (Iterator<State> iter = visitedState.iterator(); iter.hasNext();) {
+            State element = (State) iter.next();
+            if (element.Comparator(state)) {
+                found = true;
+            }
+        }
+        return found;
     }
 }

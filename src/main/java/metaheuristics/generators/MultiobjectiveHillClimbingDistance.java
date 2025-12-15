@@ -22,7 +22,6 @@ import metaheuristics.strategy.Strategy;
  */
 public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGenerator{
 
-	private List<State> visitedState = new ArrayList<State>();
 	public static int sizeNeighbors;
 	//Lista que contiene las distancias de cada soluci�n del frente de Pareto estimado
 	public static List<Double> distanceSolution = new ArrayList<Double>();
@@ -32,14 +31,6 @@ public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGener
 		super(GeneratorType.MultiobjectiveHillClimbingDistance);
 		this.typeAcceptation = AcceptType.AcceptNotDominated;
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
-	}
-
-	@Override
-	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
-		State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
-		return statecandidate;
 	}
 
 	@Override
@@ -120,15 +111,6 @@ public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGener
 			return null;
 	}
 
-	@Override
-	public List<State> getReferenceList() {
-		if (listStateReference == null) {
-			listStateReference = new ArrayList<>();
-		}
-		listStateReference.add(referenceState.clone());
-		return listStateReference;
-	}
-
 	public static List<Double> DistanceCalculateAdd(List<State> solution) {
 		State[] solutions = solution.toArray(new State[solution.size()]);
 		Double distance = 0.0;
@@ -159,17 +141,5 @@ public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGener
 			return distanceSolution;
 		}
 
-	}
-
-
-	private boolean Contain(State state){
-		boolean found = false;
-		for (Iterator<State> iter = visitedState.iterator(); iter.hasNext();) {
-			State element = (State) iter.next();
-			if(element.Comparator(state)){
-				found = true;
-			}
-		}
-		return found;
 	}
 }
