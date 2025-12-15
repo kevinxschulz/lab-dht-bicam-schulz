@@ -4,20 +4,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import factory_interface.IFFactoryAcceptCandidate;
-import factory_method.FactoryAcceptCandidate;
 import local_search.acceptation_type.AcceptType;
 import local_search.acceptation_type.AcceptableCandidate;
 import local_search.candidate_type.CandidateType;
-import local_search.candidate_type.CandidateValue;
 import local_search.complement.StrategyType;
 import local_search.complement.TabuSolutions;
 import metaheuristics.strategy.Strategy;
 import problem.definition.Problem;
 import problem.definition.State;
-
-
-
+import factory_method.FactoryAcceptCandidate;
 
 /**
  * Multi-objective Tabu Search generator.
@@ -26,67 +21,29 @@ import problem.definition.State;
  * nondominated solutions. Uses multi-objective acceptance rules specific
  * for tabu-based exploration.
  */
-public class MultiobjectiveTabuSearch extends Generator {
+public class MultiobjectiveTabuSearch extends AbstractLocalSearchGenerator {
 
-	private CandidateValue candidatevalue;
-	private AcceptType typeAcceptation;
-	private StrategyType strategy;
-	private CandidateType typeCandidate;
-	private State stateReferenceTS;
-    private IFFactoryAcceptCandidate ifacceptCandidate;
-    private GeneratorType typeGenerator;
     private List<State> listStateReference = new ArrayList<State>();
-    private float weight;
 	private List<Float> listTrace = new ArrayList<Float>();
 
-    public State getStateReferenceTS() {
-		return stateReferenceTS;
-	}
-
-	public void setStateReferenceTS(State stateReferenceTS) {
-		this.stateReferenceTS = stateReferenceTS;
-	}
-
-	public GeneratorType getTypeGenerator() {
-		return typeGenerator;
-	}
-
-	public void setTypeGenerator(GeneratorType typeGenerator) {
-		this.typeGenerator = typeGenerator;
-	}
-
 	public MultiobjectiveTabuSearch() {
-    	super();
+    	super(GeneratorType.MultiobjectiveTabuSearch);
 		this.typeAcceptation = AcceptType.AcceptNotDominatedTabu;
 		this.strategy = StrategyType.TABU;
 		@SuppressWarnings("unused")
 		Problem problem = Strategy.getStrategy().getProblem();
 		this.typeCandidate = CandidateType.RandomCandidate;
-		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.MultiobjectiveTabuSearch;
 		this.weight = 50;
 		listTrace.add(weight);
-	}
-
-	@Override
-	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		List<State> neighborhood = new ArrayList<State>();
-		Problem problem = Strategy.getStrategy().getProblem();
-		//List<State> list = new ArrayList<State>();
-		//Devuelve la lista de soluciones no dominadas de todos los vecinos posibles de stateReferenceTS que no se encuentran en la lista Tabu
-		neighborhood = problem.getOperator().generatedNewState(stateReferenceTS, operatornumber);
-		//Se escoge uno aleatoriamente como vecino con RandomCandidate
-		State statecandidate = candidatevalue.stateCandidate(stateReferenceTS, typeCandidate, strategy, operatornumber, neighborhood);
-	    return statecandidate;
 	}
 
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent)throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		ifacceptCandidate = new FactoryAcceptCandidate();
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
-		Boolean acept = candidate.acceptCandidate(stateReferenceTS, stateCandidate);
+		Boolean acept = candidate.acceptCandidate(referenceState, stateCandidate);
 		if(acept.equals(true))
-		  stateReferenceTS = stateCandidate;
+		  referenceState = stateCandidate;
 
 		if (strategy.equals(StrategyType.TABU) && acept.equals(true)) {
 			if (TabuSolutions.listTabu.size() < TabuSolutions.maxelements) {
@@ -120,73 +77,47 @@ public class MultiobjectiveTabuSearch extends Generator {
   }
 	
 	@Override
-	public GeneratorType getType() {
-		return this.typeGenerator;
-	}
-
-	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceTS);
+		listStateReference.add(referenceState);
 		return listStateReference;
 	}
 
-	@Override
-	public State getReference() {
-		return stateReferenceTS;
+	public State getStateReferenceTS() {
+		return referenceState;
 	}
 
-	@Override
-	public void setInitialReference(State stateInitialRef) {
-		this.stateReferenceTS = stateInitialRef;
+	public void setStateReferenceTS(State stateReferenceTS) {
+		this.referenceState = stateReferenceTS;
 	}
 
-	public void setStateRef(State stateRef) {
-		this.stateReferenceTS = stateRef;
-	}
-	
-	@Override
-	public List<State> getSonList() {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Gets the type of the generator.
+	 * @return The type of the generator.
+	 */
+	public GeneratorType getTypeGenerator() {
+		return generatorType;
 	}
 
-	public void setTypeCandidate(CandidateType typeCandidate){
-		this.typeCandidate = typeCandidate;
-	}
-
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return this.weight;
-	}
-
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-		this.weight = weight;
+	/**
+	 * Sets the type of the generator.
+	 * @param typeGenerator The type of the generator.
+	 */
+	public void setTypeGenerator(GeneratorType typeGenerator) {
+		this.generatorType = typeGenerator;
 	}
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public float[] getTrace() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
