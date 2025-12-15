@@ -12,8 +12,6 @@ import problem.definition.State;
 import local_search.acceptation_type.AcceptType;
 import local_search.acceptation_type.AcceptableCandidate;
 import local_search.candidate_type.CandidateType;
-import local_search.candidate_type.CandidateValue;
-import local_search.complement.StrategyType;
 import metaheuristics.strategy.Strategy;
 
 /**
@@ -22,18 +20,8 @@ import metaheuristics.strategy.Strategy;
  * <p>Maintains distances between Pareto front solutions to guide restarts
  * and encourage exploration of distant regions in objective space.
  */
-public class MultiobjectiveHillClimbingDistance extends Generator{
+public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGenerator{
 
-	protected CandidateValue candidatevalue;
-	protected AcceptType typeAcceptation;
-	protected StrategyType strategy;
-	protected CandidateType typeCandidate;
-	protected State stateReferenceHC;
-	protected IFFactoryAcceptCandidate ifacceptCandidate;
-	protected GeneratorType Generatortype;
-	protected List<State> listStateReference = new ArrayList<State>(); 
-	protected float weight;
-	protected List<Float> listTrace = new ArrayList<Float>();
 	private List<State> visitedState = new ArrayList<State>();
 	public static int sizeNeighbors;
 	//Lista que contiene las distancias de cada soluci�n del frente de Pareto estimado
@@ -41,21 +29,16 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 
 
 	public MultiobjectiveHillClimbingDistance() {
-		super();
+		super(GeneratorType.MultiobjectiveHillClimbingDistance);
 		this.typeAcceptation = AcceptType.AcceptNotDominated;
-		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
-		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveHillClimbingDistance;
-		this.weight = 50;
-		listTrace.add(weight);
 	}
 
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
-		State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
+		State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
 		return statecandidate;
 	}
 
@@ -64,23 +47,23 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 	InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		//Agregando la primera soluci�n a la lista de soluciones no dominadas
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
-			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());
+			Strategy.getStrategy().listRefPoblacFinal.add(referenceState.clone());
 			distanceSolution.add(new Double(0));
 		}
 		ifacceptCandidate = new FactoryAcceptCandidate();
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
 		State lastState = Strategy.getStrategy().listRefPoblacFinal.get(Strategy.getStrategy().listRefPoblacFinal.size()-1);
 		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, sizeNeighbors);
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, sizeNeighbors);
 		int i= 0;
 //		Boolean restart= true;
 
 //		while (restart==true) {
 			Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
 			if(accept.equals(true)){
-				stateReferenceHC = stateCandidate.clone();
+				referenceState = stateCandidate.clone();
 				visitedState = new ArrayList<State>();
-				lastState=stateReferenceHC.clone();
+				lastState=referenceState.clone();
 //				restart=false;
 			}
 
@@ -89,10 +72,10 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 				boolean stop = false;
 				while (i < neighborhood.size()&& stop==false) {
 					if (Contain(neighborhood.get(i))==false) {
-						stateReferenceHC = SolutionMoreDistance(Strategy.getStrategy().listRefPoblacFinal, distanceSolution);
-						visitedState.add(stateReferenceHC);
+						referenceState = SolutionMoreDistance(Strategy.getStrategy().listRefPoblacFinal, distanceSolution);
+						visitedState.add(referenceState);
 						stop=true;
-						lastState=stateReferenceHC.clone();
+						lastState=referenceState.clone();
 //						restart=false;
 					}
 					i++;
@@ -109,9 +92,9 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 					}
 				}
 				if(accept.equals(true)){
-					stateReferenceHC = stateCandidate.clone();
+					referenceState = stateCandidate.clone();
 					visitedState = new ArrayList<State>();
-					lastState = stateReferenceHC.clone();
+					lastState = referenceState.clone();
 					//tomar xc q pertenesca a la vecindad de xa
 				}
 			}
@@ -139,41 +122,8 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceHC.clone());
+		listStateReference.add(referenceState.clone());
 		return listStateReference;
-	}
-
-	@Override
-	public State getReference() {
-		return stateReferenceHC;
-	}
-
-	public void setStateRef(State stateRef) {
-		this.stateReferenceHC = stateRef;
-	}
-
-	@Override
-	public void setInitialReference(State stateInitialRef) {
-		this.stateReferenceHC = stateInitialRef;
-	}
-
-	public GeneratorType getGeneratorType() {
-		return Generatortype;
-	}
-
-	public void setGeneratorType(GeneratorType Generatortype) {
-		this.Generatortype = Generatortype;
-	}
-
-	@Override
-	public GeneratorType getType() {
-		return this.Generatortype;
-	}
-
-	@Override
-	public List<State> getSonList() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public static List<Double> DistanceCalculateAdd(List<State> solution) {
@@ -218,62 +168,5 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 			}
 		}
 		return found;
-	}
-
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getCountGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountGender(int countGender) {
-		// Not used in MultiobjectiveHillClimbingDistance
-	}
-
-	@Override
-	public int getCountBetterGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountBetterGender(int countBetterGender) {
-		// Not used in MultiobjectiveHillClimbingDistance
 	}
 }
