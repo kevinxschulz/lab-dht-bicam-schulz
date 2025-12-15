@@ -109,6 +109,32 @@ class MultiobjectiveStochasticHillClimbingTest {
     }
 
     @Test
+    void getCountGenderReturnsZeroInitially() {
+        assertEquals(0, generator.getCountGender());
+    }
+
+    @Test
+    void setCountGenderUpdatesValue() {
+        generator.setCountGender(12);
+        assertEquals(12, generator.getCountGender());
+        // Reset for other tests
+        generator.setCountGender(0);
+    }
+
+    @Test
+    void getCountBetterGenderReturnsZeroInitially() {
+        assertEquals(0, generator.getCountBetterGender());
+    }
+
+    @Test
+    void setCountBetterGenderUpdatesValue() {
+        generator.setCountBetterGender(6);
+        assertEquals(6, generator.getCountBetterGender());
+        // Reset for other tests
+        generator.setCountBetterGender(0);
+    }
+
+    @Test
     void awardUpdateREFReturnsFalse() {
         State state = createStateWithEvaluation(1.0);
         

@@ -146,6 +146,32 @@ class RandomSearchTest {
     }
 
     @Test
+    void getCountGenderReturnsZeroInitially() {
+        assertEquals(0, randomSearch.getCountGender());
+    }
+
+    @Test
+    void setCountGenderUpdatesValue() {
+        randomSearch.setCountGender(5);
+        assertEquals(5, randomSearch.getCountGender());
+        // Reset for other tests
+        randomSearch.setCountGender(0);
+    }
+
+    @Test
+    void getCountBetterGenderReturnsZeroInitially() {
+        assertEquals(0, randomSearch.getCountBetterGender());
+    }
+
+    @Test
+    void setCountBetterGenderUpdatesValue() {
+        randomSearch.setCountBetterGender(3);
+        assertEquals(3, randomSearch.getCountBetterGender());
+        // Reset for other tests
+        randomSearch.setCountBetterGender(0);
+    }
+
+    @Test
     void awardUpdateREFReturnsFalse() {
         State state = createStateWithEvaluation(1.0);
         

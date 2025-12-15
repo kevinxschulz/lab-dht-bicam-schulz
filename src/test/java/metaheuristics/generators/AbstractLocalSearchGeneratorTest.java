@@ -138,6 +138,36 @@ class AbstractLocalSearchGeneratorTest {
         assertEquals(0, generator.getListCountGender()[0]);
     }
 
+    @Test
+    void getCountGenderReturnsZeroInitially() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        assertEquals(0, generator.getCountGender());
+    }
+
+    @Test
+    void setCountGenderUpdatesValue() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        generator.setCountGender(10);
+        assertEquals(10, generator.getCountGender());
+        // Reset for other tests
+        generator.setCountGender(0);
+    }
+
+    @Test
+    void getCountBetterGenderReturnsZeroInitially() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        assertEquals(0, generator.getCountBetterGender());
+    }
+
+    @Test
+    void setCountBetterGenderUpdatesValue() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        generator.setCountBetterGender(7);
+        assertEquals(7, generator.getCountBetterGender());
+        // Reset for other tests
+        generator.setCountBetterGender(0);
+    }
+
     private static State stateWithEvaluation(double value) {
         State state = new State();
         ArrayList<Double> evaluation = new ArrayList<>();

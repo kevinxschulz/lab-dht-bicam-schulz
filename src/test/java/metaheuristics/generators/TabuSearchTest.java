@@ -199,4 +199,30 @@ public class TabuSearchTest {
         assertNotNull(counts);
         assertEquals(0, counts[0]);
     }
+
+    @Test
+    public void testGetCountGenderReturnsZeroInitially() {
+        assertEquals(0, tabuSearch.getCountGender());
+    }
+
+    @Test
+    public void testSetCountGenderUpdatesValue() {
+        tabuSearch.setCountGender(8);
+        assertEquals(8, tabuSearch.getCountGender());
+        // Reset for other tests
+        tabuSearch.setCountGender(0);
+    }
+
+    @Test
+    public void testGetCountBetterGenderReturnsZeroInitially() {
+        assertEquals(0, tabuSearch.getCountBetterGender());
+    }
+
+    @Test
+    public void testSetCountBetterGenderUpdatesValue() {
+        tabuSearch.setCountBetterGender(4);
+        assertEquals(4, tabuSearch.getCountBetterGender());
+        // Reset for other tests
+        tabuSearch.setCountBetterGender(0);
+    }
 }
