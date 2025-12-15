@@ -46,33 +46,8 @@ public class MultiobjectiveTabuSearch extends AbstractLocalSearchGenerator {
 		  referenceState = stateCandidate;
 
 		if (strategy.equals(StrategyType.TABU) && acept.equals(true)) {
-			if (TabuSolutions.listTabu.size() < TabuSolutions.maxelements) {
-				Boolean find = false;
-				int count = 0;
-				while ((TabuSolutions.listTabu.size() > count) && (find.equals(false))) {
-					if (TabuSolutions.listTabu.get(count).equals(stateCandidate)) {
-						find = true;
-					}
-					count++;
-				}
-				if (find.equals(false)) {
-					TabuSolutions.listTabu.add(stateCandidate);
-				}
-			} else {
-				TabuSolutions.listTabu.remove(0);
-				Boolean find = false;
-				int count = 0;
-				while (TabuSolutions.listTabu.size() > count && find.equals(false)) {
-					if (TabuSolutions.listTabu.get(count).equals(stateCandidate)) {
-						find = true;
-					}
-					count++;
-				}
-				if (find.equals(false)) {
-					TabuSolutions.listTabu.add(stateCandidate);
-				}
-			}
-	}
+			TabuSolutions.addToTabuList(stateCandidate);
+		}
 		getReferenceList();
   }
 	
@@ -106,41 +81,4 @@ public class MultiobjectiveTabuSearch extends AbstractLocalSearchGenerator {
 		this.generatorType = typeGenerator;
 	}
 
-	@Override
-	public int[] getListCountBetterGender() {
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		return null;
-	}
-
-	@Override
-	public float[] getTrace() {
-		return null;
-	}
-
-	@Override
-	public int getCountGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountGender(int countGender) {
-		// Not used in MultiobjectiveTabuSearch
-	}
-
-	@Override
-	public int getCountBetterGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountBetterGender(int countBetterGender) {
-		// Not used in MultiobjectiveTabuSearch
-	}
-
 }
-
-

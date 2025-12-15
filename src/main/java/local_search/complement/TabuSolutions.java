@@ -51,4 +51,38 @@ public class TabuSolutions {
 		}
 		return listFiltrate;
 	}
+
+	/**
+	 * Adds a state to the tabu list if it is not already present.
+	 * If the list is full, removes the oldest entry first.
+	 * 
+	 * @param state The state to add to the tabu list.
+	 */
+	public static void addToTabuList(State state) {
+		if (listTabu.size() < maxelements) {
+			if (!containsState(state)) {
+				listTabu.add(state);
+			}
+		} else {
+			listTabu.remove(0);
+			if (!containsState(state)) {
+				listTabu.add(state);
+			}
+		}
+	}
+
+	/**
+	 * Checks if a state is already in the tabu list.
+	 * 
+	 * @param state The state to check.
+	 * @return true if the state is in the tabu list, false otherwise.
+	 */
+	private static boolean containsState(State state) {
+		for (int i = 0; i < listTabu.size(); i++) {
+			if (listTabu.get(i).Comparator(state)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

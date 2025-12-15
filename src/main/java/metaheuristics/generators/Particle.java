@@ -16,7 +16,7 @@ import problem.definition.State;
  * and its velocity vector. The class implements particle-specific updates
  * used by the PSO algorithm.
  */
-public class Particle extends Generator {
+public class Particle extends NoOpTrackingGenerator {
 
 	private State statePBest;
 	private State stateActual;
@@ -198,62 +198,5 @@ public class Particle extends Generator {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getCountGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountGender(int countGender) {
-		// Not used in Particle
-	}
-
-	@Override
-	public int getCountBetterGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountBetterGender(int countBetterGender) {
-		// Not used in Particle
-	}
-
 
 }

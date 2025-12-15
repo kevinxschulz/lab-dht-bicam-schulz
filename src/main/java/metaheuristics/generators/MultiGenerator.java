@@ -20,7 +20,7 @@ import problem.definition.State;
  * delegates candidate generation to the currently selected active
  * generator.
  */
-public class MultiGenerator extends Generator {
+public class MultiGenerator extends NoOpTrackingGenerator {
 
 	private GeneratorType Generatortype;
 	private static Generator[] listGenerators = new Generator[GeneratorType.values().length];
@@ -270,7 +270,7 @@ public class MultiGenerator extends Generator {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
 	public Generator roulette() {
 		float totalWeight = 0;
 		for (int i = 0; i < listGenerators.length; i++) {
@@ -306,12 +306,6 @@ public class MultiGenerator extends Generator {
 			return listLimit.get(i).getGenerator();
 		}
 		else return listLimit.get(listLimit.size() - 1).getGenerator();
-	}
-
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	
 	@SuppressWarnings("static-access")
@@ -355,6 +349,7 @@ public class MultiGenerator extends Generator {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public float[] getTrace() {
 		// TODO Auto-generated method stub
@@ -372,38 +367,6 @@ public class MultiGenerator extends Generator {
 	
 	public Object clone(){
 		return this;
-	}
-
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getCountGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountGender(int countGender) {
-		// Not used in MultiGenerator
-	}
-
-	@Override
-	public int getCountBetterGender() {
-		return 0;
-	}
-
-	@Override
-	public void setCountBetterGender(int countBetterGender) {
-		// Not used in MultiGenerator
 	}
 
 }

@@ -97,32 +97,7 @@ public class TabuSearch extends AbstractLocalSearchGenerator {
 			referenceState = stateCandidate;
 
 		if (strategy.equals(StrategyType.TABU) && acept.equals(true)) {
-			if (TabuSolutions.listTabu.size() < TabuSolutions.maxelements) {
-				Boolean find = false;
-				int count = 0;
-				while ((TabuSolutions.listTabu.size() > count) && (find.equals(false))) {
-					if ((TabuSolutions.listTabu.get(count).Comparator(stateCandidate))==true) {
-						find = true;
-					}
-					count++;
-				}
-				if (find.equals(false)) {
-					TabuSolutions.listTabu.add(stateCandidate);
-				}
-			} else {
-				TabuSolutions.listTabu.remove(0);
-				Boolean find = false;
-				int count = 0;
-				while (TabuSolutions.listTabu.size() > count && find.equals(false)) {
-					if ((TabuSolutions.listTabu.get(count).Comparator(stateCandidate))==true) {
-						find = true;
-					}
-					count++;
-				}
-				if (find.equals(false)) {
-					TabuSolutions.listTabu.add(stateCandidate);
-				}
-			}
+			TabuSolutions.addToTabuList(stateCandidate);
 		}
 	}
 }
