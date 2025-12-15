@@ -127,4 +127,70 @@ class StrategyTest {
         strategy.calculateTime = true;
         assertEquals(true, strategy.calculateTime);
     }
+
+    @Test
+    void countPeriodChangeIsInitializedToZero() {
+        assertEquals(0, strategy.countPeriodChange);
+    }
+
+    @Test
+    void countChangeIsInitializedToZero() {
+        assertEquals(0, strategy.countChange);
+    }
+
+    @Test
+    void listStatesCanBeInitialized() {
+        strategy.listStates = new java.util.ArrayList<>();
+        assertNotNull(strategy.listStates);
+    }
+
+    @Test
+    void listBestCanBeInitialized() {
+        strategy.listBest = new java.util.ArrayList<>();
+        assertNotNull(strategy.listBest);
+    }
+
+    @Test
+    void listRefPoblacFinalCanBeInitialized() {
+        strategy.listRefPoblacFinal = new java.util.ArrayList<>();
+        assertNotNull(strategy.listRefPoblacFinal);
+    }
+
+    @Test
+    void generatorFieldCanBeSet() {
+        metaheuristics.generators.Generator mockGenerator = mock(metaheuristics.generators.Generator.class);
+        strategy.generator = mockGenerator;
+        assertSame(mockGenerator, strategy.generator);
+    }
+
+    @Test
+    void thresholdFieldCanBeSet() {
+        strategy.threshold = 0.5;
+        assertEquals(0.5, strategy.threshold, 0.001);
+    }
+
+    @Test
+    void mapGeneratorsCanBeInitialized() {
+        strategy.mapGenerators = new java.util.TreeMap<>();
+        assertNotNull(strategy.mapGenerators);
+    }
+
+    @Test
+    void timeExecuteIsInitializedToZero() {
+        assertEquals(0, Strategy.timeExecute);
+    }
+
+    @Test
+    void getListKeyReturnsNonNullWhenMapIsInitialized() {
+        strategy.mapGenerators = new java.util.TreeMap<>();
+        java.util.List<String> keys = strategy.getListKey();
+        assertNotNull(keys);
+    }
+
+    @Test
+    void notDominatedCanBeSet() {
+        local_search.acceptation_type.Dominance mockDominance = mock(local_search.acceptation_type.Dominance.class);
+        strategy.notDominated = mockDominance;
+        assertSame(mockDominance, strategy.notDominated);
+    }
 }

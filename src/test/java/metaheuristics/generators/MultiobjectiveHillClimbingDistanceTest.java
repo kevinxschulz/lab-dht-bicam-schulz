@@ -1,9 +1,6 @@
 package metaheuristics.generators;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
@@ -193,6 +190,62 @@ class MultiobjectiveHillClimbingDistanceTest {
         
         assertNotNull(trace);
         assertEquals(50f, trace[0]);
+    }
+
+    @Test
+    void getWeightReturnsInitialValue() {
+        assertEquals(50f, generator.getWeight(), 0.001f);
+    }
+
+    @Test
+    void setWeightUpdatesValue() {
+        generator.setWeight(85f);
+        assertEquals(85f, generator.getWeight(), 0.001f);
+    }
+
+    @Test
+    void typeAcceptationIsAcceptNotDominated() {
+        assertEquals(AcceptType.AcceptNotDominated, generator.typeAcceptation);
+    }
+
+    @Test
+    void typeCandidateIsNotDominatedCandidate() {
+        assertEquals(CandidateType.NotDominatedCandidate, generator.typeCandidate);
+    }
+
+    @Test
+    void getCountGenderReturnsZeroInitially() {
+        assertEquals(0, generator.getCountGender());
+    }
+
+    @Test
+    void setCountGenderUpdatesValue() {
+        generator.setCountGender(12);
+        assertEquals(12, generator.getCountGender());
+        generator.setCountGender(0);
+    }
+
+    @Test
+    void getCountBetterGenderReturnsZeroInitially() {
+        assertEquals(0, generator.getCountBetterGender());
+    }
+
+    @Test
+    void setCountBetterGenderUpdatesValue() {
+        generator.setCountBetterGender(8);
+        assertEquals(8, generator.getCountBetterGender());
+        generator.setCountBetterGender(0);
+    }
+
+    @Test
+    void getSonListReturnsNull() {
+        assertNull(generator.getSonList());
+    }
+
+    @Test
+    void awardUpdateREFReturnsFalse() {
+        State state = createStateWithEvaluation(1.0);
+        assertFalse(generator.awardUpdateREF(state));
     }
 
     private static State createStateWithEvaluation(double value) {
