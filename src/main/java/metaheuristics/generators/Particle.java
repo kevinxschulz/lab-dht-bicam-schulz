@@ -235,5 +235,25 @@ public class Particle extends Generator {
 		return null;
 	}
 
+	@Override
+	public int getCountGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		// Not used in Particle
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		// Not used in Particle
+	}
+
 
 }

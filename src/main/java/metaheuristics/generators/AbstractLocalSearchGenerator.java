@@ -128,4 +128,24 @@ abstract class AbstractLocalSearchGenerator extends Generator {
     public float[] getTrace() {
         return this.listTrace;
     }
+
+    @Override
+    public int getCountGender() {
+        return countGender;
+    }
+
+    @Override
+    public void setCountGender(int countGender) {
+        AbstractLocalSearchGenerator.countGender = countGender;
+    }
+
+    @Override
+    public int getCountBetterGender() {
+        return countBetterGender;
+    }
+
+    @Override
+    public void setCountBetterGender(int countBetterGender) {
+        AbstractLocalSearchGenerator.countBetterGender = countBetterGender;
+    }
 }

@@ -178,7 +178,7 @@ public class MultiGenerator extends Generator {
 		// TODO Auto-generated method stub
 		Strategy.getStrategy().generator = roulette();
 		activeGenerator = Strategy.getStrategy().generator;
-		activeGenerator.countGender++;
+		activeGenerator.setCountGender(activeGenerator.getCountGender() + 1);
 		State state = Strategy.getStrategy().generator.generate(1);
 		return state;
 	}
@@ -244,7 +244,7 @@ public class MultiGenerator extends Generator {
 		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
 			if(stateCandidate.getEvaluation().get(0) > Strategy.getStrategy().getBestState().getEvaluation().get(0)){
 				if(stateCandidate.getEvaluation().get(0) > Strategy.getStrategy().getBestState().getEvaluation().get(0))
-					activeGenerator.countBetterGender++;
+					activeGenerator.setCountBetterGender(activeGenerator.getCountBetterGender() + 1);
 //				System.out.println(activeGenerator.getType().toString() + activeGenerator.countBetterGender);
 //				System.out.println(activeGenerator.countBetterGender);
 				return true;
@@ -254,7 +254,7 @@ public class MultiGenerator extends Generator {
 		else {
 			if(stateCandidate.getEvaluation().get(0) < Strategy.getStrategy().getBestState().getEvaluation().get(0)){
 				if(stateCandidate.getEvaluation().get(0) < Strategy.getStrategy().getBestState().getEvaluation().get(0))
-					activeGenerator.countBetterGender++;
+					activeGenerator.setCountBetterGender(activeGenerator.getCountBetterGender() + 1);
 //				System.out.println(activeGenerator.getType().toString() + activeGenerator.countBetterGender);
 //				System.out.println(activeGenerator.countBetterGender);
 				return true;
@@ -384,6 +384,26 @@ public class MultiGenerator extends Generator {
 	public int[] getListCountGender() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getCountGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		// Not used in MultiGenerator
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		// Not used in MultiGenerator
 	}
 
 }

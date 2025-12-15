@@ -298,6 +298,25 @@ public class ParticleSwarmOptimization extends Generator {
 		return this.listTrace;
 	}
 
+	@Override
+	public int getCountGender() {
+		return countGender;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		ParticleSwarmOptimization.countGender = countGender;
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return countBetterGender;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		ParticleSwarmOptimization.countBetterGender = countBetterGender;
+	}
 
 	
 }

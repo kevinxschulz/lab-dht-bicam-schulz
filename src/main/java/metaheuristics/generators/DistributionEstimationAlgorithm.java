@@ -331,5 +331,24 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return this.listTrace;
 	}
 
+	@Override
+	public int getCountGender() {
+		return countGender;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		DistributionEstimationAlgorithm.countGender = countGender;
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return countBetterGender;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		DistributionEstimationAlgorithm.countBetterGender = countBetterGender;
+	}
 
 }

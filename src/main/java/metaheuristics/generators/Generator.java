@@ -107,5 +107,29 @@ public abstract class Generator {
 	 * @return the list of count of gender.
 	 */
 	public abstract int[] getListCountGender();
+	
+	/**
+	 * Gets the count of gender.
+	 * @return the count of gender.
+	 */
+	public abstract int getCountGender();
+	
+	/**
+	 * Sets the count of gender.
+	 * @param countGender the count of gender.
+	 */
+	public abstract void setCountGender(int countGender);
+	
+	/**
+	 * Gets the count of better gender.
+	 * @return the count of better gender.
+	 */
+	public abstract int getCountBetterGender();
+	
+	/**
+	 * Sets the count of better gender.
+	 * @param countBetterGender the count of better gender.
+	 */
+	public abstract void setCountBetterGender(int countBetterGender);
 
 }

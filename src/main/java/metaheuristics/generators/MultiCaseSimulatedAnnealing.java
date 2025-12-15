@@ -162,5 +162,25 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int getCountGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		// Not used in MultiCaseSimulatedAnnealing
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return 0;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		// Not used in MultiCaseSimulatedAnnealing
+	}
 	
 }

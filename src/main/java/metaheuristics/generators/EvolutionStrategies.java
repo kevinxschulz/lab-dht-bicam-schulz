@@ -230,5 +230,24 @@ public class EvolutionStrategies extends Generator {
 		return this.listTrace;
 	}
 
+	@Override
+	public int getCountGender() {
+		return countGender;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		EvolutionStrategies.countGender = countGender;
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return countBetterGender;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		EvolutionStrategies.countBetterGender = countBetterGender;
+	}
 
 }

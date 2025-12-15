@@ -256,4 +256,24 @@ public class GeneticAlgorithm extends Generator {
 		return this.listTrace;
 	}
 
+	@Override
+	public int getCountGender() {
+		return countGender;
+	}
+
+	@Override
+	public void setCountGender(int countGender) {
+		GeneticAlgorithm.countGender = countGender;
+	}
+
+	@Override
+	public int getCountBetterGender() {
+		return countBetterGender;
+	}
+
+	@Override
+	public void setCountBetterGender(int countBetterGender) {
+		GeneticAlgorithm.countBetterGender = countBetterGender;
+	}
+
 }

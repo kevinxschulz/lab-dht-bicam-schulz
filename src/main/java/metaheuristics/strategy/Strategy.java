@@ -147,7 +147,7 @@ public class Strategy {
 						updateCountGender();
 						countPeriodo = countPeriodo + countPeriodChange / 10;
 						periodo = 0;
-						MultiGenerator.activeGenerator.countBetterGender = 0;
+					MultiGenerator.activeGenerator.setCountBetterGender(0);
 					}
 					updateWeight();//actualizar el peso de los generadores si se reinician cuando ocurre un cambio
 					//generar el estado candidato de la iteraci�n
@@ -194,7 +194,7 @@ public class Strategy {
 						updateCountGender();
 						countPeriodo = countPeriodo + countPeriodChange / 10;
 						periodo++;
-						MultiGenerator.activeGenerator.countBetterGender = 0;
+					MultiGenerator.activeGenerator.setCountBetterGender(0);
 					}
 					stateCandidate = multiGenerator.generate(operatornumber);
 					problem.Evaluate(stateCandidate);
@@ -260,10 +260,10 @@ public class Strategy {
 				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveHillClimbingDistance) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveHillClimbingRestart) &&
 				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveStochasticHillClimbing) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveTabuSearch) && 
 				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.ParticleSwarmOptimization)*/
-				MultiGenerator.getListGenerators()[i].getListCountGender()[periodo] = MultiGenerator.getListGenerators()[i].countGender + MultiGenerator.getListGenerators()[i].getListCountGender()[periodo];
-				MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo] = MultiGenerator.getListGenerators()[i].countBetterGender + MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo];
-				MultiGenerator.getListGenerators()[i].countGender = 0;
-				MultiGenerator.getListGenerators()[i].countBetterGender = 0;
+				MultiGenerator.getListGenerators()[i].getListCountGender()[periodo] = MultiGenerator.getListGenerators()[i].getCountGender() + MultiGenerator.getListGenerators()[i].getListCountGender()[periodo];
+				MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo] = MultiGenerator.getListGenerators()[i].getCountBetterGender() + MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo];
+				MultiGenerator.getListGenerators()[i].setCountGender(0);
+				MultiGenerator.getListGenerators()[i].setCountBetterGender(0);
 			}
 		}
 	}

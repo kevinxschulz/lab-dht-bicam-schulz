@@ -47,6 +47,14 @@ public class DominanceTest {
             public int[] getListCountBetterGender() { return new int[0]; }
             @Override
             public int[] getListCountGender() { return new int[0]; }
+            @Override
+            public int getCountGender() { return 0; }
+            @Override
+            public void setCountGender(int countGender) {}
+            @Override
+            public int getCountBetterGender() { return 0; }
+            @Override
+            public void setCountBetterGender(int countBetterGender) {}
         };
     }
 
