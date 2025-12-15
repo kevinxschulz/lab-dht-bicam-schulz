@@ -26,7 +26,7 @@ abstract class AbstractLocalSearchGenerator extends Generator {
     protected State referenceState;
     protected IFFactoryAcceptCandidate ifacceptCandidate;
     protected GeneratorType generatorType;
-    protected List<State> listStateReference = new ArrayList<State>();
+    public static List<State> listStateReference = new ArrayList<State>();
     protected float weight = 50f;
 
     public static int countGender = 0;
@@ -37,6 +37,9 @@ abstract class AbstractLocalSearchGenerator extends Generator {
 
     protected AbstractLocalSearchGenerator(GeneratorType generatorType) {
         this.generatorType = generatorType;
+        if (listStateReference == null) {
+            listStateReference = new ArrayList<State>();
+        }
         listTrace[0] = this.weight;
         listCountBetterGender[0] = 0;
         listCountGender[0] = 0;

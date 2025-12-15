@@ -1,6 +1,8 @@
 package metaheuristics.generators;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.lang.reflect.InvocationTargetException;
@@ -46,6 +48,40 @@ class AbstractHillClimbingGeneratorTest {
     }
 
     @Test
+    void weightDefaultsToFiftyAndCanChange() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+        assertEquals(50f, generator.getWeight());
+
+        generator.setWeight(25f);
+
+        assertEquals(25f, generator.getWeight());
+    }
+
+    @Test
+    void setStateRefOverridesReference() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+        State original = stateWithEvaluation(2.0);
+        State replacement = stateWithEvaluation(8.0);
+        generator.setInitialReference(original);
+
+        generator.setStateRef(replacement);
+
+        assertSame(replacement, generator.getReference());
+    }
+
+    @Test
+    void generatorTypeAccessorsStayInSync() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+        assertEquals(GeneratorType.HillClimbing, generator.getGeneratorType());
+        assertEquals(GeneratorType.HillClimbing, generator.getType());
+
+        generator.setGeneratorType(GeneratorType.SimulatedAnnealing);
+
+        assertEquals(GeneratorType.SimulatedAnnealing, generator.getGeneratorType());
+        assertEquals(GeneratorType.SimulatedAnnealing, generator.getType());
+    }
+
+    @Test
     void updateReferenceUsesAcceptBestLogic() throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
         State initial = stateWithEvaluation(3.0);
@@ -55,6 +91,17 @@ class AbstractHillClimbingGeneratorTest {
         generator.updateReference(better, 0);
 
         assertSame(better, generator.getReference());
+    }
+
+    @Test
+    void awardUpdateRefReturnsFalseAndKeepsReference() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+        State reference = stateWithEvaluation(1.0);
+        generator.setInitialReference(reference);
+        State candidate = stateWithEvaluation(5.0);
+
+        assertFalse(generator.awardUpdateREF(candidate));
+        assertSame(reference, generator.getReference());
     }
 
     @Test
@@ -70,6 +117,31 @@ class AbstractHillClimbingGeneratorTest {
         List<State> secondCall = generator.getReferenceList();
         assertEquals(2, secondCall.size());
         assertSame(reference, secondCall.get(1));
+    }
+
+    @Test
+    void typeCandidateCanBeOverriddenManually() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+
+        generator.setTypeCandidate(CandidateType.RandomCandidate);
+
+        assertEquals(CandidateType.RandomCandidate, generator.exposedCandidateType());
+    }
+
+    @Test
+    void getSonListReturnsNull() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+
+        assertNull(generator.getSonList());
+    }
+
+    @Test
+    void traceAndCountersExposeDefaults() {
+        TestHillClimbingGenerator generator = new TestHillClimbingGenerator();
+
+        assertEquals(50f, generator.getTrace()[0]);
+        assertEquals(0, generator.getListCountBetterGender()[0]);
+        assertEquals(0, generator.getListCountGender()[0]);
     }
 
     private static void configureStrategy(ProblemType type) {
@@ -99,7 +171,7 @@ class AbstractHillClimbingGeneratorTest {
 
         @Override
         public State generate(Integer operatornumber) {
-            return stateReferenceHC;
+            return referenceState;
         }
     }
 }

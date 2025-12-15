@@ -1,6 +1,7 @@
 package metaheuristics.generators;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -98,5 +99,104 @@ public class TabuSearchTest {
         
         assertEquals(initialState, tabuSearch.getReference());
         assertTrue(TabuSolutions.listTabu.isEmpty());
+    }
+
+    @Test
+    public void testTabuListDoesNotAddDuplicates() throws Exception {
+        State initialState = mock(State.class);
+        State candidateState = mock(State.class);
+        when(candidateState.Comparator(any(State.class))).thenReturn(true);
+        tabuSearch.setInitialReference(initialState);
+        
+        when(mockAcceptableCandidate.acceptCandidate(any(), any())).thenReturn(true);
+        
+        TabuSolutions.listTabu.add(candidateState);
+        int sizeBefore = TabuSolutions.listTabu.size();
+        
+        tabuSearch.updateReference(candidateState, 0);
+        
+        assertEquals(sizeBefore, TabuSolutions.listTabu.size());
+    }
+
+    @Test
+    public void testTabuListRemovesOldestWhenFull() throws Exception {
+        State initialState = mock(State.class);
+        tabuSearch.setInitialReference(initialState);
+        
+        when(mockAcceptableCandidate.acceptCandidate(any(), any())).thenReturn(true);
+        
+        // Fill tabu list
+        for (int i = 0; i < TabuSolutions.maxelements; i++) {
+            State state = mock(State.class);
+            when(state.Comparator(any(State.class))).thenReturn(false);
+            TabuSolutions.listTabu.add(state);
+        }
+        
+        State newCandidate = mock(State.class);
+        when(newCandidate.Comparator(any(State.class))).thenReturn(false);
+        
+        tabuSearch.updateReference(newCandidate, 0);
+        
+        assertEquals(TabuSolutions.maxelements, TabuSolutions.listTabu.size());
+        assertTrue(TabuSolutions.listTabu.contains(newCandidate));
+    }
+
+    @Test
+    public void testGetReferenceList() {
+        State state = mock(State.class);
+        tabuSearch.setInitialReference(state);
+        
+        List<State> list = tabuSearch.getReferenceList();
+        
+        assertEquals(1, list.size());
+        assertEquals(state, list.get(0));
+    }
+
+    @Test
+    public void testSetAndGetWeight() {
+        tabuSearch.setWeight(75f);
+        
+        assertEquals(75f, tabuSearch.getWeight());
+    }
+
+    @Test
+    public void testGetTypeReturnsTabuSearch() {
+        assertEquals(GeneratorType.TabuSearch, tabuSearch.getType());
+    }
+
+    @Test
+    public void testGetSonListReturnsNull() {
+        assertEquals(null, tabuSearch.getSonList());
+    }
+
+    @Test
+    public void testAwardUpdateREFReturnsFalse() {
+        State state = mock(State.class);
+        
+        assertEquals(false, tabuSearch.awardUpdateREF(state));
+    }
+
+    @Test
+    public void testGetTraceReturnsArray() {
+        float[] trace = tabuSearch.getTrace();
+        
+        assertNotNull(trace);
+        assertEquals(50f, trace[0]);
+    }
+
+    @Test
+    public void testGetListCountBetterGenderReturnsArray() {
+        int[] counts = tabuSearch.getListCountBetterGender();
+        
+        assertNotNull(counts);
+        assertEquals(0, counts[0]);
+    }
+
+    @Test
+    public void testGetListCountGenderReturnsArray() {
+        int[] counts = tabuSearch.getListCountGender();
+        
+        assertNotNull(counts);
+        assertEquals(0, counts[0]);
     }
 }

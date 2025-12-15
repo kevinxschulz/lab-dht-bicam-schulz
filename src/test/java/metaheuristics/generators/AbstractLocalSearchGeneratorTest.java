@@ -1,6 +1,8 @@
 package metaheuristics.generators;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +13,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import local_search.candidate_type.CandidateType;
 import metaheuristics.strategy.Strategy;
 import problem.definition.Problem;
 import problem.definition.State;
@@ -68,6 +71,73 @@ class AbstractLocalSearchGeneratorTest {
         assertEquals(75f, generator.getWeight());
     }
 
+    @Test
+    void constructorDefaultsToRandomCandidateType() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+
+        assertEquals(CandidateType.RandomCandidate, generator.exposedCandidateType());
+    }
+
+    @Test
+    void setStateRefOverridesReference() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        State initial = stateWithEvaluation(2.0);
+        State updated = stateWithEvaluation(6.0);
+        generator.setInitialReference(initial);
+
+        generator.setStateRef(updated);
+
+        assertSame(updated, generator.getReference());
+    }
+
+    @Test
+    void typeCandidateCanBeChangedManually() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+
+        generator.setTypeCandidate(CandidateType.GreaterCandidate);
+
+        assertEquals(CandidateType.GreaterCandidate, generator.exposedCandidateType());
+    }
+
+    @Test
+    void generatorTypeAccessorsStayInSync() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        assertEquals(GeneratorType.HillClimbing, generator.getGeneratorType());
+        assertEquals(GeneratorType.HillClimbing, generator.getType());
+
+        generator.setGeneratorType(GeneratorType.SimulatedAnnealing);
+
+        assertEquals(GeneratorType.SimulatedAnnealing, generator.getGeneratorType());
+        assertEquals(GeneratorType.SimulatedAnnealing, generator.getType());
+    }
+
+    @Test
+    void awardUpdateRefReturnsFalseAndDoesNotChangeReference() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+        State reference = stateWithEvaluation(1.0);
+        generator.setInitialReference(reference);
+        State candidate = stateWithEvaluation(9.0);
+
+        assertFalse(generator.awardUpdateREF(candidate));
+        assertSame(reference, generator.getReference());
+    }
+
+    @Test
+    void getSonListReturnsNull() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+
+        assertNull(generator.getSonList());
+    }
+
+    @Test
+    void traceAndCountersExposeDefaults() {
+        TestLocalSearchGenerator generator = new TestLocalSearchGenerator();
+
+        assertEquals(50f, generator.getTrace()[0]);
+        assertEquals(0, generator.getListCountBetterGender()[0]);
+        assertEquals(0, generator.getListCountGender()[0]);
+    }
+
     private static State stateWithEvaluation(double value) {
         State state = new State();
         ArrayList<Double> evaluation = new ArrayList<>();
@@ -80,6 +150,10 @@ class AbstractLocalSearchGeneratorTest {
 
         TestLocalSearchGenerator() {
             super(GeneratorType.HillClimbing);
+        }
+
+        CandidateType exposedCandidateType() {
+            return this.typeCandidate;
         }
 
         @Override

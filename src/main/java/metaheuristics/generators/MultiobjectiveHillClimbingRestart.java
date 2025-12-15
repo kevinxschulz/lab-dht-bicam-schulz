@@ -27,39 +27,26 @@ import metaheuristics.strategy.Strategy;
  * restarts the search from random positions when needed to escape plateaus
  * or stagnation.
  */
-public class MultiobjectiveHillClimbingRestart extends Generator{
+public class MultiobjectiveHillClimbingRestart extends AbstractLocalSearchGenerator {
 
-	protected CandidateValue candidatevalue;
-	protected AcceptType typeAcceptation;
-	protected StrategyType strategy;
-	protected CandidateType typeCandidate;
-	protected State stateReferenceHC;
-	protected IFFactoryAcceptCandidate ifacceptCandidate;
-	protected GeneratorType Generatortype;
-	protected List<State> listStateReference = new ArrayList<State>(); 
-	protected float weight;
-	protected List<Float> listTrace = new ArrayList<Float>();
 	private List<State> visitedState = new ArrayList<State>();
 	public static int sizeNeighbors;
 
 
 	public MultiobjectiveHillClimbingRestart() {
-		super();
+		super(GeneratorType.MultiobjectiveHillClimbingRestart);
 		this.typeAcceptation = AcceptType.AcceptNotDominated;
 		this.strategy = StrategyType.NORMAL;
 		//Problem problem = Strategy.getStrategy().getProblem();
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveHillClimbingRestart;
-		this.weight = 50;
-		listTrace.add(weight);
 	}
 
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
-		State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
+		State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
 		return statecandidate;
 	}
 
@@ -68,20 +55,20 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 		//Agregando la primera soluci�n a la lista de soluciones no dominadas
 
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
-			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());
+			Strategy.getStrategy().listRefPoblacFinal.add(referenceState.clone());
 		}
 
 		ifacceptCandidate = new FactoryAcceptCandidate();
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
 		State lastState = Strategy.getStrategy().listRefPoblacFinal.get(Strategy.getStrategy().listRefPoblacFinal.size()-1);
 		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, sizeNeighbors);
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, sizeNeighbors);
 		int i= 0;
 
 		Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
 
 		if(accept.equals(true)){
-			stateReferenceHC = stateCandidate.clone();
+			referenceState = stateCandidate.clone();
 			visitedState = new ArrayList<State>();
 			lastState = stateCandidate.clone();
 			//tomar xc q pertenesca a la vecindad de xa
@@ -108,7 +95,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 				}
 			}
 			if(accept.equals(true)){
-				stateReferenceHC = stateCandidate.clone();
+				referenceState = stateCandidate.clone();
 				visitedState = new ArrayList<State>();
 				lastState = stateCandidate.clone();
 				//tomar xc q pertenesca a la vecindad de xa
@@ -121,35 +108,8 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceHC.clone());
+		listStateReference.add(referenceState.clone());
 		return listStateReference;
-	}
-
-	@Override
-	public State getReference() {
-		return stateReferenceHC;
-	}
-
-	public void setStateRef(State stateRef) {
-		this.stateReferenceHC = stateRef;
-	}
-
-	@Override
-	public void setInitialReference(State stateInitialRef) {
-		this.stateReferenceHC = stateInitialRef;
-	}
-
-	public GeneratorType getGeneratorType() {
-		return Generatortype;
-	}
-
-	public void setGeneratorType(GeneratorType Generatortype) {
-		this.Generatortype = Generatortype;
-	}
-
-	@Override
-	public GeneratorType getType() {
-		return this.Generatortype;
 	}
 
 	@Override
@@ -173,36 +133,5 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	public boolean awardUpdateREF(State stateCandidate) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-
-	@Override
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

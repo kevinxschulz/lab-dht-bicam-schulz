@@ -22,35 +22,21 @@ import problem.definition.State;
  * solutions using a multi-objective acceptance rule. Intended for problems
  * with multiple objectives where nondominated moves are preferred.
  */
-public class MultiobjectiveStochasticHillClimbing extends Generator{
+public class MultiobjectiveStochasticHillClimbing extends AbstractLocalSearchGenerator {
 
-	protected CandidateValue candidatevalue;
-	protected AcceptType typeAcceptation;
-	protected StrategyType strategy;
-	protected CandidateType typeCandidate;
-	protected State stateReferenceHC;
-	protected IFFactoryAcceptCandidate ifacceptCandidate;
-	protected GeneratorType Generatortype;
-	protected List<State> listStateReference = new ArrayList<State>(); 
-	protected float weight;
-	protected List<Float> listTrace = new ArrayList<Float>();
-	
 	public MultiobjectiveStochasticHillClimbing() {
-		super();
+		super(GeneratorType.MultiobjectiveStochasticHillClimbing);
 		this.typeAcceptation = AcceptType.AcceptNotDominated;
 		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveStochasticHillClimbing;
-		this.weight = 50;
-		listTrace.add(weight);
 	}
 
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
-	    State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
+		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
+	    State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
 	    return statecandidate;
 	}
 
@@ -58,43 +44,16 @@ public class MultiobjectiveStochasticHillClimbing extends Generator{
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		ifacceptCandidate = new FactoryAcceptCandidate();
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
-		Boolean accept = candidate.acceptCandidate(stateReferenceHC, stateCandidate);
+		Boolean accept = candidate.acceptCandidate(referenceState, stateCandidate);
 		if(accept.equals(true))
-		  stateReferenceHC = stateCandidate.clone();
+		  referenceState = stateCandidate.clone();
 		getReferenceList();
 	}
 	
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add( stateReferenceHC.clone());
+		listStateReference.add(referenceState.clone());
 		return listStateReference;
-	}
-
-	@Override
-	public State getReference() {
-		return stateReferenceHC;
-	}
-
-	public void setStateRef(State stateRef) {
-		this.stateReferenceHC = stateRef;
-	}
-
-	@Override
-	public void setInitialReference(State stateInitialRef) {
-		this.stateReferenceHC = stateInitialRef;
-	}
-
-	public GeneratorType getGeneratorType() {
-		return Generatortype;
-	}
-
-	public void setGeneratorType(GeneratorType Generatortype) {
-		this.Generatortype = Generatortype;
-	}
-
-	@Override
-	public GeneratorType getType() {
-		return this.Generatortype;
 	}
 
 	@Override
@@ -115,27 +74,4 @@ public class MultiobjectiveStochasticHillClimbing extends Generator{
 		return 0;
 	}
 
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
