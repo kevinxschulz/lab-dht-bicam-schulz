@@ -106,7 +106,7 @@ public class ParticleSwarmOptimization extends Generator {
 		Boolean found = false;
 		List<String> key = Strategy.getStrategy().getListKey();
 		int count = 0;
-		if(RandomSearch.listStateReference.size() == 0){
+		if(AbstractLocalSearchGenerator.listStateReference.size() == 0){
 			return this.setListParticle(new ArrayList<Particle>());
 		}
 		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
@@ -117,17 +117,17 @@ public class ParticleSwarmOptimization extends Generator {
 				ParticleSwarmOptimization generator = (ParticleSwarmOptimization) Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListParticle().isEmpty()){
 					//convertir los estados en particulas
-					for (int j = 0; j < RandomSearch.listStateReference.size(); j++) {
+					for (int j = 0; j < AbstractLocalSearchGenerator.listStateReference.size(); j++) {
 						//si el estado es creado con el generator RandomSearch entonces la convierto en particula
 						if(getListParticle().size() != countRef){
 							ArrayList<Object> velocity = new ArrayList<Object>();
-							State stateAct = (State) RandomSearch.listStateReference.get(j).getCopy();
-							stateAct.setCode(new ArrayList<Object>(RandomSearch.listStateReference.get(j).getCode()));
-							stateAct.setEvaluation(RandomSearch.listStateReference.get(j).getEvaluation());
+							State stateAct = (State) AbstractLocalSearchGenerator.listStateReference.get(j).getCopy();
+							stateAct.setCode(new ArrayList<Object>(AbstractLocalSearchGenerator.listStateReference.get(j).getCode()));
+							stateAct.setEvaluation(AbstractLocalSearchGenerator.listStateReference.get(j).getEvaluation());
 							
-							State statePBest = (State) RandomSearch.listStateReference.get(j).getCopy();
-							statePBest.setCode(new ArrayList<Object>(RandomSearch.listStateReference.get(j).getCode()));
-							statePBest.setEvaluation(RandomSearch.listStateReference.get(j).getEvaluation());
+							State statePBest = (State) AbstractLocalSearchGenerator.listStateReference.get(j).getCopy();
+							statePBest.setCode(new ArrayList<Object>(AbstractLocalSearchGenerator.listStateReference.get(j).getCode()));
+							statePBest.setEvaluation(AbstractLocalSearchGenerator.listStateReference.get(j).getEvaluation());
 							
 							Particle particle = new Particle(stateAct, statePBest, velocity);
 							getListParticle().add(particle);

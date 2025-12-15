@@ -95,19 +95,17 @@ public abstract class Generator {
 	 * @return The trace of the generator.
 	 */
 	public abstract float[] getTrace();
-	public int countGender;
-	public int countBetterGender;
+	
 	/**
 	 * Gets the list of count of better gender.
 	 * @return the list of count of better gender.
 	 */
 	public abstract int[] getListCountBetterGender();
+	
 	/**
 	 * Gets the list of count of gender.
 	 * @return the list of count of gender.
 	 */
 	public abstract int[] getListCountGender();
-	public int[] listCountBetterGender; // arreglo con las mejoras de cada generador en un periodo de 10, acumulativo
-	
 
 }

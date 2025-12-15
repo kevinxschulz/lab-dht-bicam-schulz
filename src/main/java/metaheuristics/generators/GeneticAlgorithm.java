@@ -171,7 +171,7 @@ public class GeneticAlgorithm extends Generator {
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				GeneticAlgorithm generator = (GeneticAlgorithm) Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListState().isEmpty()){
-					listState.addAll(RandomSearch.listStateReference);
+					listState.addAll(AbstractLocalSearchGenerator.listStateReference);
 					//for (int j = 1; j < Strategy.getStrategy().Statistics.getAllStates().size(); j++) {
 //					for (int j = 1; j < RandomSearch.listStateReference.size(); j++) {
 						//if(Strategy.getStrategy().Statistics.getAllStates().get(j).getTypeGenerator().equals(GeneratorType.RandomSearch) && (listState.size()!= countRef)){

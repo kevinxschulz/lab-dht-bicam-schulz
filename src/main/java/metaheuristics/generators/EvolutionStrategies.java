@@ -143,7 +143,7 @@ public class EvolutionStrategies extends Generator {
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				EvolutionStrategies generator = (EvolutionStrategies) Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListStateReference().isEmpty()){
-					listStateReference.addAll(RandomSearch.listStateReference);
+					listStateReference.addAll(AbstractLocalSearchGenerator.listStateReference);
 					//for (int j = 1; j < Strategy.getStrategy().Statistics.getAllStates().size(); j++) {
 //					for (int j = 1; j < RandomSearch.listStateReference.size(); j++) {
 //						if(listStateReference.size() != countRef){

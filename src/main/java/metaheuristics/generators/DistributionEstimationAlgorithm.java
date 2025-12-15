@@ -233,7 +233,7 @@ public class DistributionEstimationAlgorithm extends Generator {
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				DistributionEstimationAlgorithm generator = (DistributionEstimationAlgorithm)Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListReference().isEmpty()){
-					referenceList.addAll(RandomSearch.listStateReference);
+					referenceList.addAll(AbstractLocalSearchGenerator.listStateReference);
 					//for (int j = 1; j < Strategy.getStrategy().Statistics.getAllStates().size(); j++) {
 //					for (int j = 1; j < RandomSearch.listStateReference.size(); j++) {
 //						//if((Strategy.getStrategy().Statistics.getAllStates().get(j).getTypeGenerator().equals(GeneratorType.RandomSearch)) && (referenceList.size()!= countRef)){
