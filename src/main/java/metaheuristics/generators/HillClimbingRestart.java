@@ -4,9 +4,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import local_search.candidate_type.CandidateType;
 import metaheuristics.strategy.Strategy;
 
 import problem.definition.State;
+import problem.definition.Problem.ProblemType;
 
 /**
  * A generator that implements the Hill Climbing with Restart algorithm.
@@ -27,6 +29,11 @@ public class HillClimbingRestart extends AbstractLocalSearchGenerator{
 //		countIterations = Strategy.getStrategy().getCountCurrent();
 //		countSame = 1;
 		countCurrent = count;
+		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
+			this.typeCandidate = CandidateType.GreaterCandidate;
+		} else {
+			this.typeCandidate = CandidateType.SmallerCandidate;
+		}
 	}
 
 

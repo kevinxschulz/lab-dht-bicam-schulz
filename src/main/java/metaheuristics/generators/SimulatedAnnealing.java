@@ -7,94 +7,89 @@ import java.util.List;
 import local_search.acceptation_type.AcceptType;
 import local_search.candidate_type.CandidateType;
 import local_search.complement.StrategyType;
-	 * Gets the type of the generator.
-	 * @return The type of the generator.
-	 */
-	@Override
-	public GeneratorType getType() {
-		return this.typeGenerator;
-	}
+import metaheuristics.strategy.Strategy;
+import problem.definition.State;
 
-	/**
-	 * Gets the list of reference states.
-	 * @return The list of reference states.
-	 */
-	@Override
-	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceSA);
-		return listStateReference;
-	}
+/**
+ * A generator that implements the Simulated Annealing algorithm.
+ * It uses a probabilistic approach to accept worse solutions, allowing it to escape local optima.
+ */
+public class SimulatedAnnealing extends AbstractLocalSearchGenerator {
 
-	/**
-	 * Gets the list of son states.
-	 * @return The list of son states.
-	 */
-	@Override
-	public List<State> getSonList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public static final Double alpha = 0.93;
+    public static Double tinitial;
+    public static Double tfinal;
+    public static int countIterationsT;
+    private int countRept;
 
-	/**
-	 * Awards the update of the reference state.
-	 * @param stateCandidate The candidate state.
-	 * @return True if the update is awarded, false otherwise.
-	 */
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    /**
+     * Gets the type of the generator.
+     * @return The type of the generator.
+     */
+    public GeneratorType getTypeGenerator() {
+        return generatorType;
+    }
 
+    /**
+     * Sets the type of the generator.
+     * @param typeGenerator The type of the generator.
+     */
+    public void setTypeGenerator(GeneratorType typeGenerator) {
+        this.generatorType = typeGenerator;
+    }
 
-	/**
-	 * Gets the weight of the generator.
-	 * @return The weight of the generator.
-	 */
-	@Override
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return this.weight;
-	}
+    /**
+     * Constructs a new SimulatedAnnealing generator with default values.
+     */
+    public SimulatedAnnealing(){
+        super(GeneratorType.SimulatedAnnealing);
+        this.typeAcceptation = AcceptType.AcceptNotBadT;
+        this.strategy = StrategyType.NORMAL;
+        this.typeCandidate = CandidateType.RandomCandidate;
+    }
 
-	/**
-	 * Sets the weight of the generator.
-	 * @param weight The weight of the generator.
-	 */
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-		this.weight = weight;
-	}
+    /**
+     * Generates a new state by exploring the neighborhood of the current reference state.
+     * @param operatornumber The operator number.
+     * @return A new state.
+     * @throws IllegalArgumentException
+     * @throws SecurityException
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     * @throws NoSuchMethodException
+     */
+    @Override
+    public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException,
+            InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        List<State> neighborhood = new ArrayList<State>();
+        neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(referenceState, operatornumber);
+        State statecandidate = candidatevalue.stateCandidate(referenceState, typeCandidate, strategy, operatornumber, neighborhood);
+        return statecandidate;
+    }
 
-	/**
-	 * Gets the list of count of better gender.
-	 * @return the list of count of better gender.
-	 */
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
-	}
-
-	/**
-	 * Gets the list of count of gender.
-	 * @return the list of count of gender.
-	 */
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
-	}
-
-	/**
-	 * Gets the trace of the generator.
-	 * @return The trace of the generator.
-	 */
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return this.listTrace;
-	}
-
+    /**
+     * Updates the reference state based on the acceptance criteria and the current temperature.
+     * @param stateCandidate The candidate state.
+     * @param countIterationsCurrent The current number of iterations.
+     * @throws IllegalArgumentException
+    * @throws SecurityException
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws InvocationTargetException
+     * @throws NoSuchMethodException
+     */
+    @Override
+    public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException,
+            SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException,
+            InvocationTargetException, NoSuchMethodException {
+        countRept = countIterationsT;
+        super.updateReference(stateCandidate, countIterationsCurrent);
+        if (countIterationsCurrent.equals(countIterationsT)) {
+            tinitial = tinitial * alpha;
+            countIterationsT = countIterationsT + countRept;
+        }
+    }
 }
