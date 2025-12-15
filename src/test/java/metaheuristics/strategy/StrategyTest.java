@@ -1,0 +1,130 @@
+package metaheuristics.strategy;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.mock;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import local_search.complement.StopExecute;
+import local_search.complement.UpdateParameter;
+import problem.definition.Problem;
+import problem.definition.State;
+
+/**
+ * Test class for Strategy.
+ * Tests the singleton strategy controller functionality.
+ */
+class StrategyTest {
+
+    private Strategy strategy;
+
+    @BeforeEach
+    void setUp() {
+        Strategy.destroyExecute();
+        strategy = Strategy.getStrategy();
+    }
+
+    @AfterEach
+    void tearDown() {
+        Strategy.destroyExecute();
+    }
+
+    @Test
+    void getStrategyReturnsSingletonInstance() {
+        Strategy instance1 = Strategy.getStrategy();
+        Strategy instance2 = Strategy.getStrategy();
+
+        assertSame(instance1, instance2);
+    }
+
+    @Test
+    void setBestStateUpdatesState() {
+        State mockState = mock(State.class);
+
+        strategy.setBestState(mockState);
+
+        assertSame(mockState, strategy.getBestState());
+    }
+
+    @Test
+    void setProblemUpdatesProblem() {
+        Problem mockProblem = mock(Problem.class);
+
+        strategy.setProblem(mockProblem);
+
+        assertSame(mockProblem, strategy.getProblem());
+    }
+
+    @Test
+    void setCountMaxUpdatesMaxCount() {
+        strategy.setCountMax(1000);
+
+        assertEquals(1000, strategy.getCountMax());
+    }
+
+    @Test
+    void setCountCurrentUpdatesCurrentCount() {
+        strategy.setCountCurrent(500);
+
+        assertEquals(500, strategy.getCountCurrent());
+    }
+
+    @Test
+    void setThresholdUpdatesThreshold() {
+        strategy.setThreshold(0.75);
+
+        assertEquals(0.75, strategy.getThreshold(), 0.001);
+    }
+
+    @Test
+    void setStopExecuteUpdatesStopCriteria() {
+        StopExecute mockStopExecute = mock(StopExecute.class);
+
+        strategy.setStopexecute(mockStopExecute);
+
+        assertSame(mockStopExecute, strategy.getStopexecute());
+    }
+
+    @Test
+    void setUpdateParameterUpdatesParameter() {
+        UpdateParameter mockUpdateParameter = mock(UpdateParameter.class);
+
+        strategy.setUpdateparameter(mockUpdateParameter);
+
+        assertSame(mockUpdateParameter, strategy.getUpdateparameter());
+    }
+
+    @Test
+    void listOfflineErrorIsInitialized() {
+        assertNotNull(strategy.listOfflineError);
+        assertEquals(100, strategy.listOfflineError.length);
+    }
+
+    @Test
+    void saveListStatesCanBeSet() {
+        strategy.saveListStates = true;
+        assertEquals(true, strategy.saveListStates);
+    }
+
+    @Test
+    void saveListBestStatesCanBeSet() {
+        strategy.saveListBestStates = true;
+        assertEquals(true, strategy.saveListBestStates);
+    }
+
+    @Test
+    void saveFreneParetoMonoObjetivoCanBeSet() {
+        strategy.saveFreneParetoMonoObjetivo = true;
+        assertEquals(true, strategy.saveFreneParetoMonoObjetivo);
+    }
+
+    @Test
+    void calculateTimeCanBeSet() {
+        strategy.calculateTime = true;
+        assertEquals(true, strategy.calculateTime);
+    }
+}
