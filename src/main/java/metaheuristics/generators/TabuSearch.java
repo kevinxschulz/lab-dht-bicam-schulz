@@ -88,6 +88,14 @@ public class TabuSearch extends Generator {
 		
 	}
 
+	void setCandidateValue(CandidateValue candidateValue) {
+		this.candidatevalue = candidateValue;
+	}
+
+	void setAcceptCandidateFactory(IFFactoryAcceptCandidate factory) {
+		this.ifacceptCandidate = factory;
+	}
+
 	/**
 	 * Generates a new state by exploring the neighborhood of the current reference state.
 	 * @param operatornumber The operator number.
@@ -152,7 +160,9 @@ public class TabuSearch extends Generator {
 	 */
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent)throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		ifacceptCandidate = new FactoryAcceptCandidate();
+		if (ifacceptCandidate == null) {
+			ifacceptCandidate = new FactoryAcceptCandidate();
+		}
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
 		Boolean acept = candidate.acceptCandidate(stateReferenceTS, stateCandidate);
 		if(acept.equals(true))

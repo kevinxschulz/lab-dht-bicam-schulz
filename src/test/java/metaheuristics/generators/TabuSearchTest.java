@@ -1,7 +1,7 @@
 package metaheuristics.generators;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
@@ -11,14 +11,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import factory_interface.IFFactoryAcceptCandidate;
 import local_search.acceptation_type.AcceptableCandidate;
 import local_search.candidate_type.CandidateValue;
 import local_search.complement.TabuSolutions;
-import metaheuristics.problem.Problem;
+import problem.definition.Problem;
 import metaheuristics.strategy.Strategy;
 import problem.definition.Operator;
 import problem.definition.State;
@@ -33,7 +33,7 @@ public class TabuSearchTest {
     private Problem mockProblem;
     private Operator mockOperator;
 
-    @Before
+    @BeforeEach
     public void setUp() throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         mockProblem = mock(Problem.class);
         mockOperator = mock(Operator.class);
@@ -49,17 +49,19 @@ public class TabuSearchTest {
         mockFactoryAcceptCandidate = mock(IFFactoryAcceptCandidate.class);
         mockAcceptableCandidate = mock(AcceptableCandidate.class);
         
-        tabuSearch.candidatevalue = mockCandidateValue;
-        tabuSearch.ifacceptCandidate = mockFactoryAcceptCandidate;
+        tabuSearch.setCandidateValue(mockCandidateValue);
+        tabuSearch.setAcceptCandidateFactory(mockFactoryAcceptCandidate);
         
         when(mockFactoryAcceptCandidate.createAcceptCandidate(any())).thenReturn(mockAcceptableCandidate);
     }
 
     @Test
     public void testGenerate() throws Exception {
+        State referenceState = mock(State.class);
         State mockState = mock(State.class);
         List<State> neighborhood = new ArrayList<>();
         neighborhood.add(mock(State.class));
+        tabuSearch.setInitialReference(referenceState);
         
         when(mockOperator.generatedNewState(any(State.class), anyInt())).thenReturn(neighborhood);
         when(mockCandidateValue.stateCandidate(any(), any(), any(), any(), any())).thenReturn(mockState);
