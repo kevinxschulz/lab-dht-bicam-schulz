@@ -122,6 +122,9 @@ public class MultiobjectiveHillClimbingDistance extends AbstractLocalSearchGener
 
 	@Override
 	public List<State> getReferenceList() {
+		if (listStateReference == null) {
+			listStateReference = new ArrayList<>();
+		}
 		listStateReference.add(referenceState.clone());
 		return listStateReference;
 	}

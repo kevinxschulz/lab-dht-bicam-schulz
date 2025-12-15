@@ -56,6 +56,9 @@ abstract class AbstractLocalSearchGenerator extends Generator {
 
     @Override
     public List<State> getReferenceList() {
+        if (listStateReference == null) {
+            listStateReference = new ArrayList<>();
+        }
         listStateReference.add(referenceState);
         return listStateReference;
     }

@@ -108,6 +108,9 @@ public class MultiobjectiveHillClimbingRestart extends AbstractLocalSearchGenera
 
 	@Override
 	public List<State> getReferenceList() {
+		if (listStateReference == null) {
+			listStateReference = new ArrayList<>();
+		}
 		listStateReference.add(referenceState.clone());
 		return listStateReference;
 	}
