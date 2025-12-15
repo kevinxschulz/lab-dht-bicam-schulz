@@ -33,10 +33,8 @@ import factory_method.FactoryReplace;
  * using the pluggable factory-provided operators. Produces offspring
  * from selected parents and applies the configured replacement strategy.
  */
-public class GeneticAlgorithm extends Generator {
+public class GeneticAlgorithm extends AbstractPopulationBasedGenerator {
 
-	private State stateReferenceGA;
-	private List<State> listState = new ArrayList<State>(); 
 	private IFFactoryFatherSelection iffatherselection;
 	private IFFactoryCrossover iffactorycrossover;
 	private IFFactoryMutation iffactorymutation;
@@ -46,48 +44,21 @@ public class GeneticAlgorithm extends Generator {
 	public static final CrossoverType crossoverType = CrossoverType.UniformCrossover;
 	public static final ReplaceType replaceType = ReplaceType.GenerationalReplace;
 	public static final SelectionType selectionType = SelectionType.TruncationSelection;
-	
-//	private SelectionType selectionType;
-//	private CrossoverType crossoverType;
-//	private MutationType mutationType;
-//	private ReplaceType replaceType;
-	private GeneratorType generatorType;
 	public static final double PC = 0.8;
 	public static final double PM = 0.1;
-	public static int countRef = 0;
-	public static int truncation;
-	private float weight;
-	
-	//problemas dinamicos
-	private int countGender = 0;
-	private int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
-	private float[] listTrace = new float[1200000];
 	
     public GeneticAlgorithm() {
-		super();
-		this.listState = getListStateRef(); // llamada al m�todo que devuelve la lista. 
-//		this.selectionType = SelectionType.Truncation;
-//		this.crossoverType = CrossoverType.UniformCrossover;
-//		this.mutationType = MutationType.UniformMutation;
-//		this.replaceType = ReplaceType.Smallest;
-		this.generatorType = GeneratorType.GeneticAlgorithm;
-		this.weight = 50;
-		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		super(GeneratorType.GeneticAlgorithm);
+		this.referenceList = initializeReferenceList();
 	}
     
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     	
 		//******************selection*******************************
-		//ArrayList<State>list=new ArrayList<State>();
-		List<State> refList = new ArrayList<State>(this.listState); 
-    	iffatherselection = new FactoryFatherSelection();
+		iffatherselection = new FactoryFatherSelection();
     	FatherSelection selection = iffatherselection.createSelectFather(selectionType);
-    	List<State> fathers = selection.selection(refList, truncation);
+    	List<State> fathers = selection.selection(this.referenceList, truncation);
     	int pos1 = (int)(Math.random() * fathers.size());
     	int pos2 = (int)(Math.random() * fathers.size());
     	
@@ -117,163 +88,15 @@ public class GeneticAlgorithm extends Generator {
     	return auxState1;
 	}
     
-	@Override
-	public State getReference() {
-		stateReferenceGA = listState.get(0);
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
-			for (int i = 1; i < listState.size(); i++) {
-				if(stateReferenceGA.getEvaluation().get(0) < listState.get(i).getEvaluation().get(0))
-					stateReferenceGA = listState.get(i);
-			}
-		}
-		else{
-			for (int i = 1; i < listState.size(); i++) {
-				if(stateReferenceGA.getEvaluation().get(0) > listState.get(i).getEvaluation().get(0))
-					stateReferenceGA = listState.get(i);
-			}
-		}
-		return stateReferenceGA;
-	}
 
-	public void setStateRef(State stateRef) {
-		this.stateReferenceGA = stateRef;
-	}
-	@Override
-	public void setInitialReference(State stateInitialRef) {
-		this.stateReferenceGA = stateInitialRef;
-	}
 
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
 		iffreplace = new FactoryReplace();
 		Replace replace = iffreplace.createReplace(replaceType);
-		listState = replace.replace(stateCandidate, listState);
+		referenceList = replace.replace(stateCandidate, referenceList);
 	}
 	
-	public List<State> getListState() {
-		return listState;
-	}
 
-	public void setListState(List<State> listState) {
-		this.listState = listState;
-	}
-	
-	public List<State> getListStateRef(){
-		Boolean found = false;
-		List<String> key = Strategy.getStrategy().getListKey();
-		int count = 0;
-		//if(Strategy.getStrategy().Statistics.getAllStates().size() == 0){
-		/*if(RandomSearch.listStateReference.size() == 0){
-			return this.listState = new ArrayList<State>();
-		}*/
-		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
-			if(key.get(count).equals(GeneratorType.GeneticAlgorithm.toString())){
-				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
-				GeneticAlgorithm generator = (GeneticAlgorithm) Strategy.getStrategy().mapGenerators.get(keyGenerator);
-				if(generator.getListState().isEmpty()){
-					listState.addAll(AbstractLocalSearchGenerator.listStateReference);
-					//for (int j = 1; j < Strategy.getStrategy().Statistics.getAllStates().size(); j++) {
-//					for (int j = 1; j < RandomSearch.listStateReference.size(); j++) {
-						//if(Strategy.getStrategy().Statistics.getAllStates().get(j).getTypeGenerator().equals(GeneratorType.RandomSearch) && (listState.size()!= countRef)){
-//						if(listState.size() != countRef){
-							//listState.add(Strategy.getStrategy().Statistics.getAllStates().get(j));
-//							listState.add(RandomSearch.listStateReference.get(j));
-//						}
-//					}  
-				}
-				else{
-					listState = generator.getListState();
-				}
-			        found = true;
-			}
-			count++;
-		}
-		return listState;
-	}
-
-	public GeneratorType getGeneratorType() {
-		return generatorType;
-	}
-
-	public void setGeneratorType(GeneratorType generatorType) {
-		this.generatorType = generatorType;
-	}
-
-	@Override
-	public GeneratorType getType() {
-		return this.generatorType;
-	}
-
-	@Override
-	public List<State> getReferenceList() {
-		List<State> ReferenceList = new ArrayList<State>();
-		for (int i = 0; i < listState.size(); i++) {
-			State value = listState.get(i);
-			ReferenceList.add(value);
-		}
-		return ReferenceList;
-	}
-
-	@Override
-	public List<State> getSonList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public float getWeight() {
-		// TODO Auto-generated method stub
-		return this.weight;
-	}
-
-	@Override
-	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-		this.weight = weight;
-	}
-	@Override
-	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
-	}
-
-	@Override
-	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
-	}
-
-	@Override
-	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return this.listTrace;
-	}
-
-	@Override
-	public int getCountGender() {
-		return countGender;
-	}
-
-	@Override
-	public void setCountGender(int countGender) {
-		this.countGender = countGender;
-	}
-
-	@Override
-	public int getCountBetterGender() {
-		return countBetterGender;
-	}
-
-	@Override
-	public void setCountBetterGender(int countBetterGender) {
-		this.countBetterGender = countBetterGender;
-	}
 
 }
